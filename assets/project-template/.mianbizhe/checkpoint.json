@@ -3,7 +3,7 @@
   "status": "initialized",
   "current_node": "bind",
   "completed_nodes": [],
-  "next_action": "读取 .mianbizhe 状态包，输出破局能力宣告与恢复审计，沿执行图连续推进直到产物解析完毕或遇到客观边界。",
+  "next_action": "读取 .mianbizhe 状态包，输出破局能力宣告与任务速览，沿执行图连续推进直到产物解析完毕或遇到客观边界。",
   "next_action_inputs": [],
   "rollback": null,
   "updated_at": "UNSET"
