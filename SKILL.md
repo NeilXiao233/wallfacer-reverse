@@ -11,9 +11,15 @@ description: 面壁者是一个以权威参考会话为证据源的跨设备任�
 
 当前模式写入 `.mianbizhe/task-contract.json` 的 `execution_intensity`；未填写时按 `difficult` 处理。
 
-- `difficult`（困难模式）：保持原面壁者流程，只按当前证据披露少量高价值技术能力；不主动进入 `reverse-skill-router`。
-- `challenge`（挑战模式）：披露 `references/reverse-capabilities.md` 的全部新增能力，仍由面壁者统一执行和交接；不主动进入 `reverse-skill-router`。
-- `hell`（地狱模式）：面壁者主动读取并调用 `reverse-skill-router`，获取专业逆向路由、工具和子 Skill 建议；面壁者继续保有当前任务的执行图和交接状态。
+- `difficult`（困难模式，默认）：保持原面壁者流程，只按当前证据披露少量高价值技术能力；不进入 `reverse-skill-router`。
+- `challenge`（挑战模式）：披露 `references/reverse-capabilities.md` 的全部新增能力，仍由面壁者统一执行和交接；不进入 `reverse-skill-router`。
+- `hell`（地狱模式）：只有用户明确请求才启用；面壁者主动读取并调用 `reverse-skill-router`，获取专业逆向路由、工具和子 Skill 建议；面壁者继续保有当前任务的执行图和交接状态。
+
+自动路由规则：
+
+1. 默认使用 `difficult`。
+2. 连续 2 次失败或部分成功、且没有通过的新路线（以 `attempt-ledger.json` 为准）时，自动升级到 `challenge`，更新 `task-contract.json` 的 `execution_intensity` 并在 `attempt-ledger.json` 中记录升级原因；升级后不自动降回。
+3. 永不自动升级到 `hell`；地狱模式只有用户明确请求（如“地狱模式”或 `hell`）才触发。
 
 地狱模式下 `reverse-skill-router` 的获取与激活：
 
@@ -21,7 +27,7 @@ description: 面壁者是一个以权威参考会话为证据源的跨设备任�
 2. 可读：直接以 `wallfacer-reverse-delegation: hell` 委派，要求其只做技术路由与补充，不接管执行图、证据台账和交接状态。
 3. 不可读（未安装）：引导用户安装并激活 `reverse-skill-router`；优先建议启动一个新会话完成安装，因为新会话启动时会重新加载 skill 清单，安装后该 skill 才能被识别和激活。安装完成后，回到本会话或在新会话中继续地狱模式委派。
 
-`reverse-skill-router` 在面壁者之外保持被动状态，只因用户明确调用或地狱模式委派而进入。
+`reverse-skill-router` 在面壁者之外保持被动状态，只因用户明确调用，或面壁者在用户明确请求地狱模式后委派而进入。
 
 ## 可移植路径约定
 
@@ -77,6 +83,7 @@ description: 面壁者是一个以权威参考会话为证据源的跨设备任�
 4. 先运行最小区分性测试，只改变一个相关条件。
 5. 把结果写入 `attempt-ledger.json`：条件、动作、观察、假设变化、未阻塞动作、下一路线、证据。
 6. 只有缺失信息、已证明不兼容、不可用外部依赖、资源/物理边界等客观约束，才能标记 `blocked`。
+7. 连续 2 次失败或部分成功且没有通过的新路线时，按自动路由升级到 `challenge` 并记录升级原因；`hell` 只接受用户明确请求。
 
 每条限制必须包含：
 

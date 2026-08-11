@@ -14,7 +14,7 @@ Required files:
 
 Optional task contract field:
 
-- `execution_intensity`: `difficult` (default), `challenge`, or `hell`. It records how much technical capability is disclosed and whether the passive reverse router is delegated to.
+- `execution_intensity`: `difficult` (default), `challenge`, or `hell`. It records how much technical capability is disclosed and whether the passive reverse router is delegated to. Automatic routing: `difficult` escalates to `challenge` after two consecutive failed or partial attempts without a passed route; `hell` is entered only on an explicit user request and is never automatic.
 
 Portable path rule: `task-contract.project_root` is `"."` (the directory containing `.mianbizhe`) and reference locators are relative to the skill root. The state package must not store `/Users/...`, `C:\...`, or other machine-specific absolute paths; the validator rejects them.
 

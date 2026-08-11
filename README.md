@@ -22,7 +22,7 @@ Use `$wallfacer-reverse` or 面壁者-逆向 when continuing a cross-device proj
 - Execution graph: `bind -> audit -> map -> route -> discriminate -> execute -> verify -> checkpoint`.
 - Evidence tiers: `A-runtime`, `B-static`, `C-inference`, `D-reference-method`. Reference facts cannot prove target facts.
 - Breakthrough protocol: failed routes become evidence, every retry requires a materially different cross-layer route, and progress stops only at verified delivery or a named, evidenced boundary.
-- Intensity modes: `difficult` (original workflow), `challenge` (disclose all absorbed capabilities), `hell` (delegate to reverse-skill-router for technical routing).
+- Intensity modes: `difficult` is the default (original workflow); `challenge` discloses all absorbed capabilities and is the automatic escalation target after repeated failure; `hell` delegates to reverse-skill-router only when the user explicitly requests it.
 - Portable paths: no machine absolute paths; reference locators resolve relative to the skill root (`locator_base: skill_root`).
 
 ## Included Resources
@@ -65,7 +65,7 @@ git clone https://github.com/NeilXiao233/wallfacer-reverse.git "$CODEX_HOME/skil
 - 执行图：`bind -> audit -> map -> route -> discriminate -> execute -> verify -> checkpoint`。
 - 证据分层：`A-runtime`、`B-static`、`C-inference`、`D-reference-method`；参考事实不能证明目标事实。
 - 破局协议：失败路径转为证据，每次重试必须换一条实质不同的跨层路线，只在验证交付或命名并证明的客观边界处停止。
-- 运行强度：`difficult`（原流程）、`challenge`（披露全部新增能力）、`hell`（委派 reverse-skill-router 做技术路由）。
+- 运行强度：默认 `difficult`（原流程）；反复失败自动升级到 `challenge`（披露全部新增能力）；`hell`（委派 reverse-skill-router 做技术路由）只在用户明确请求时启用。
 - 可移植路径：状态包不写机器绝对路径，reference locator 相对 skill 根目录解析（`locator_base: skill_root`）。
 
 ## 包含内容
