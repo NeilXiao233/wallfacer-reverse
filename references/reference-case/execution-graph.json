@@ -1,0 +1,15 @@
+{
+  "case_id": "griddle-demo-v1.0.0",
+  "kind": "reference_method",
+  "nodes": [
+    {"id":"bind","order":1,"purpose":"bind named session, target identity, and exclusions","inputs":["user_prompt","reference trace index"],"outputs":["task contract","reference binding"],"evidence":["trace-index.json"],"exit":"all three routing fields are explicit"},
+    {"id":"audit","order":2,"purpose":"audit package, version, hashes, tools, and external prerequisites","inputs":["target package","environment"],"outputs":["audit findings","artifact manifest"],"evidence":["key-workspace/tools/verify_recovery.py"],"exit":"known, missing, and external inputs are separated"},
+    {"id":"map","order":3,"purpose":"map data, assets, code/build, runtime, network/device, and delivery layers","inputs":["audit findings"],"outputs":["layer inventory"],"evidence":["key-workspace/tools/build_asset_index.py","key-workspace/tools/build_level_inventory.py"],"exit":"each layer has a source locator or explicit gap"},
+    {"id":"route","order":4,"purpose":"choose concrete extraction and observation paths","inputs":["layer inventory"],"outputs":["route matrix"],"evidence":["traces/"],"exit":"each route has input, output, evidence, and exit condition"},
+    {"id":"discriminate","order":5,"purpose":"run minimal tests that distinguish hypotheses","inputs":["route matrix"],"outputs":["attempt ledger entries"],"evidence":["traces/"],"exit":"ambiguous branches have a selected test"},
+    {"id":"execute","order":6,"purpose":"perform reversible scoped actions","inputs":["selected route"],"outputs":["derived artifacts"],"evidence":["artifact hashes","tool logs"],"exit":"outputs are reproducible or the failure is logged"},
+    {"id":"verify","order":7,"purpose":"verify static and user-visible behavior separately","inputs":["derived artifacts"],"outputs":["verification results"],"evidence":["key-workspace/tools/verify_animal_data.py","key-workspace/tools/verify_web_mechanics.py"],"exit":"claims are tied to evidence tiers"},
+    {"id":"checkpoint","order":8,"purpose":"write portable handoff and next action","inputs":["ledgers","verification"],"outputs":["HANDOFF.md","checkpoint.json"],"evidence":["validate_state.py"],"exit":"a new device can resume from one exact action"}
+  ],
+  "excluded_in_reference": ["credentials", "payment secrets", "unverified runtime claims"]
+}

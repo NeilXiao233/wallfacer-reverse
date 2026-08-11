@@ -1,0 +1,4 @@
+interface:
+  display_name: "面壁者-逆向"
+  short_description: "跨设备复用参考会话并按需完成包、运行时、协议与资源恢复"
+  default_prompt: "Use $wallfacer-reverse to bind a reference workflow to this target, keep target facts isolated, and apply the requested difficult, challenge, or hell execution intensity."

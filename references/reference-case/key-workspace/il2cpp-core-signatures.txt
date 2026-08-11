@@ -1,0 +1,156 @@
+== CheerGames.Shared.dll :: CheerGames.Shared.InGameBoosterType ==
+fields: value__, HINT, ERASER
+methods: 
+props: 
+== CheerGames.Shared.dll :: CheerGames.Shared.LevelDifficulty ==
+fields: value__, NORMAL, HARD, SUPER_HARD
+methods: 
+props: 
+== CheerGames.Shared.dll :: CheerGames.Shared.PreLevelBoosterType ==
+fields: value__
+methods: 
+props: 
+== CheerGames.Shared.dll :: CheerGames.Shared.TutorialType ==
+fields: value__, UNKNOWN, NONE, ONBOARDING
+methods: 
+props: 
+== CheerGames.Shared.dll :: GridInfo ==
+fields: <Width>k__BackingField, <Height>k__BackingField, <Columns>k__BackingField, _columnNames, <RowNames>k__BackingField
+methods: get_Width(), set_Width(value), get_Height(), set_Height(value), get_Columns(), set_Columns(value), get_RowNames(), set_RowNames(value), OnDeserialized(context), .ctor()
+props: Width, Height, Columns, RowNames
+== CheerGames.Shared.dll :: ColumnInfo ==
+fields: <Name>k__BackingField, <ImageId>k__BackingField, <ImageCGAssetId>k__BackingField, <ImageData>k__BackingField, <Sprite>k__BackingField
+methods: get_Name(), set_Name(value), get_ImageId(), set_ImageId(value), get_ImageCGAssetId(), set_ImageCGAssetId(value), get_ImageData(), set_ImageData(value), get_Sprite(), set_Sprite(value), get_HasImageSource(), .ctor(), .ctor(name), OnDeserialized(context), ApplySprite(sprite), Base64ToSprite(base64)
+props: Name, ImageId, ImageCGAssetId, ImageData, Sprite, HasImageSource
+== CheerGames.Shared.dll :: Item ==
+fields: <Id>k__BackingField, <Name>k__BackingField, <Icon>k__BackingField, <ImageCGAssetId>k__BackingField, <ImageData>k__BackingField, <ConnectedTo>k__BackingField, <Revealed>k__BackingField, <HideText>k__BackingField, <Cells>k__BackingField, <Sprite>k__BackingField, <DisplayText>k__BackingField, <TrimmedSprite>k__BackingField, <ContentAspect>k__BackingField, <SpriteAspect>k__BackingField
+methods: get_Id(), set_Id(value), get_Name(), set_Name(value), get_Icon(), set_Icon(value), get_ImageCGAssetId(), set_ImageCGAssetId(value), get_ImageData(), set_ImageData(value), get_ConnectedTo(), set_ConnectedTo(value), get_Revealed(), set_Revealed(value), get_HideText(), set_HideText(value), get_Cells(), set_Cells(value), get_IsMultiCell(), get_IsOnlyText(), get_IsImageOnly(), get_HasImage(), get_HasImageSource(), get_Sprite(), set_Sprite(value), get_DisplayText(), set_DisplayText(value), get_TrimmedSprite(), set_TrimmedSprite(value), get_ContentAspect(), set_ContentAspect(value), get_SpriteAspect(), set_SpriteAspect(value), OnDeserialized(context), ApplySprite(sprite), ReleaseOwnedTrimmedSprite(), Base64ToSprite(base64), BuildTrimmedSprite(), TryGetContentRect(tex,region,minX,minY,width,height,alphaThreshold), ReadRegionPixels32(tex,x,y,w,h), .ctor()
+props: Id, Name, Icon, ImageCGAssetId, ImageData, ConnectedTo, Revealed, HideText, Cells, IsMultiCell, IsOnlyText, IsImageOnly, HasImage, HasImageSource, Sprite, DisplayText, TrimmedSprite, ContentAspect, SpriteAspect
+== CheerGames.Shared.dll :: ItemCellInfo ==
+fields: <JsonColumn>k__BackingField, <JsonRow>k__BackingField
+methods: get_JsonColumn(), set_JsonColumn(value), get_JsonRow(), set_JsonRow(value), OnDeserialized(context), .ctor()
+props: JsonColumn, JsonRow
+== CheerGames.Shared.dll :: ClueData ==
+fields: <Id>k__BackingField, <Content>k__BackingField, <ConnectedItemIds>k__BackingField, <IsRevealed>k__BackingField, <DisplayContent>k__BackingField, _resolvedContent
+methods: get_Id(), set_Id(value), get_Content(), set_Content(value), get_ConnectedItemIds(), set_ConnectedItemIds(value), get_IsRevealed(), set_IsRevealed(value), get_DisplayContent(), set_DisplayContent(value), OnDeserialized(context), ResolveSpritePlaceholders(columnIndexByName,itemIndexByName), .ctor()
+props: Id, Content, ConnectedItemIds, IsRevealed, DisplayContent
+== CheerGames.Shared.dll :: CGAssetEntry ==
+fields: <FileFormat>k__BackingField, <Folder>k__BackingField
+methods: get_FileFormat(), set_FileFormat(value), get_Folder(), set_Folder(value), .ctor()
+props: FileFormat, Folder
+== CheerGames.Shared.dll :: CGAssetCatalog ==
+fields: <Url>k__BackingField, <Assets>k__BackingField
+methods: get_Url(), set_Url(value), get_Assets(), set_Assets(value), TryGetEntry(cgAssetId,entry), .ctor()
+props: Url, Assets
+== CheerGames.Shared.dll :: LockAndKeyData ==
+fields: <Type>k__BackingField, <Color>k__BackingField
+methods: get_Type(), set_Type(value), get_Color(), set_Color(value), get_IsKey(), get_IsLock(), .ctor()
+props: Type, Color, IsKey, IsLock
+== CheerGames.Shared.dll :: CellData ==
+fields: <Id>k__BackingField, <JsonColumn>k__BackingField, <JsonRow>k__BackingField, <Lock>k__BackingField, <LockAndKey>k__BackingField
+methods: get_Id(), set_Id(value), get_JsonColumn(), set_JsonColumn(value), get_JsonRow(), set_JsonRow(value), get_Lock(), set_Lock(value), get_LockAndKey(), set_LockAndKey(value), OnDeserialized(context), .ctor()
+props: Id, JsonColumn, JsonRow, Lock, LockAndKey
+== CheerGames.Shared.dll :: CheerGames.Shared.LevelJsonModel ==
+fields: <EditorVersion>k__BackingField, <Hash>k__BackingField, <Revision>k__BackingField, <PosterId>k__BackingField, <PosterImageCGAssetId>k__BackingField, <PosterTitle>k__BackingField, <Grid>k__BackingField, <Items>k__BackingField, <Clues>k__BackingField, <Cells>k__BackingField, <AssetCatalog>k__BackingField
+methods: get_EditorVersion(), set_EditorVersion(value), get_Hash(), set_Hash(value), get_Revision(), set_Revision(value), get_PosterId(), set_PosterId(value), get_PosterImageCGAssetId(), set_PosterImageCGAssetId(value), get_PosterTitle(), set_PosterTitle(value), get_HashWithRevision(), get_Grid(), set_Grid(value), get_Items(), set_Items(value), get_Clues(), set_Clues(value), get_Cells(), set_Cells(value), get_AssetCatalog(), set_AssetCatalog(value), FromJson(json), GetReferencedCGAssetIds(), IsSpriteUsable(sprite), TryGetSpriteTexture(sprite,texture), OnDeserialized(context), ClearRuntimeSprites(), ResolveClueSpritePlaceholders(), .ctor()
+props: EditorVersion, Hash, Revision, PosterId, PosterImageCGAssetId, PosterTitle, HashWithRevision, Grid, Items, Clues, Cells, AssetCatalog
+== Assembly-CSharp.dll :: CheerGames.Game.EraserBoosterManager ==
+fields: _button, _hintButton, _cluePanelView, _selectionPanel, _inventorySystem, _inputCoordinator, _hapticSystem, _hapticConfig, _audioSystem, _audioConfig, <IsEraserMode>k__BackingField, OnClueCompleted
+methods: get_IsEraserMode(), set_IsEraserMode(value), get_ButtonWorldPosition(), add_OnClueCompleted(value), remove_OnClueCompleted(value), Init(), OnEraserRVRewardReceived(), OnEraserRequested(), OnClueSelected(clueId), EndEraser(), ExitEraserMode(), .ctor()
+props: IsEraserMode, ButtonWorldPosition
+== Assembly-CSharp.dll :: CheerGames.Game.HintBoosterManager ==
+fields: _button, _eraserButton, _selectionPanel, _inputCoordinator, _inventorySystem, _session, _grid, _level, _itemsById, OnHintItemFound
+methods: add_OnHintItemFound(value), remove_OnHintItemFound(value), get_ButtonWorldPosition(), Init(level,grid), OnHintRVRewardReceived(), OnHintRequested(), EndHint(), FindBestHintItem(), FindBestHintItem(excludeKeyCells), FindAnyUnrevealedItem(excludeKeyCells), CountUnrevealedItems(clue,excludeKeyCells), HasUnrevealedSlots(item,excludeKeyCells), IsKeyCell(cell), .ctor()
+props: ButtonWorldPosition
+== Assembly-CSharp.dll :: CheerGames.Game.Cell ==
+fields: <Row>k__BackingField, <Column>k__BackingField, _slots, <CurtainCount>k__BackingField, <LockAndKey>k__BackingField
+methods: get_Row(), get_Column(), get_Slots(), get_CurtainCount(), set_CurtainCount(value), get_IsCurtained(), get_LockAndKey(), set_LockAndKey(value), get_IsLocked(), get_IsBlocked(), .ctor(row,column), SetCurtain(curtainCount), DecrementCurtain(), SetLockAndKey(data), ClearNewLock(), AddItem(item), get_IsFullyRevealed(), get_HasUnrevealedSlot(), IndexOf(slot)
+props: Row, Column, Slots, CurtainCount, IsCurtained, LockAndKey, IsLocked, IsBlocked, IsFullyRevealed, HasUnrevealedSlot
+== Assembly-CSharp.dll :: CheerGames.Game.CellSlot ==
+fields: <Item>k__BackingField, <IsRevealed>k__BackingField
+methods: get_Item(), get_IsRevealed(), set_IsRevealed(value), .ctor(item), Reveal()
+props: Item, IsRevealed
+== Assembly-CSharp.dll :: CheerGames.Game.CellSpriteConfig ==
+fields: topLeft, topRight, bottomLeft, bottomRight, defaultCell, columnHeader, rowHeaderFirst, rowHeader, rowHeaderLast, multiCellColors
+methods: GetMultiCellColor(groupIndex), GetCellSprite(row,col,totalRows,totalCols), GetRowHeaderSprite(row,totalRows), .ctor()
+props: 
+== Assembly-CSharp.dll :: CheerGames.Game.MultiCellUIType ==
+fields: value__, Other, TopRight, BottomRight
+methods: 
+props: 
+== Assembly-CSharp.dll :: CheerGames.Game.GridModel ==
+fields: _rows, _columns, _cellWidth, _cellHeight, _spacing, _origin, _cells, _unrevealedBuffer
+methods: get_Rows(), get_Columns(), get_CellCount(), get_CellWidth(), get_CellHeight(), get_Spacing(), get_Origin(), .ctor(rows,columns,cellWidth,cellHeight,spacing,centerWorldPosition), GetCellCenter(row,column), PlaceItem(row,col,item), GetCell(row,column), IsRowFullyRevealed(row), IsColumnFullyRevealed(col), GetUnrevealedCells(row)
+props: Rows, Columns, CellCount, CellWidth, CellHeight, Spacing, Origin
+== Assembly-CSharp.dll :: CheerGames.Game.GridSpawner ==
+fields: _cellPrefab, _itemViewPrefab, _columnHeaderPrefab, _rowHeaderPrefab, _toasterPrefab, _cellSpriteConfig, _whiteLine, _greyLine, _outline, _revealedColor, _revealedColorFadeDuration, _keyPrefab, _keyOffset, _keyShakeStrength, _keyShakeDuration, _keyShakeVibrato, _lockShakeStrength, _lockShakeDuration, _lockShakeVibrato, _grid, _cellViews, _headers, _columnHeaderImages, _rowHeaderImages, _columnHeaderMarked, _rowHeaderMarked, _separators, _itemViewPool, _gridBoundsWithHeaders, _keyContainer, _itemsLayer, _itemsFlightLayer, _renderOrder, _toasterView
+methods: get_Grid(), get_RevealedColor(), get_SpriteConfig(), GetGridBoundsWithHeaders(), get_KeyContainer(), get_ItemsLayer(), get_ItemsFlightLayer(), ShakeKeyInstancesForColor(color), ShakeLock(cellView), PlaceKeyInstances(cellView,count,sprite), Build(rows,columns,spacing,columnHeaderSpacing,columnInfos,rowNames), InitItemViewPool(count), GetItemView(), ReturnItemView(iv), get_Toaster(), GetCellView(row,column), SpawnSeparators(rows,columns,cellWidth,cellHeight,spacing), ApplyUniformFontSize(texts), SetHeaderSprite(header,sprite), MarkColumnHeader(col,animate), MarkRowHeader(row,animate), GetRowHeaderImage(row), GetOutlineRect(), GetRowHeaderRightEdgeWorld(), GetCellAreaTopWorld(), Clear(), .ctor()
+props: Grid, RevealedColor, SpriteConfig, KeyContainer, ItemsLayer, ItemsFlightLayer, Toaster
+== Assembly-CSharp.dll :: CheerGames.Game.GriddleCellSelectionSystem ==
+fields: _unrevealedItemsBuffer, _seenItemIds, _session, _gridSpawner, _selectionPanel, _gameViews, _inputCoordinator, _eraserBoosterManager, _tutorialController, _itemPlacementSystem, _hapticSystem, _hapticConfig, _audioSystem, _audioConfig
+methods: InitTutorial(), OnCellTapped(row,col), OnItemViewTapped(itemView), OnTutorialCellClicked(), GetUnrevealedItemsInRow(row), IsItemPendingClonePlacement(itemId), .ctor()
+props: 
+== Assembly-CSharp.dll :: CheerGames.Game.GriddleClueRevealSystem ==
+fields: PLACEMENT_ID, REWARD_INTENT, _session, _gridSpawner, _gameViews, _analyticsSystems, _levelLoaderSystem, _levelDecisionSystem, _levelAttemptSystem, _preferencesSystem, _inventorySystem, _heartSystem, _timeManager, _hapticSystem, _hapticConfig, _audioSystem, _audioConfig, _advertisementManager, _advertisementSystem, _frameworkPreferencesSystem, _isRewardedVideoActive, _isShowingRewardedAd, _isInitialized
+methods: InitAdvertisement(), IsExtraClueUnlocked(), Dispose(), OnExtraClueClicked(sourceWorldPos), RevealNextUnrevealedClue(), RevealClueFromExtraButton(clue,autoComplete), RefreshRevealButtonState(), FinishRewardedAdFlow(), OnRewardedLoaded(), OnRewardedLoadFailed(errorInfo), OnRewardedShowed(adUnitId,adInfo), OnRewardedAdDisplayed(adUnitId,adInfo), OnRewardedAdDisplayFailed(errorInfo), OnRewardedClicked(), OnRewardedRewardReceived(), OnRewardedClosed(adInfo), OnRewardedRevenuePaid(adUnitId,adInfo), RevealConnectedClues(item,sourceWorldPos,hideCompleted,onCompletedCluesHidden), HideCompletedClues(useEraserAnimation,onAllHidden), FireInitialClueStartedEvents(), SendClueStarted(clueId), SendClueCompleted(clueId), BuildLevelAnalyticsModel(), .ctor()
+props: 
+== Assembly-CSharp.dll :: CheerGames.Game.GriddleItemPlacementSystem ==
+fields: _session, _gridSpawner, _gameViews, _scopedEventBus, _tutorialController, _eraserBoosterManager, _hintBoosterManager, _clueRevealSystem, _revealHighlightSystem, _analyticsSystems, _levelLoaderSystem, _levelDecisionSystem, _levelAttemptSystem, _preferencesSystem, _inventorySystem, _heartSystem, _timeManager, _hapticSystem, _hapticConfig, _audioSystem, _audioConfig, _activeFlightCount, _gridSpawnerOriginalSiblingIndex
+methods: get_IsOnboardingLevel(), BeginFlight(), EndFlight(), RevealAllClonesOf(item), OnItemSelected(cellView,selected,itemView), OnClueCompletedByEraser(clueId), FlyEraserItem(item,cellView,slotIndex,onComplete), OnHintUsed(bestItem), RevealClonesExcluding(item,excludeRow,excludeCol), DecrementAllCurtains(amount), ProcessPendingClonePlacements(), ExecuteDeferredPlacement(item,row,col,slotIndex), OnCellItemRevealed(row,col), TryUnlockNewLocksByKey(row,col), PlayObstacleReveal(row,col,onComplete), PlayCurtainRevealOn(row,col,onComplete), PlayKeyLockReveal(lockRow,lockCol,onComplete), FindKeyCell(color), TryTriggerLevelCompleted(), DebugFillGridWithoutCompleting(), BuildLevelAnalyticsModel(), .ctor()
+props: IsOnboardingLevel
+== Assembly-CSharp.dll :: CheerGames.Game.GriddleLevelSession ==
+fields: <Level>k__BackingField, <ItemsById>k__BackingField, <CluesById>k__BackingField, <TriggerItemIdsByClueId>k__BackingField, <RevealedClueIds>k__BackingField, <CompletedClueIds>k__BackingField, <PendingClonePlacements>k__BackingField, <AnimatedRows>k__BackingField, <AnimatedColumns>k__BackingField, <IsLevelCompletedTriggered>k__BackingField
+methods: get_Level(), set_Level(value), get_ItemsById(), get_CluesById(), get_TriggerItemIdsByClueId(), get_RevealedClueIds(), get_CompletedClueIds(), MarkClueRevealed(clueId), IsClueRevealed(clueId), TryMarkClueCompleted(clueId), IsClueCompleted(clueId), get_PendingClonePlacements(), get_AnimatedRows(), get_AnimatedColumns(), get_IsLevelCompletedTriggered(), set_IsLevelCompletedTriggered(value), SetLevel(level), BuildLookupCaches(), FindSlotForItem(cell,itemId), FindUnrevealedSlot(cell), AreAllCellsRevealed(grid), AreAllItemsRevealedForClue(clue,grid), AreAllTriggerItemsRevealed(clueId,grid), AreAllItemsRevealedOnGrid(itemIds,grid), IsItemRevealedOnGrid(item,grid), .ctor()
+props: Level, ItemsById, CluesById, TriggerItemIdsByClueId, RevealedClueIds, CompletedClueIds, PendingClonePlacements, AnimatedRows, AnimatedColumns, IsLevelCompletedTriggered
+== Assembly-CSharp.dll :: CheerGames.Game.GriddleLevelSetupSystem ==
+fields: _config, _gridSpawner, _selectionPanel, _gameViews, _safeArea, _inputCoordinator, _eraserBoosterManager, _hintBoosterManager, _tutorialController, _session, _itemPlacementSystem, _clueRevealSystem, _revealHighlightSystem, _cellSelectionSystem, _levelDecisionSystem, _levelLoaderSystem
+methods: InitializeLevelAsync(levelModel,cancellationToken), GetMultiCellUIType(row,col,totalRows,totalCols), .ctor()
+props: 
+== Assembly-CSharp.dll :: CheerGames.Game.GriddleRevealHighlightSystem ==
+fields: WaveDelayPerCell, WaveScalePunch, WaveYPunch, WaveDuration, _gridSpawner, _session, _hapticSystem, _hapticConfig, _audioSystem, _audioConfig
+methods: HighlightRevealedCells(animate), PlayWaveOnImage(img,delay,color), .ctor()
+props: 
+== Assembly-CSharp.dll :: CheerGames.Game.TutorialController ==
+fields: _overlay, _pointerPrefab, _pointerImage, _overlayColor, _disabledButtonColor, _pointerOffset, _pointerLoopScaleMin, _pointerLoopScaleMax, _pointerLoopDuration, _overlayFadeDuration, _pointerPopDuration, _overlaySortingOrder, _highlightSortingOrder, _hapticSystem, _hapticConfig, _audioSystem, _audioConfig, _inputCoordinator, _isActive, _guidedHintActive, _correctItem, _onCellClicked, _clickZone, _selectionPanel, _tutorialCell, _pointerTarget, _pointerAtCenter, _pointerLoopActive, _pointerLoopStartTime, _pointerAppearScale, _overlayFadeTween, _pointerAppearTween, _cornerBuffer, _highlights, <HasCompletedOnboarding>k__BackingField
+methods: get_IsActive(), get_IsGuidedHintActive(), get_HasCompletedOnboarding(), set_HasCompletedOnboarding(value), get_PointerImage(), Awake(), StartTutorial(cell,correctItem,clue,selectionPanel,onCellClicked), SetOverlayAlpha(alpha), PlayIntroSequence(), PopPointerIn(sortingOrder,playFeedback,onComplete), EnableTutorialClickZone(), KillIntroTweens(), OnSelectionPanelShown(), StartPointerLoop(), SetPointerSortingOrder(sortingOrder), OnDestroy(), StopPointerLoop(), LateUpdate(), ShowGuidedHint(cell,clues,onCellClicked), EndGuidedHint(), EndTutorial(), TeardownOverlayAndHighlights(), AddHighlight(target,sortingOrder), SetupSorting(target,sortingOrder), RemoveSorting(target), PositionPointer(targetRect), GetLoopFactor(), CreateClickZone(cellRect), OnClickZoneClicked(), .ctor(), <PlayIntroSequence>b__48_0(), <OnClickZoneClicked>b__68_0()
+props: IsActive, IsGuidedHintActive, HasCompletedOnboarding, PointerImage
+== Assembly-CSharp.dll :: CheerGames.Game.LockKeyColorConfig ==
+fields: Color, LockTopSprite, LockBottomSprite, KeySprite
+methods: .ctor()
+props: 
+== Assembly-CSharp.dll :: CheerGames.Game.SelectionPanel ==
+fields: _panel, _buttonContainer, _optionMask, _optionButtonPrefab, _separatorPrefab, _rowPrefab, _rowSeparatorPrefab, _maxItemsPerRow, _arrow, _arrowUpSprite, _arrowDownSprite, _arrowOverlapAbove, _arrowOverlapBelow, _screenMargin, _sortingOrder, _tutorialDisabledAlpha, OnlyTextHeight, ImageOnlyHeight, ImageTextHeight, RowSeparatorHeight, TextOnlyHorizontalPadding, _getItemView, _returnItemView, _panelRect, _buttonContainerRect, _animator, _arrowImage, _panelCanvas, _panelRaycaster, _onItemSelected, _activeCell, _isHiding, _isTutorialMode, _onHideComplete, _buttons, _buttonRects, _optionButtonViews, _separators, _separatorRects, _optionItemViews, _rows, _rowLayoutElements, _rowSeparators, _rowSeparatorRects, _currentOptionCount, _defaultOptionWidth, _headerRightEdge, _cellAreaTop, _hasBounds, _corners
+methods: get_IsVisible(), IsShowingFor(cell), get_OptionsParent(), Awake(), GetContainerOffsetY(above), GetContainerHeight(), GetContainerWidth(), GetButtonContainerPadding(), SetItemViewPool(getItemView,returnItemView), SetGridBounds(headerRightEdge,cellAreaTop), InitButtons(count), Show(cell,options,cellsInRow,onSelected), DecideDirection(cellWorldPos,cellHalfH), ApplyTestPosition(cellWorldPos,cellHalfH,above), Hide(onComplete), FinishHide(), EnsureRowPool(rowCount), ClearOptionItemViews(), SetTutorialMode(correctItemId,disabledColor), GetOptionButtonRect(itemId), ClearTutorialMode(), OnOptionClicked(selected,itemView), ProcessOptionSelection(selected,itemView), .ctor()
+props: IsVisible, OptionsParent
+== CheerGames.Framework.dll :: CheerGames.Framework.SagaLevelEntryModel ==
+fields: <Key>k__BackingField, <IsUsableInLoop>k__BackingField, <Difficulty>k__BackingField, <TutorialType>k__BackingField
+methods: get_Key(), set_Key(value), get_IsUsableInLoop(), set_IsUsableInLoop(value), get_Difficulty(), set_Difficulty(value), get_TutorialType(), set_TutorialType(value), .ctor()
+props: Key, IsUsableInLoop, Difficulty, TutorialType
+== CheerGames.Framework.dll :: CheerGames.Framework.SagaLevelsFFJModel ==
+fields: FLAG_NAME, <CatalogName>k__BackingField, <Url>k__BackingField, <Levels>k__BackingField
+methods: get_CatalogName(), set_CatalogName(value), get_Url(), set_Url(value), get_Levels(), set_Levels(value), .ctor()
+props: CatalogName, Url, Levels
+== CheerGames.Framework.dll :: CheerGames.Framework.CheerGameApiClient ==
+fields: DownloadBufferSize, _endpoint, _sdkKey, _cheerGameId, _cheerUserId, _buildNumber
+methods: .ctor(endpoint,sdkKey,cheerGameId,cheerUserId,buildNumber), Validate(cancellationToken), GetTestIdfas(cancellationToken), GetLevelsMetadata(page,pageSize,sort,latestOnly,creatorId,cancellationToken), GetLevelRevisionMetadata(hash,revision,cancellationToken), GetLevelLatestRevisionMetadata(hash,cancellationToken), GetLevelRevisionMetadataContent(hash,revision,cancellationToken), GetLevelLatestRevisionMetadataContent(hash,cancellationToken), GetLevelCatalogs(cancellationToken), GetLevelCatalogEntries(catalogId,status,cancellationToken), GetExportedCatalogLevels(catalogId,status,cancellationToken), GetLevelRevisionsMetadata(hash,cancellationToken), GetFeatureFlags(cancellationToken), GetFeatureFlag(id,cancellationToken), CreateLevelContent(levelContent,cancellationToken), CreateLevelRevisionContent(hash,levelContent,cancellationToken), GetTempLevelContent(cancellationToken), UpdateTempLevelContent(levelContent,cancellationToken), CreateLevelAttempt(hash,revision,request,cancellationToken), GetAsync(path,cancellationToken), GetAsync(path,queryParams,cancellationToken), PostAsync(path,body,cancellationToken), PutAsync(path,body,cancellationToken), PostRawAsync(path,rawBytes,contentType,extraHeaders,cancellationToken), BuildRequest(uri,method), GetAssetsMetadataBatch(request,cancellationToken), GetAssetLatestRevisionContent(hash,cancellationToken), GetAssetRevisionContent(hash,revision,cancellationToken), UploadFile(fileBytes,fileName,contentType,cancellationToken)
+props: 
+== CheerGames.Framework.dll :: CheerGames.Framework.LevelAttemptResponse ==
+fields: <Id>k__BackingField, <GameId>k__BackingField, <LevelHash>k__BackingField, <LevelRevision>k__BackingField, <VideoFileName>k__BackingField, <NakamaUserId>k__BackingField, <BuildNumber>k__BackingField, <RecordType>k__BackingField, <CreatedAt>k__BackingField
+methods: get_Id(), set_Id(value), get_GameId(), set_GameId(value), get_LevelHash(), set_LevelHash(value), get_LevelRevision(), set_LevelRevision(value), get_VideoFileName(), set_VideoFileName(value), get_NakamaUserId(), set_NakamaUserId(value), get_BuildNumber(), set_BuildNumber(value), get_RecordType(), set_RecordType(value), get_CreatedAt(), set_CreatedAt(value), .ctor()
+props: Id, GameId, LevelHash, LevelRevision, VideoFileName, NakamaUserId, BuildNumber, RecordType, CreatedAt
+== CheerGames.Framework.dll :: CheerGames.Framework.LevelMetadataResponse ==
+fields: <Hash>k__BackingField, <Revision>k__BackingField, <GameId>k__BackingField, <CreatorId>k__BackingField, <CreatorEmail>k__BackingField, <EditorVersion>k__BackingField, <CreatedAt>k__BackingField
+methods: get_Hash(), set_Hash(value), get_Revision(), set_Revision(value), get_GameId(), set_GameId(value), get_CreatorId(), set_CreatorId(value), get_CreatorEmail(), set_CreatorEmail(value), get_EditorVersion(), set_EditorVersion(value), get_CreatedAt(), set_CreatedAt(value), .ctor()
+props: Hash, Revision, GameId, CreatorId, CreatorEmail, EditorVersion, CreatedAt
+== CheerGames.Framework.dll :: CheerGames.Framework.LevelDecisionSystem ==
+fields: _preferencesSystem, _logManagers, _cgAssetProvider, _loopLevels, _sagaLevelsFeatureFlagJsonModel, _levelIndexesByHashRevision, _levelIndexToHashRevisionCache, _inGameBoosterTutorials, AssetPrefetchWindow, _prefetchCts, <NextLevelJsonModel>k__BackingField, <AvailableLevelIndexesByDifficulty>k__BackingField
+methods: get_IsNextLevelJsonModelAvailable(), get_AreNextLevelAssetsReady(), get_NextLevelJsonModel(), set_NextLevelJsonModel(value), get_AvailableLevelIndexesByDifficulty(), get_TotalLevelCount(), get_TotalLoopLevelCount(), InitWithDataAsync(sagaLevelsFeatureFlagJsonModel), PrefetchUpcomingLevelAssetsAsync(cancellationToken), BuildLevelIndexesByHashRevision(), SetLoopLevels(), GetLoopNumber(levelIndex), GetHashLoopNumber(levelIndex,hashWithRevision), GetModdedLevelIndex(levelIndex), GetCurrentLevelDifficulty(), GetLevelDifficulty(levelIndex), GetLevelHashWithRevision(levelIndex), GetLevelTutorialType(levelIndex), UpdateNextLevelJsonModelAsync(), KickPrefetchForNextLevel(), GetCatalogName(), TryLoadLevelModelAsync(levelKey), ConvertJsonStringToLevelJsonModel(jsonString), GetBackupLevelIndex(), TryGetLevelJsonTextAsync(key), GetMechanicTutorials(), GetInGameBoosterTutorials(), IsBoosterTutorialLevel(levelIndex), UpdateAvailableLevelsAsync(), GetInGameBoosterUnlockStates(levelIndex), .ctor()
+props: IsNextLevelJsonModelAvailable, AreNextLevelAssetsReady, NextLevelJsonModel, AvailableLevelIndexesByDifficulty, TotalLevelCount, TotalLoopLevelCount
+== CheerGames.Framework.dll :: CheerGames.Framework.LevelDownloaderSystem ==
+fields: SAVE_LEVEL_VERSION, PARALLEL_DOWNLOADS_IOS, PARALLEL_DOWNLOADS_ANDROID, LogTag, SavedLevelFolderPath, _timeManager, _frameworkPreferencesSystem, _isDownloadingLevels, _areLevelsDownloadedSuccessfully, _cancellationTokenSource, _model
+methods: InitWithData(model,forceDownload), Dispose(), DownloadLevels(), HasDownloadableLevels(), DownloadLevelsAsync(cancellationToken), DeleteUnexpectedFilesFromLevelsFolder(levelFolderPath,expectedFiles), DeleteSavedLevel(), HasSavedLevel(), Log(message), LogWarning(message), .ctor(), .cctor(), CheerGames.Framework.ILevelDownloaderSystem.InitWithData(model,forceDownload)
+props: 
+== CheerGames.Framework.dll :: CheerGames.Framework.CreateLevelTryRequestJsonModel ==
+fields: <VideoFileName>k__BackingField, <DeviceId>k__BackingField, <LevelHashWithRevision>k__BackingField, <BuildNumber>k__BackingField, <RecordType>k__BackingField
+methods: get_VideoFileName(), set_VideoFileName(value), get_DeviceId(), set_DeviceId(value), get_LevelHashWithRevision(), set_LevelHashWithRevision(value), get_BuildNumber(), set_BuildNumber(value), get_RecordType(), set_RecordType(value), .ctor()
+props: VideoFileName, DeviceId, LevelHashWithRevision, BuildNumber, RecordType

@@ -1,0 +1,10 @@
+{
+  "case_id": "griddle-demo-v1.0.0",
+  "storage_policy": "cold_external",
+  "artifacts": [
+    {"id":"griddle-ipa","path":"griddle-recovery/device/Griddle-256.ipa","kind":"original_package","bytes":315818496,"sha256":"f9abf991e4c343938dc615caaa1ab56e19c86e7edcf4441eb4d24cc9fe7f58f2","uri":"external://griddle/griddle-256.ipa","restore":"fetch <uri> && sha256sum Griddle-256.ipa"},
+    {"id":"unity-extract","path":"griddle-recovery/output/unity-extract/","kind":"derived_full_extract","bytes":736514048,"sha256":null,"uri":"external://griddle/unity-extract.tar.zst","restore":"fetch <uri> && zstd -d unity-extract.tar.zst | tar -xf -"},
+    {"id":"ipa-extracted","path":"griddle-recovery/device/ipa-extracted/","kind":"rebuildable_derivative","bytes":415334000,"sha256":null,"uri":null,"restore":"unzip Griddle-256.ipa -d device/ipa-extracted"}
+  ],
+  "omitted_from_skill": ["media files", "Unity full export", "IPA extracted tree", "device backups", "virtual environments"]
+}

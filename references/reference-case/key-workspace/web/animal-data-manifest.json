@@ -1,0 +1,205 @@
+{
+  "generatedAt": "animal-directed-v2",
+  "app": {
+    "zh": "森友谜格",
+    "en": "Woodland Griddle"
+  },
+  "directorVersion": 2,
+  "source": "recovered Griddle logic skeleton + fully directed animal stories",
+  "worldBible": {
+    "zh": "故事发生在一个友善的拟人动物社区。角色可以上学、经营店铺、旅行和参加庆典，但不饲养其他有智慧的动物，也不食用会与角色物种产生残酷联想的肉、蛋或同类副产品。食物以植物、果实和无酒精饮品为主；水生角色只出现在具备合理水域条件的场景。",
+    "en": "The stories take place in a friendly anthropomorphic animal community. Characters may study, run shops, travel, and attend festivals, but they never own other sapient animals or consume meat, eggs, or species-linked by-products. Food is plant-forward and drinks are alcohol-free; aquatic characters only appear where the setting supports them."
+  },
+  "levels": [
+    {
+      "file": "001_DF4A43E0F299F729FB2303651F47206C_20.json",
+      "key": "DF4A43E0F299F729FB2303651F47206C_20",
+      "catalogLevel": 1,
+      "source": "animal-directed",
+      "posterTitle": {
+        "zh": "林间早餐",
+        "en": "Breakfast in the Grove"
+      },
+      "width": 2,
+      "height": 2,
+      "itemCount": 4,
+      "clueCount": 4,
+      "slotCount": 4,
+      "hasCurtain": false,
+      "hasLockKey": false,
+      "animalSheet": "assets/animal/animal-cast-sheet.png",
+      "itemSheet": "assets/animal/items/level-01.png"
+    },
+    {
+      "file": "002_7B077751428445A070056F05FD37ABD1_21.json",
+      "key": "7B077751428445A070056F05FD37ABD1_21",
+      "catalogLevel": 2,
+      "source": "animal-directed",
+      "posterTitle": {
+        "zh": "窗台植物伙伴",
+        "en": "Windowsill Plant Friends"
+      },
+      "width": 2,
+      "height": 3,
+      "itemCount": 6,
+      "clueCount": 4,
+      "slotCount": 6,
+      "hasCurtain": false,
+      "hasLockKey": false,
+      "animalSheet": "assets/animal/animal-cast-sheet.png",
+      "itemSheet": "assets/animal/items/level-02.png"
+    },
+    {
+      "file": "003_37D673378A933FA2B97830E4700CA95C_23.json",
+      "key": "37D673378A933FA2B97830E4700CA95C_23",
+      "catalogLevel": 3,
+      "source": "animal-directed",
+      "posterTitle": {
+        "zh": "森林果市",
+        "en": "Forest Fruit Market"
+      },
+      "width": 3,
+      "height": 2,
+      "itemCount": 6,
+      "clueCount": 4,
+      "slotCount": 6,
+      "hasCurtain": false,
+      "hasLockKey": false,
+      "animalSheet": "assets/animal/animal-cast-sheet.png",
+      "itemSheet": "assets/animal/items/level-03.png"
+    },
+    {
+      "file": "004_361D56AEE7DFF94944EB15DA1978684D_14.json",
+      "key": "361D56AEE7DFF94944EB15DA1978684D_14",
+      "catalogLevel": 4,
+      "source": "animal-directed",
+      "posterTitle": {
+        "zh": "河畔冰果摊",
+        "en": "Riverside Sorbet Stand"
+      },
+      "width": 3,
+      "height": 2,
+      "itemCount": 6,
+      "clueCount": 3,
+      "slotCount": 6,
+      "hasCurtain": false,
+      "hasLockKey": false,
+      "animalSheet": "assets/animal/animal-cast-sheet.png",
+      "itemSheet": "assets/animal/items/level-04.png"
+    },
+    {
+      "file": "005_F6C3FC445252124DCD9E99CAC6DE72AE_13.json",
+      "key": "F6C3FC445252124DCD9E99CAC6DE72AE_13",
+      "catalogLevel": 5,
+      "source": "animal-directed",
+      "posterTitle": {
+        "zh": "森林课堂",
+        "en": "Forest School Day"
+      },
+      "width": 3,
+      "height": 3,
+      "itemCount": 9,
+      "clueCount": 6,
+      "slotCount": 9,
+      "hasCurtain": false,
+      "hasLockKey": false,
+      "animalSheet": "assets/animal/animal-cast-sheet.png",
+      "itemSheet": "assets/animal/items/level-05.png"
+    },
+    {
+      "file": "006_30B06FEDE9DDEF68C1958D35580471E1_12.json",
+      "key": "30B06FEDE9DDEF68C1958D35580471E1_12",
+      "catalogLevel": 6,
+      "source": "animal-directed",
+      "posterTitle": {
+        "zh": "灯会晚餐搭档",
+        "en": "Lantern Festival Dinner Partners"
+      },
+      "width": 3,
+      "height": 3,
+      "itemCount": 9,
+      "clueCount": 6,
+      "slotCount": 9,
+      "hasCurtain": false,
+      "hasLockKey": false,
+      "animalSheet": "assets/animal/animal-cast-sheet.png",
+      "itemSheet": "assets/animal/items/level-06.png"
+    },
+    {
+      "file": "007_C4650830092AFE0B17DB60D966A08A50_16.json",
+      "key": "C4650830092AFE0B17DB60D966A08A50_16",
+      "catalogLevel": 7,
+      "source": "animal-directed",
+      "posterTitle": {
+        "zh": "森林柠檬饮大赛",
+        "en": "Forest Lemonade Contest"
+      },
+      "width": 3,
+      "height": 4,
+      "itemCount": 12,
+      "clueCount": 5,
+      "slotCount": 12,
+      "hasCurtain": false,
+      "hasLockKey": false,
+      "animalSheet": "assets/animal/animal-cast-sheet.png",
+      "itemSheet": "assets/animal/items/level-07.png"
+    },
+    {
+      "file": "008_46F799ECC3681CD31AF103F419B44953_21.json",
+      "key": "46F799ECC3681CD31AF103F419B44953_21",
+      "catalogLevel": 8,
+      "source": "animal-directed",
+      "posterTitle": {
+        "zh": "森林造型屋",
+        "en": "Forest Grooming Studio"
+      },
+      "width": 3,
+      "height": 3,
+      "itemCount": 9,
+      "clueCount": 5,
+      "slotCount": 9,
+      "hasCurtain": false,
+      "hasLockKey": false,
+      "animalSheet": "assets/animal/animal-cast-sheet.png",
+      "itemSheet": "assets/animal/items/level-08.png"
+    },
+    {
+      "file": "009_DE8737A96D2BB2F53F8E7E54EF472723_28.json",
+      "key": "DE8737A96D2BB2F53F8E7E54EF472723_28",
+      "catalogLevel": 9,
+      "source": "animal-directed",
+      "posterTitle": {
+        "zh": "云轨旅行节",
+        "en": "Cloudrail Travel Festival"
+      },
+      "width": 4,
+      "height": 4,
+      "itemCount": 16,
+      "clueCount": 8,
+      "slotCount": 16,
+      "hasCurtain": false,
+      "hasLockKey": false,
+      "animalSheet": "assets/animal/animal-cast-sheet.png",
+      "itemSheet": "assets/animal/items/level-09.png"
+    },
+    {
+      "file": "010_47FD71513CB793F005F49E5CB83C3A9A_16.json",
+      "key": "47FD71513CB793F005F49E5CB83C3A9A_16",
+      "catalogLevel": 10,
+      "source": "animal-directed",
+      "posterTitle": {
+        "zh": "月光果饮会",
+        "en": "Moonlight Fruit-drink Party"
+      },
+      "width": 3,
+      "height": 3,
+      "itemCount": 9,
+      "clueCount": 6,
+      "slotCount": 9,
+      "hasCurtain": false,
+      "hasLockKey": true,
+      "animalSheet": "assets/animal/animal-cast-sheet.png",
+      "itemSheet": "assets/animal/items/level-10.png"
+    }
+  ]
+}

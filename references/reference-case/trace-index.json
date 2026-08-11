@@ -1,0 +1,12 @@
+{
+  "case_id": "griddle-demo-v1.0.0",
+  "format": "jsonl.zst",
+  "source_policy": "sanitized_raw_trace_preserved; summaries are navigation only",
+  "traces": [
+    {"id":"griddle-recovery-main","source_turns":"all","original_locator":"local-session:019fcaee-3bc6-7113-a055-16e3af71fef6","bundle":"traces/griddle-recovery-main.jsonl.zst","bytes":3289463,"sha256":"76ac31de7a0217a0724f5ee8730eb6b6c37ed7fdc94cda9b82bd75966c04d14d","purpose":"package access, extraction, level/asset inventory, evidence boundaries"},
+    {"id":"griddle-role-fix","source_turns":"all","original_locator":"local-session:019fdade-19f1-77b0-b61f-558c1dd39bcc","bundle":"traces/griddle-role-fix.jsonl.zst","bytes":6733818,"sha256":"2a14dc7227a42b1e1a29fb185606c6e60bf1b9bfdad14918f5b5d5719159570c","purpose":"field reuse, verification, deployment boundary, final handoff"},
+    {"id":"griddle-followup-1","source_turns":"all","original_locator":"local-session:019fdb13-9b66-7240-9ea9-40bbe95fc791","bundle":"traces/griddle-followup-1.jsonl.zst","bytes":263596,"sha256":"344a761b5a724df4ef7fb452bf26a71731088de5c2f32387766505a6ebb62f07","purpose":"follow-up evidence and checkpoint details"},
+    {"id":"griddle-followup-2","source_turns":"all","original_locator":"local-session:019fdbbb-4411-7812-b7c4-2eac217198eb","bundle":"traces/griddle-followup-2.jsonl.zst","bytes":474065,"sha256":"609c83328807676d9129f93548f06d41df70ace545b45703fd020436e8f6582e","purpose":"follow-up evidence and residual risks"},
+    {"id":"griddle-followup-3","source_turns":"all","original_locator":"local-session:019fdaec-2efb-73d0-abe4-e10067dbe354","bundle":"traces/griddle-followup-3.jsonl.zst","bytes":82655,"sha256":"f3f17d992c937bc93f8b50e561a66b025f4fcd8aeb3bb3cee787b1b104b9cc6d","purpose":"small verification continuation"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "execution_intensity": "difficult",
+  "project_id": "UNSET",
+  "project_name": "UNSET",
+  "project_root": "UNSET",
+  "target_identity": {"app_id": null, "bundle_id": null, "version": null, "package_sha256": null},
+  "objective": "UNSET",
+  "deliverables": [],
+  "scope": {"include_webapp_demo": false, "authorized_runtime": false, "destructive_actions": false},
+  "exclusions": [],
+  "created_at": "UNSET",
+  "owner": "UNSET"
+}

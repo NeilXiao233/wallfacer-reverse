@@ -1,0 +1,1096 @@
+
+== CheerGames.Game.GameFlowSystem == image= CheerGames.Game.dll
+parent:  declaring:  fields: 1 methods: 4 props: 0
+  field 39779 _model typeIndex= 27778 token= 67109427
+  method 69887 InitWithData ret= 40808 flags= 134 params= model token= 100664340
+  method 69888 SkipHomeSceneLoading ret= 30860 flags= 486 params=  token= 100664341
+  method 69889 .ctor ret= 40808 flags= 6278 params=  token= 100664342
+  method 69890 CheerGames.Game.IGameFlowSystem.InitWithData ret= 40808 flags= 481 params= model token= 100664343
+
+== CheerGames.Game.GameFlowSystemFFJModel == image= CheerGames.Game.dll
+parent:  declaring:  fields: 2 methods: 3 props: 1
+  field 39780 FLAG_NAME typeIndex= 37864 token= 67109428
+  field 39781 <SkipHomeSceneLoading>k__BackingField typeIndex= 30861 token= 67109429
+  method 69891 get_SkipHomeSceneLoading ret= 30860 flags= 2182 params=  token= 100664344
+  method 69892 set_SkipHomeSceneLoading ret= 40808 flags= 2177 params= value token= 100664345
+  method 69893 .ctor ret= 40808 flags= 6278 params=  token= 100664346
+  prop 13078 SkipHomeSceneLoading get= 0 set= 1 token= 385876077
+
+== CheerGames.Game.InputCoordinator == image= CheerGames.Game.dll
+parent:  declaring:  fields: 17 methods: 16 props: 4
+  field 39904 _cameraSystem typeIndex= 28976 token= 67109552
+  field 39905 _scopedEventBus typeIndex= 30058 token= 67109553
+  field 39906 _settings typeIndex= 30656 token= 67109554
+  field 39907 _isFingerMoved typeIndex= 23058 token= 67109555
+  field 39908 _touchStartTime typeIndex= 37161 token= 67109556
+  field 39909 _lastPosition typeIndex= 40516 token= 67109557
+  field 39910 _touchStartPosition typeIndex= 40516 token= 67109558
+  field 39911 _onTouchDown typeIndex= 15740 token= 67109559
+  field 39912 _onTouchDrag typeIndex= 15740 token= 67109560
+  field 39913 _onTouchUp typeIndex= 15740 token= 67109561
+  field 39914 _onTap typeIndex= 15740 token= 67109562
+  field 39915 _raycastResults typeIndex= 13273 token= 67109563
+  field 39916 _pointerEventData typeIndex= 34375 token= 67109564
+  field 39917 _eventSystem typeIndex= 26693 token= 67109565
+  field 39918 _queueItemLayerMask typeIndex= 30861 token= 67109566
+  field 39919 _isInteractable typeIndex= 23058 token= 67109567
+  field 39920 _hitBuffer typeIndex= 19858 token= 67109568
+  method 70262 get_OnTouchDown ret= 14712 flags= 2534 params=  token= 100664715
+  method 70263 get_OnTouchDrag ret= 14712 flags= 2534 params=  token= 100664716
+  method 70264 get_OnTouchUp ret= 14712 flags= 2534 params=  token= 100664717
+  method 70265 get_OnTap ret= 14712 flags= 2534 params=  token= 100664718
+  method 70266 InitWithData ret= 40808 flags= 134 params= eventSystem token= 100664719
+  method 70267 SetInteractable ret= 40808 flags= 486 params= interactable token= 100664720
+  method 70268 InputTick ret= 40808 flags= 486 params=  token= 100664721
+  method 70269 HandleOnTouchDown ret= 40808 flags= 129 params= position token= 100664722
+  method 70270 HandleOnTouchUpdate ret= 40808 flags= 129 params= position,deltaPosition token= 100664723
+  method 70271 HandleOnTouchUp ret= 40808 flags= 129 params= position token= 100664724
+  method 70272 HandleOnTap ret= 40808 flags= 129 params= position token= 100664725
+  method 70273 IsTouchOverUI ret= 23057 flags= 129 params= screenPosition token= 100664726
+  method 70274 ToScaledDelta ret= 40515 flags= 129 params= deltaPosition token= 100664727
+  method 70275 Dispose ret= 40808 flags= 486 params=  token= 100664728
+  method 70276 .ctor ret= 40808 flags= 6278 params=  token= 100664729
+  method 70277 CheerGames.Game.IInputCoordinator.InitWithData ret= 40808 flags= 481 params= eventSystem token= 100664730
+  prop 13180 OnTouchDown get= 0 set= -1 token= 385876179
+  prop 13181 OnTouchDrag get= 1 set= -1 token= 385876180
+  prop 13182 OnTouchUp get= 2 set= -1 token= 385876181
+  prop 13183 OnTap get= 3 set= -1 token= 385876182
+
+== CheerGames.Game.LevelFailCause == image= CheerGames.Game.dll
+parent:  declaring:  fields: 4 methods: 0 props: 0
+  field 40119 value__ typeIndex= 30883 token= 67109767
+  field 40120 UNKNOWN typeIndex= 31703 token= 67109768
+  field 40121 QUIT typeIndex= 31703 token= 67109769
+  field 40122 OUT_OF_MOVES typeIndex= 31703 token= 67109770
+
+== CheerGames.Game.GameState == image= CheerGames.Game.dll
+parent:  declaring:  fields: 11 methods: 0 props: 0
+  field 40398 value__ typeIndex= 30883 token= 67110046
+  field 40399 NONE typeIndex= 27806 token= 67110047
+  field 40400 LOADING typeIndex= 27806 token= 67110048
+  field 40401 IDLE typeIndex= 27806 token= 67110049
+  field 40402 PLAYING typeIndex= 27806 token= 67110050
+  field 40403 PAUSED typeIndex= 27806 token= 67110051
+  field 40404 RESUME typeIndex= 27806 token= 67110052
+  field 40405 COMPLETED typeIndex= 27806 token= 67110053
+  field 40406 EGO typeIndex= 27806 token= 67110054
+  field 40407 FAILED typeIndex= 27806 token= 67110055
+  field 40408 REVIVING typeIndex= 27806 token= 67110056
+
+== CheerGames.Game.GameStateSystem == image= CheerGames.Game.dll
+parent:  declaring:  fields: 3 methods: 4 props: 1
+  field 40409 _gamePreferencesSystem typeIndex= 29903 token= 67110057
+  field 40410 _scopedEventBus typeIndex= 30057 token= 67110058
+  field 40411 _currentState typeIndex= 15115 token= 67110059
+  method 70737 get_CurrentState ret= 15245 flags= 2534 params=  token= 100665190
+  method 70738 ChangeGameState ret= 40808 flags= 486 params= state token= 100665191
+  method 70739 Dispose ret= 40808 flags= 486 params=  token= 100665192
+  method 70740 .ctor ret= 40808 flags= 6278 params=  token= 100665193
+  prop 13296 CurrentState get= 0 set= -1 token= 385876295
+
+== CheerGames.Game.LevelAttemptSystem == image= CheerGames.Game.dll
+parent:  declaring:  fields: 1 methods: 5 props: 1
+  field 40412 <EGONumber>k__BackingField typeIndex= 30861 token= 67110060
+  method 70747 get_EGONumber ret= 30860 flags= 2534 params=  token= 100665200
+  method 70748 set_EGONumber ret= 40808 flags= 2177 params= value token= 100665201
+  method 70749 IncreaseEGONumber ret= 40808 flags= 486 params=  token= 100665202
+  method 70750 ResetEGONumber ret= 40808 flags= 486 params=  token= 100665203
+  method 70751 .ctor ret= 40808 flags= 6278 params=  token= 100665204
+  prop 13299 EGONumber get= 0 set= 1 token= 385876298
+
+== CheerGames.Game.LevelLoaderSystem == image= CheerGames.Game.dll
+parent:  declaring:  fields: 6 methods: 9 props: 3
+  field 40413 _scopedEventBus typeIndex= 30057 token= 67110061
+  field 40414 _frameworkPreferencesSystem typeIndex= 29898 token= 67110062
+  field 40415 _objectResolver typeIndex= 29785 token= 67110063
+  field 40416 <IsCustomLevel>k__BackingField typeIndex= 23058 token= 67110064
+  field 40417 <LoadedLevelIndex>k__BackingField typeIndex= 30861 token= 67110065
+  field 40418 <LoadedLevelJsonModel>k__BackingField typeIndex= 31711 token= 67110066
+  method 70759 get_IsCustomLevel ret= 23057 flags= 2534 params=  token= 100665212
+  method 70760 set_IsCustomLevel ret= 40808 flags= 2177 params= value token= 100665213
+  method 70761 get_LoadedLevelIndex ret= 30860 flags= 2534 params=  token= 100665214
+  method 70762 set_LoadedLevelIndex ret= 40808 flags= 2534 params= value token= 100665215
+  method 70763 get_LoadedLevelJsonModel ret= 31710 flags= 2534 params=  token= 100665216
+  method 70764 set_LoadedLevelJsonModel ret= 40808 flags= 2534 params= value token= 100665217
+  method 70765 InitWithData ret= 40808 flags= 486 params= levelJsonModel token= 100665218
+  method 70766 InitializeAsync ret= 40808 flags= 129 params= levelJsonModel token= 100665219
+  method 70767 .ctor ret= 40808 flags= 6278 params=  token= 100665220
+  prop 13303 IsCustomLevel get= 0 set= 1 token= 385876302
+  prop 13304 LoadedLevelIndex get= 2 set= 3 token= 385876303
+  prop 13305 LoadedLevelJsonModel get= 4 set= 5 token= 385876304
+
+== CheerGames.Game.MechanicIntroductionSystem == image= CheerGames.Game.dll
+parent:  declaring:  fields: 2 methods: 9 props: 0
+  field 40419 _config typeIndex= 32363 token= 67110067
+  field 40420 _mechanicTutorials typeIndex= 12703 token= 67110068
+  method 70777 InitWithData ret= 40808 flags= 486 params= mechanicTutorials token= 100665230
+  method 70778 IsMechanicTutorialLevel ret= 23057 flags= 486 params= levelIndex,tutorialType token= 100665231
+  method 70779 HasNewMechanicToShow ret= 23057 flags= 486 params= levelIndex token= 100665232
+  method 70780 GetLevelsOfPreviousAndCurrentMechanic ret= 16922 flags= 486 params= currentLevelIndex token= 100665233
+  method 70781 GetNextMechanicTutorialType ret= 39434 flags= 486 params= currentLevelIndex token= 100665234
+  method 70782 GetHeaderText ret= 37841 flags= 486 params= tutorialType token= 100665235
+  method 70783 GetDescriptionText ret= 37841 flags= 486 params= tutorialType token= 100665236
+  method 70784 GetSprite ret= 37502 flags= 486 params= tutorialType token= 100665237
+  method 70785 .ctor ret= 40808 flags= 6278 params=  token= 100665238
+
+== CheerGames.Framework.SagaLevelEntryModel == image= CheerGames.Framework.dll
+parent:  declaring:  fields: 4 methods: 9 props: 4
+  field 54117 <Key>k__BackingField typeIndex= 37842 token= 67109003
+  field 54118 <IsUsableInLoop>k__BackingField typeIndex= 23058 token= 67109004
+  field 54119 <Difficulty>k__BackingField typeIndex= 31688 token= 67109005
+  field 54120 <TutorialType>k__BackingField typeIndex= 39435 token= 67109006
+  method 92441 get_Key ret= 37841 flags= 2182 params=  token= 100663559
+  method 92442 set_Key ret= 40808 flags= 2177 params= value token= 100663560
+  method 92443 get_IsUsableInLoop ret= 23057 flags= 2182 params=  token= 100663561
+  method 92444 set_IsUsableInLoop ret= 40808 flags= 2177 params= value token= 100663562
+  method 92445 get_Difficulty ret= 31687 flags= 2182 params=  token= 100663563
+  method 92446 set_Difficulty ret= 40808 flags= 2177 params= value token= 100663564
+  method 92447 get_TutorialType ret= 39434 flags= 2182 params=  token= 100663565
+  method 92448 set_TutorialType ret= 40808 flags= 2177 params= value token= 100663566
+  method 92449 .ctor ret= 40808 flags= 6278 params=  token= 100663567
+  prop 17560 Key get= 0 set= 1 token= 385876053
+  prop 17561 IsUsableInLoop get= 2 set= 3 token= 385876054
+  prop 17562 Difficulty get= 4 set= 5 token= 385876055
+  prop 17563 TutorialType get= 6 set= 7 token= 385876056
+
+== CheerGames.Framework.SagaLevelsFFJModel == image= CheerGames.Framework.dll
+parent:  declaring:  fields: 4 methods: 7 props: 3
+  field 54121 FLAG_NAME typeIndex= 37864 token= 67109007
+  field 54122 <CatalogName>k__BackingField typeIndex= 37842 token= 67109008
+  field 54123 <Url>k__BackingField typeIndex= 37842 token= 67109009
+  field 54124 <Levels>k__BackingField typeIndex= 7357 token= 67109010
+  method 92450 get_CatalogName ret= 37841 flags= 2182 params=  token= 100663568
+  method 92451 set_CatalogName ret= 40808 flags= 2177 params= value token= 100663569
+  method 92452 get_Url ret= 37841 flags= 2182 params=  token= 100663570
+  method 92453 set_Url ret= 40808 flags= 2177 params= value token= 100663571
+  method 92454 get_Levels ret= 7356 flags= 2182 params=  token= 100663572
+  method 92455 set_Levels ret= 40808 flags= 2177 params= value token= 100663573
+  method 92456 .ctor ret= 40808 flags= 6278 params=  token= 100663574
+  prop 17564 CatalogName get= 0 set= 1 token= 385876057
+  prop 17565 Url get= 2 set= 3 token= 385876058
+  prop 17566 Levels get= 4 set= 5 token= 385876059
+
+== CheerGames.Framework.LevelCatalogStatus == image= CheerGames.Framework.dll
+parent:  declaring:  fields: 4 methods: 0 props: 0
+  field 54314 value__ typeIndex= 30883 token= 67109200
+  field 54315 None typeIndex= 31673 token= 67109201
+  field 54316 Draft typeIndex= 31673 token= 67109202
+  field 54317 Published typeIndex= 31673 token= 67109203
+
+== CheerGames.Framework.LevelCatalogEntryResponse == image= CheerGames.Framework.dll
+parent:  declaring:  fields: 6 methods: 13 props: 6
+  field 54351 <LevelHash>k__BackingField typeIndex= 37842 token= 67109237
+  field 54352 <LevelRevision>k__BackingField typeIndex= 30861 token= 67109238
+  field 54353 <LevelNumber>k__BackingField typeIndex= 30861 token= 67109239
+  field 54354 <Difficulty>k__BackingField typeIndex= 37842 token= 67109240
+  field 54355 <IsUsableInLoop>k__BackingField typeIndex= 23058 token= 67109241
+  field 54356 <CustomProperties>k__BackingField typeIndex= 7364 token= 67109242
+  method 92727 get_LevelHash ret= 37841 flags= 2182 params=  token= 100663845
+  method 92728 set_LevelHash ret= 40808 flags= 2182 params= value token= 100663846
+  method 92729 get_LevelRevision ret= 30860 flags= 2182 params=  token= 100663847
+  method 92730 set_LevelRevision ret= 40808 flags= 2182 params= value token= 100663848
+  method 92731 get_LevelNumber ret= 30860 flags= 2182 params=  token= 100663849
+  method 92732 set_LevelNumber ret= 40808 flags= 2182 params= value token= 100663850
+  method 92733 get_Difficulty ret= 37841 flags= 2182 params=  token= 100663851
+  method 92734 set_Difficulty ret= 40808 flags= 2182 params= value token= 100663852
+  method 92735 get_IsUsableInLoop ret= 23057 flags= 2182 params=  token= 100663853
+  method 92736 set_IsUsableInLoop ret= 40808 flags= 2182 params= value token= 100663854
+  method 92737 get_CustomProperties ret= 7363 flags= 2182 params=  token= 100663855
+  method 92738 set_CustomProperties ret= 40808 flags= 2182 params= value token= 100663856
+  method 92739 .ctor ret= 40808 flags= 6278 params=  token= 100663857
+  prop 17611 LevelHash get= 0 set= 1 token= 385876104
+  prop 17612 LevelRevision get= 2 set= 3 token= 385876105
+  prop 17613 LevelNumber get= 4 set= 5 token= 385876106
+  prop 17614 Difficulty get= 6 set= 7 token= 385876107
+  prop 17615 IsUsableInLoop get= 8 set= 9 token= 385876108
+  prop 17616 CustomProperties get= 10 set= 11 token= 385876109
+
+== CheerGames.Framework.LevelCatalogResponse == image= CheerGames.Framework.dll
+parent:  declaring:  fields: 5 methods: 11 props: 5
+  field 54357 <Id>k__BackingField typeIndex= 37842 token= 67109243
+  field 54358 <Name>k__BackingField typeIndex= 37842 token= 67109244
+  field 54359 <SortOrder>k__BackingField typeIndex= 30861 token= 67109245
+  field 54360 <IncludeInBuild>k__BackingField typeIndex= 23058 token= 67109246
+  field 54361 <IsMainCatalog>k__BackingField typeIndex= 23058 token= 67109247
+  method 92740 get_Id ret= 37841 flags= 2182 params=  token= 100663858
+  method 92741 set_Id ret= 40808 flags= 2182 params= value token= 100663859
+  method 92742 get_Name ret= 37841 flags= 2182 params=  token= 100663860
+  method 92743 set_Name ret= 40808 flags= 2182 params= value token= 100663861
+  method 92744 get_SortOrder ret= 30860 flags= 2182 params=  token= 100663862
+  method 92745 set_SortOrder ret= 40808 flags= 2182 params= value token= 100663863
+  method 92746 get_IncludeInBuild ret= 23057 flags= 2182 params=  token= 100663864
+  method 92747 set_IncludeInBuild ret= 40808 flags= 2182 params= value token= 100663865
+  method 92748 get_IsMainCatalog ret= 23057 flags= 2182 params=  token= 100663866
+  method 92749 set_IsMainCatalog ret= 40808 flags= 2182 params= value token= 100663867
+  method 92750 .ctor ret= 40808 flags= 6278 params=  token= 100663868
+  prop 17617 Id get= 0 set= 1 token= 385876110
+  prop 17618 Name get= 2 set= 3 token= 385876111
+  prop 17619 SortOrder get= 4 set= 5 token= 385876112
+  prop 17620 IncludeInBuild get= 6 set= 7 token= 385876113
+  prop 17621 IsMainCatalog get= 8 set= 9 token= 385876114
+
+== CheerGames.Framework.LevelMetadataResponse == image= CheerGames.Framework.dll
+parent:  declaring:  fields: 7 methods: 15 props: 7
+  field 54363 <Hash>k__BackingField typeIndex= 37842 token= 67109249
+  field 54364 <Revision>k__BackingField typeIndex= 30861 token= 67109250
+  field 54365 <GameId>k__BackingField typeIndex= 37842 token= 67109251
+  field 54366 <CreatorId>k__BackingField typeIndex= 37842 token= 67109252
+  field 54367 <CreatorEmail>k__BackingField typeIndex= 37842 token= 67109253
+  field 54368 <EditorVersion>k__BackingField typeIndex= 30861 token= 67109254
+  field 54369 <CreatedAt>k__BackingField typeIndex= 37842 token= 67109255
+  method 92754 get_Hash ret= 37841 flags= 2182 params=  token= 100663872
+  method 92755 set_Hash ret= 40808 flags= 2182 params= value token= 100663873
+  method 92756 get_Revision ret= 30860 flags= 2182 params=  token= 100663874
+  method 92757 set_Revision ret= 40808 flags= 2182 params= value token= 100663875
+  method 92758 get_GameId ret= 37841 flags= 2182 params=  token= 100663876
+  method 92759 set_GameId ret= 40808 flags= 2182 params= value token= 100663877
+  method 92760 get_CreatorId ret= 37841 flags= 2182 params=  token= 100663878
+  method 92761 set_CreatorId ret= 40808 flags= 2182 params= value token= 100663879
+  method 92762 get_CreatorEmail ret= 37841 flags= 2182 params=  token= 100663880
+  method 92763 set_CreatorEmail ret= 40808 flags= 2182 params= value token= 100663881
+  method 92764 get_EditorVersion ret= 30860 flags= 2182 params=  token= 100663882
+  method 92765 set_EditorVersion ret= 40808 flags= 2182 params= value token= 100663883
+  method 92766 get_CreatedAt ret= 37841 flags= 2182 params=  token= 100663884
+  method 92767 set_CreatedAt ret= 40808 flags= 2182 params= value token= 100663885
+  method 92768 .ctor ret= 40808 flags= 6278 params=  token= 100663886
+  prop 17623 Hash get= 0 set= 1 token= 385876116
+  prop 17624 Revision get= 2 set= 3 token= 385876117
+  prop 17625 GameId get= 4 set= 5 token= 385876118
+  prop 17626 CreatorId get= 6 set= 7 token= 385876119
+  prop 17627 CreatorEmail get= 8 set= 9 token= 385876120
+  prop 17628 EditorVersion get= 10 set= 11 token= 385876121
+  prop 17629 CreatedAt get= 12 set= 13 token= 385876122
+
+== CheerGames.Framework.PaginatedResponse`1 == image= CheerGames.Framework.dll
+parent:  declaring:  fields: 5 methods: 11 props: 5
+  field 54370 <Items>k__BackingField typeIndex= 12596 token= 67109256
+  field 54371 <TotalCount>k__BackingField typeIndex= 30861 token= 67109257
+  field 54372 <Page>k__BackingField typeIndex= 30861 token= 67109258
+  field 54373 <PageSize>k__BackingField typeIndex= 30861 token= 67109259
+  field 54374 <TotalPages>k__BackingField typeIndex= 30861 token= 67109260
+  method 92769 get_Items ret= 12595 flags= 2182 params=  token= 100663887
+  method 92770 set_Items ret= 40808 flags= 2182 params= value token= 100663888
+  method 92771 get_TotalCount ret= 30860 flags= 2182 params=  token= 100663889
+  method 92772 set_TotalCount ret= 40808 flags= 2182 params= value token= 100663890
+  method 92773 get_Page ret= 30860 flags= 2182 params=  token= 100663891
+  method 92774 set_Page ret= 40808 flags= 2182 params= value token= 100663892
+  method 92775 get_PageSize ret= 30860 flags= 2182 params=  token= 100663893
+  method 92776 set_PageSize ret= 40808 flags= 2182 params= value token= 100663894
+  method 92777 get_TotalPages ret= 30860 flags= 2182 params=  token= 100663895
+  method 92778 set_TotalPages ret= 40808 flags= 2182 params= value token= 100663896
+  method 92779 .ctor ret= 40808 flags= 6278 params=  token= 100663897
+  prop 17630 Items get= 0 set= 1 token= 385876123
+  prop 17631 TotalCount get= 2 set= 3 token= 385876124
+  prop 17632 Page get= 4 set= 5 token= 385876125
+  prop 17633 PageSize get= 6 set= 7 token= 385876126
+  prop 17634 TotalPages get= 8 set= 9 token= 385876127
+
+== CheerGames.Game.EraserBoosterManager == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 12 methods: 12 props: 2
+  field 59613 _button typeIndex= 26542 token= 67108871
+  field 59614 _hintButton typeIndex= 28585 token= 67108872
+  field 59615 _cluePanelView typeIndex= 24024 token= 67108873
+  field 59616 _selectionPanel typeIndex= 36736 token= 67108874
+  field 59617 _inventorySystem typeIndex= 29544 token= 67108875
+  field 59618 _inputCoordinator typeIndex= 29505 token= 67108876
+  field 59619 _hapticSystem typeIndex= 29435 token= 67108877
+  field 59620 _hapticConfig typeIndex= 27782 token= 67108878
+  field 59621 _audioSystem typeIndex= 28914 token= 67108879
+  field 59622 _audioConfig typeIndex= 27764 token= 67108880
+  field 59623 <IsEraserMode>k__BackingField typeIndex= 23058 token= 67108881
+  field 59624 OnClueCompleted typeIndex= 5397 token= 67108882
+  method 100095 get_IsEraserMode ret= 23057 flags= 2182 params=  token= 100663306
+  method 100096 set_IsEraserMode ret= 40808 flags= 2177 params= value token= 100663307
+  method 100097 get_ButtonWorldPosition ret= 40550 flags= 2182 params=  token= 100663308
+  method 100098 add_OnClueCompleted ret= 40808 flags= 2182 params= value token= 100663309
+  method 100099 remove_OnClueCompleted ret= 40808 flags= 2182 params= value token= 100663310
+  method 100100 Init ret= 40808 flags= 134 params=  token= 100663311
+  method 100101 OnEraserRVRewardReceived ret= 40808 flags= 129 params=  token= 100663312
+  method 100102 OnEraserRequested ret= 40808 flags= 129 params=  token= 100663313
+  method 100103 OnClueSelected ret= 40808 flags= 129 params= clueId token= 100663314
+  method 100104 EndEraser ret= 40808 flags= 134 params=  token= 100663315
+  method 100105 ExitEraserMode ret= 40808 flags= 134 params=  token= 100663316
+  method 100106 .ctor ret= 40808 flags= 6278 params=  token= 100663317
+  prop 18970 IsEraserMode get= 0 set= 1 token= 385875969
+  prop 18971 ButtonWorldPosition get= 2 set= -1 token= 385875970
+
+== CheerGames.Game.HintBoosterManager == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 10 methods: 14 props: 1
+  field 59625 _button typeIndex= 28585 token= 67108883
+  field 59626 _eraserButton typeIndex= 26542 token= 67108884
+  field 59627 _selectionPanel typeIndex= 36736 token= 67108885
+  field 59628 _inputCoordinator typeIndex= 29505 token= 67108886
+  field 59629 _inventorySystem typeIndex= 29544 token= 67108887
+  field 59630 _session typeIndex= 28182 token= 67108888
+  field 59631 _grid typeIndex= 28164 token= 67108889
+  field 59632 _level typeIndex= 31711 token= 67108890
+  field 59633 _itemsById typeIndex= 7409 token= 67108891
+  field 59634 OnHintItemFound typeIndex= 5445 token= 67108892
+  method 100107 add_OnHintItemFound ret= 40808 flags= 2182 params= value token= 100663318
+  method 100108 remove_OnHintItemFound ret= 40808 flags= 2182 params= value token= 100663319
+  method 100109 get_ButtonWorldPosition ret= 40550 flags= 2182 params=  token= 100663320
+  method 100110 Init ret= 40808 flags= 134 params= level,grid token= 100663321
+  method 100111 OnHintRVRewardReceived ret= 40808 flags= 129 params=  token= 100663322
+  method 100112 OnHintRequested ret= 40808 flags= 129 params=  token= 100663323
+  method 100113 EndHint ret= 40808 flags= 134 params=  token= 100663324
+  method 100114 FindBestHintItem ret= 46409 flags= 129 params=  token= 100663325
+  method 100115 FindBestHintItem ret= 46409 flags= 129 params= excludeKeyCells token= 100663326
+  method 100116 FindAnyUnrevealedItem ret= 46409 flags= 129 params= excludeKeyCells token= 100663327
+  method 100117 CountUnrevealedItems ret= 30860 flags= 129 params= clue,excludeKeyCells token= 100663328
+  method 100118 HasUnrevealedSlots ret= 23057 flags= 129 params= item,excludeKeyCells token= 100663329
+  method 100119 IsKeyCell ret= 23057 flags= 145 params= cell token= 100663330
+  method 100120 .ctor ret= 40808 flags= 6278 params=  token= 100663331
+  prop 18972 ButtonWorldPosition get= 2 set= -1 token= 385875971
+
+== CheerGames.Game.MultiCellUIType == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 4 methods: 0 props: 0
+  field 59656 value__ typeIndex= 30883 token= 67108914
+  field 59657 Other typeIndex= 32935 token= 67108915
+  field 59658 TopRight typeIndex= 32935 token= 67108916
+  field 59659 BottomRight typeIndex= 32935 token= 67108917
+
+== CheerGames.Game.GridSpawner == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 34 methods: 27 props: 7
+  field 59680 _cellPrefab typeIndex= 27787 token= 67108938
+  field 59681 _itemViewPrefab typeIndex= 27787 token= 67108939
+  field 59682 _columnHeaderPrefab typeIndex= 24221 token= 67108940
+  field 59683 _rowHeaderPrefab typeIndex= 27787 token= 67108941
+  field 59684 _toasterPrefab typeIndex= 27787 token= 67108942
+  field 59685 _cellSpriteConfig typeIndex= 23681 token= 67108943
+  field 59686 _whiteLine typeIndex= 27787 token= 67108944
+  field 59687 _greyLine typeIndex= 27787 token= 67108945
+  field 59688 _outline typeIndex= 35290 token= 67108946
+  field 59689 _revealedColor typeIndex= 24110 token= 67108947
+  field 59690 _revealedColorFadeDuration typeIndex= 37161 token= 67108948
+  field 59691 _keyPrefab typeIndex= 27787 token= 67108949
+  field 59692 _keyOffset typeIndex= 40516 token= 67108950
+  field 59693 _keyShakeStrength typeIndex= 37161 token= 67108951
+  field 59694 _keyShakeDuration typeIndex= 37161 token= 67108952
+  field 59695 _keyShakeVibrato typeIndex= 30861 token= 67108953
+  field 59696 _lockShakeStrength typeIndex= 37161 token= 67108954
+  field 59697 _lockShakeDuration typeIndex= 37161 token= 67108955
+  field 59698 _lockShakeVibrato typeIndex= 30861 token= 67108956
+  field 59699 _grid typeIndex= 28164 token= 67108957
+  field 59700 _cellViews typeIndex= 19830 token= 67108958
+  field 59701 _headers typeIndex= 12998 token= 67108959
+  field 59702 _columnHeaderImages typeIndex= 20100 token= 67108960
+  field 59703 _rowHeaderImages typeIndex= 20100 token= 67108961
+  field 59704 _columnHeaderMarked typeIndex= 19770 token= 67108962
+  field 59705 _rowHeaderMarked typeIndex= 19770 token= 67108963
+  field 59706 _separators typeIndex= 12998 token= 67108964
+  field 59707 _itemViewPool typeIndex= 15623 token= 67108965
+  field 59708 _gridBoundsWithHeaders typeIndex= 35250 token= 67108966
+  field 59709 _keyContainer typeIndex= 35290 token= 67108967
+  field 59710 _itemsLayer typeIndex= 35290 token= 67108968
+  field 59711 _itemsFlightLayer typeIndex= 35290 token= 67108969
+  field 59712 _renderOrder typeIndex= 28168 token= 67108970
+  field 59713 _toasterView typeIndex= 39142 token= 67108971
+  method 100173 get_Grid ret= 28163 flags= 2182 params=  token= 100663384
+  method 100174 get_RevealedColor ret= 24109 flags= 2182 params=  token= 100663385
+  method 100175 get_SpriteConfig ret= 23680 flags= 2182 params=  token= 100663386
+  method 100176 GetGridBoundsWithHeaders ret= 35249 flags= 134 params=  token= 100663387
+  method 100177 get_KeyContainer ret= 39296 flags= 2182 params=  token= 100663388
+  method 100178 get_ItemsLayer ret= 35289 flags= 2182 params=  token= 100663389
+  method 100179 get_ItemsFlightLayer ret= 35289 flags= 2182 params=  token= 100663390
+  method 100180 ShakeKeyInstancesForColor ret= 40808 flags= 134 params= color token= 100663391
+  method 100181 ShakeLock ret= 40808 flags= 134 params= cellView token= 100663392
+  method 100182 PlaceKeyInstances ret= 40808 flags= 134 params= cellView,count,sprite token= 100663393
+  method 100183 Build ret= 40808 flags= 134 params= rows,columns,spacing,columnHeaderSpacing,columnInfos,rowNames token= 100663394
+  method 100184 InitItemViewPool ret= 40808 flags= 134 params= count token= 100663395
+  method 100185 GetItemView ret= 31153 flags= 134 params=  token= 100663396
+  method 100186 ReturnItemView ret= 40808 flags= 134 params= iv token= 100663397
+  method 100187 get_Toaster ret= 39141 flags= 2182 params=  token= 100663398
+  method 100188 GetCellView ret= 23682 flags= 134 params= row,column token= 100663399
+  method 100189 SpawnSeparators ret= 40808 flags= 129 params= rows,columns,cellWidth,cellHeight,spacing token= 100663400
+  method 100190 ApplyUniformFontSize ret= 40808 flags= 145 params= texts token= 100663401
+  method 100191 SetHeaderSprite ret= 40808 flags= 129 params= header,sprite token= 100663402
+  method 100192 MarkColumnHeader ret= 40808 flags= 134 params= col,animate token= 100663403
+  method 100193 MarkRowHeader ret= 40808 flags= 134 params= row,animate token= 100663404
+  method 100194 GetRowHeaderImage ret= 30406 flags= 134 params= row token= 100663405
+  method 100195 GetOutlineRect ret= 35289 flags= 134 params=  token= 100663406
+  method 100196 GetRowHeaderRightEdgeWorld ret= 37160 flags= 134 params=  token= 100663407
+  method 100197 GetCellAreaTopWorld ret= 37160 flags= 134 params=  token= 100663408
+  method 100198 Clear ret= 40808 flags= 134 params=  token= 100663409
+  method 100199 .ctor ret= 40808 flags= 6278 params=  token= 100663410
+  prop 18994 Grid get= 0 set= -1 token= 385875993
+  prop 18995 RevealedColor get= 1 set= -1 token= 385875994
+  prop 18996 SpriteConfig get= 2 set= -1 token= 385875995
+  prop 18997 KeyContainer get= 4 set= -1 token= 385875996
+  prop 18998 ItemsLayer get= 5 set= -1 token= 385875997
+  prop 18999 ItemsFlightLayer get= 6 set= -1 token= 385875998
+  prop 19000 Toaster get= 14 set= -1 token= 385875999
+
+== CheerGames.Game.InputCoordinator == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 40 methods: 28 props: 1
+  field 59714 OnTapEvent typeIndex= 5424 token= 67108972
+  field 59715 OnCellTapped typeIndex= 5534 token= 67108973
+  field 59716 OnItemViewTapped typeIndex= 5329 token= 67108974
+  field 59717 OnZoomStateChanged typeIndex= 5231 token= 67108975
+  field 59718 _selectionPanel typeIndex= 36736 token= 67108976
+  field 59719 _settings typeIndex= 30653 token= 67108977
+  field 59720 _zoomContainer typeIndex= 41792 token= 67108978
+  field 59721 _eventSystem typeIndex= 26695 token= 67108979
+  field 59722 _cluePanelView typeIndex= 24024 token= 67108980
+  field 59723 _hapticSystem typeIndex= 29435 token= 67108981
+  field 59724 _hapticConfig typeIndex= 27782 token= 67108982
+  field 59725 _audioSystem typeIndex= 28914 token= 67108983
+  field 59726 _audioConfig typeIndex= 27764 token= 67108984
+  field 59727 _isFingerMoved typeIndex= 23058 token= 67108985
+  field 59728 _touchStartTime typeIndex= 37161 token= 67108986
+  field 59729 _touchStartPosition typeIndex= 40516 token= 67108987
+  field 59730 _previousTouchPosition typeIndex= 40516 token= 67108988
+  field 59731 _isDraggingZoom typeIndex= 23058 token= 67108989
+  field 59732 _isInputBlocked typeIndex= 23058 token= 67108990
+  field 59733 _zoomPanEnabled typeIndex= 23058 token= 67108991
+  field 59734 _isPinching typeIndex= 23058 token= 67108992
+  field 59735 _wasPinching typeIndex= 23058 token= 67108993
+  field 59736 _pinchBaselineStale typeIndex= 23058 token= 67108994
+  field 59737 _pinchZoomActivated typeIndex= 23058 token= 67108995
+  field 59738 _pinchSeedDistance typeIndex= 37161 token= 67108996
+  field 59739 _previousPinchDistance typeIndex= 37161 token= 67108997
+  field 59740 _previousPinchMidpoint typeIndex= 40516 token= 67108998
+  field 59741 _currentZoom typeIndex= 37161 token= 67108999
+  field 59742 _targetZoom typeIndex= 37161 token= 67109000
+  field 59743 _zoomVelocity typeIndex= 37161 token= 67109001
+  field 59744 _initialZoom typeIndex= 37161 token= 67109002
+  field 59745 _initialAnchoredPos typeIndex= 40516 token= 67109003
+  field 59746 _isZoomedOrPanned typeIndex= 23058 token= 67109004
+  field 59747 ResetZoomDuration typeIndex= 37180 token= 67109005
+  field 59748 MaxFitZoom typeIndex= 37180 token= 67109006
+  field 59749 _gridRect typeIndex= 35290 token= 67109007
+  field 59750 _gridModel typeIndex= 28164 token= 67109008
+  field 59751 _raycastResults typeIndex= 13273 token= 67109009
+  field 59752 _pointerEventData typeIndex= 34375 token= 67109010
+  field 59753 _panTween typeIndex= 39478 token= 67109011
+  method 100217 add_OnTapEvent ret= 40808 flags= 2534 params= value token= 100663428
+  method 100218 remove_OnTapEvent ret= 40808 flags= 2534 params= value token= 100663429
+  method 100219 add_OnCellTapped ret= 40808 flags= 2534 params= value token= 100663430
+  method 100220 remove_OnCellTapped ret= 40808 flags= 2534 params= value token= 100663431
+  method 100221 add_OnItemViewTapped ret= 40808 flags= 2534 params= value token= 100663432
+  method 100222 remove_OnItemViewTapped ret= 40808 flags= 2534 params= value token= 100663433
+  method 100223 add_OnZoomStateChanged ret= 40808 flags= 2534 params= value token= 100663434
+  method 100224 remove_OnZoomStateChanged ret= 40808 flags= 2534 params= value token= 100663435
+  method 100225 SetGridReference ret= 40808 flags= 486 params= gridRect,gridModel token= 100663436
+  method 100226 get_IsInputBlocked ret= 23057 flags= 2534 params=  token= 100663437
+  method 100227 SetInputBlocked ret= 40808 flags= 486 params= blocked token= 100663438
+  method 100228 SetZoomPanEnabled ret= 40808 flags= 486 params= enabled token= 100663439
+  method 100229 InputTick ret= 40808 flags= 486 params=  token= 100663440
+  method 100230 PinchTick ret= 23057 flags= 129 params=  token= 100663441
+  method 100231 OnTouchDown ret= 40808 flags= 129 params= position token= 100663442
+  method 100232 OnTouchUpdate ret= 40808 flags= 129 params= position token= 100663443
+  method 100233 OnTouchUp ret= 40808 flags= 129 params= position token= 100663444
+  method 100234 OnTap ret= 40808 flags= 129 params= position token= 100663445
+  method 100235 TryGetCellFromScreenPoint ret= 23057 flags= 129 params= screenPos,row,col token= 100663446
+  method 100236 EnsureCellVisible ret= 40808 flags= 486 params= cellRect,padding,onComplete token= 100663447
+  method 100237 FitGridToScreen ret= 40808 flags= 486 params= gridBoundsLocal,gridTransform,safeAreaRect,margin token= 100663448
+  method 100238 FadeInGrid ret= 40808 flags= 486 params= duration token= 100663449
+  method 100239 ResetZoom ret= 40808 flags= 486 params=  token= 100663450
+  method 100240 NotifyZoomStateChanged ret= 40808 flags= 129 params=  token= 100663451
+  method 100241 GetItemViewFromRaycast ret= 31153 flags= 129 params= position token= 100663452
+  method 100242 IsOverCluePanel ret= 23057 flags= 129 params= position token= 100663453
+  method 100243 HasBlockingHit ret= 23057 flags= 129 params= position token= 100663454
+  method 100244 .ctor ret= 40808 flags= 6278 params=  token= 100663455
+  prop 19002 IsInputBlocked get= 9 set= -1 token= 385876001
+
+== CheerGames.Game.GameController == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 4 methods: 5 props: 1
+  field 59769 _inputCoordinator typeIndex= 29505 token= 67109027
+  field 59770 _cellSelectionSystem typeIndex= 28173 token= 67109028
+  field 59771 _isInitialized typeIndex= 23058 token= 67109029
+  field 59772 _tutorialRequested typeIndex= 23058 token= 67109030
+  method 100248 get_IsTutorialPending ret= 23057 flags= 2182 params=  token= 100663459
+  method 100249 NotifyLevelInitialized ret= 40808 flags= 134 params= tutorialEnabled token= 100663460
+  method 100250 StartTutorialIfRequested ret= 40808 flags= 134 params=  token= 100663461
+  method 100251 Tick ret= 40808 flags= 486 params=  token= 100663462
+  method 100252 .ctor ret= 40808 flags= 6278 params=  token= 100663463
+  prop 19003 IsTutorialPending get= 0 set= -1 token= 385876002
+
+== CheerGames.Game.GriddleCellSelectionSystem == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 14 methods: 7 props: 0
+  field 59809 _unrevealedItemsBuffer typeIndex= 13718 token= 67109067
+  field 59810 _seenItemIds typeIndex= 9148 token= 67109068
+  field 59811 _session typeIndex= 28182 token= 67109069
+  field 59812 _gridSpawner typeIndex= 28170 token= 67109070
+  field 59813 _selectionPanel typeIndex= 36736 token= 67109071
+  field 59814 _gameViews typeIndex= 27816 token= 67109072
+  field 59815 _inputCoordinator typeIndex= 29505 token= 67109073
+  field 59816 _eraserBoosterManager typeIndex= 26547 token= 67109074
+  field 59817 _tutorialController typeIndex= 39433 token= 67109075
+  field 59818 _itemPlacementSystem typeIndex= 28178 token= 67109076
+  field 59819 _hapticSystem typeIndex= 29435 token= 67109077
+  field 59820 _hapticConfig typeIndex= 27782 token= 67109078
+  field 59821 _audioSystem typeIndex= 28914 token= 67109079
+  field 59822 _audioConfig typeIndex= 27764 token= 67109080
+  method 100268 InitTutorial ret= 40808 flags= 134 params=  token= 100663479
+  method 100269 OnCellTapped ret= 40808 flags= 134 params= row,col token= 100663480
+  method 100270 OnItemViewTapped ret= 40808 flags= 134 params= itemView token= 100663481
+  method 100271 OnTutorialCellClicked ret= 40808 flags= 129 params=  token= 100663482
+  method 100272 GetUnrevealedItemsInRow ret= 13715 flags= 129 params= row token= 100663483
+  method 100273 IsItemPendingClonePlacement ret= 23057 flags= 129 params= itemId token= 100663484
+  method 100274 .ctor ret= 40808 flags= 6278 params=  token= 100663485
+
+== CheerGames.Game.GriddleClueRevealSystem == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 23 methods: 24 props: 0
+  field 59826 PLACEMENT_ID typeIndex= 37862 token= 67109084
+  field 59827 REWARD_INTENT typeIndex= 37862 token= 67109085
+  field 59828 _session typeIndex= 28182 token= 67109086
+  field 59829 _gridSpawner typeIndex= 28170 token= 67109087
+  field 59830 _gameViews typeIndex= 27816 token= 67109088
+  field 59831 _analyticsSystems typeIndex= 10081 token= 67109089
+  field 59832 _levelLoaderSystem typeIndex= 29609 token= 67109090
+  field 59833 _levelDecisionSystem typeIndex= 29600 token= 67109091
+  field 59834 _levelAttemptSystem typeIndex= 29590 token= 67109092
+  field 59835 _preferencesSystem typeIndex= 29904 token= 67109093
+  field 59836 _inventorySystem typeIndex= 29544 token= 67109094
+  field 59837 _heartSystem typeIndex= 28923 token= 67109095
+  field 59838 _timeManager typeIndex= 30234 token= 67109096
+  field 59839 _hapticSystem typeIndex= 29435 token= 67109097
+  field 59840 _hapticConfig typeIndex= 27782 token= 67109098
+  field 59841 _audioSystem typeIndex= 28914 token= 67109099
+  field 59842 _audioConfig typeIndex= 27764 token= 67109100
+  field 59843 _advertisementManager typeIndex= 28760 token= 67109101
+  field 59844 _advertisementSystem typeIndex= 28768 token= 67109102
+  field 59845 _frameworkPreferencesSystem typeIndex= 29899 token= 67109103
+  field 59846 _isRewardedVideoActive typeIndex= 23058 token= 67109104
+  field 59847 _isShowingRewardedAd typeIndex= 23058 token= 67109105
+  field 59848 _isInitialized typeIndex= 23058 token= 67109106
+  method 100277 InitAdvertisement ret= 40808 flags= 134 params=  token= 100663488
+  method 100278 IsExtraClueUnlocked ret= 23057 flags= 129 params=  token= 100663489
+  method 100279 Dispose ret= 40808 flags= 486 params=  token= 100663490
+  method 100280 OnExtraClueClicked ret= 40808 flags= 134 params= sourceWorldPos token= 100663491
+  method 100281 RevealNextUnrevealedClue ret= 40808 flags= 129 params=  token= 100663492
+  method 100282 RevealClueFromExtraButton ret= 40808 flags= 129 params= clue,autoComplete token= 100663493
+  method 100283 RefreshRevealButtonState ret= 40808 flags= 129 params=  token= 100663494
+  method 100284 FinishRewardedAdFlow ret= 40808 flags= 129 params=  token= 100663495
+  method 100285 OnRewardedLoaded ret= 40808 flags= 486 params=  token= 100663496
+  method 100286 OnRewardedLoadFailed ret= 40808 flags= 486 params= errorInfo token= 100663497
+  method 100287 OnRewardedShowed ret= 40808 flags= 486 params= adUnitId,adInfo token= 100663498
+  method 100288 OnRewardedAdDisplayed ret= 40808 flags= 486 params= adUnitId,adInfo token= 100663499
+  method 100289 OnRewardedAdDisplayFailed ret= 40808 flags= 486 params= errorInfo token= 100663500
+  method 100290 OnRewardedClicked ret= 40808 flags= 486 params=  token= 100663501
+  method 100291 OnRewardedRewardReceived ret= 40808 flags= 486 params=  token= 100663502
+  method 100292 OnRewardedClosed ret= 40808 flags= 486 params= adInfo token= 100663503
+  method 100293 OnRewardedRevenuePaid ret= 40808 flags= 486 params= adUnitId,adInfo token= 100663504
+  method 100294 RevealConnectedClues ret= 40808 flags= 134 params= item,sourceWorldPos,hideCompleted,onCompletedCluesHidden token= 100663505
+  method 100295 HideCompletedClues ret= 40808 flags= 134 params= useEraserAnimation,onAllHidden token= 100663506
+  method 100296 FireInitialClueStartedEvents ret= 40808 flags= 134 params=  token= 100663507
+  method 100297 SendClueStarted ret= 40808 flags= 129 params= clueId token= 100663508
+  method 100298 SendClueCompleted ret= 40808 flags= 129 params= clueId token= 100663509
+  method 100299 BuildLevelAnalyticsModel ret= 31654 flags= 129 params=  token= 100663510
+  method 100300 .ctor ret= 40808 flags= 6278 params=  token= 100663511
+
+== CheerGames.Game.GriddleItemPlacementSystem == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 23 methods: 22 props: 1
+  field 59853 _session typeIndex= 28182 token= 67109111
+  field 59854 _gridSpawner typeIndex= 28170 token= 67109112
+  field 59855 _gameViews typeIndex= 27816 token= 67109113
+  field 59856 _scopedEventBus typeIndex= 30058 token= 67109114
+  field 59857 _tutorialController typeIndex= 39433 token= 67109115
+  field 59858 _eraserBoosterManager typeIndex= 26547 token= 67109116
+  field 59859 _hintBoosterManager typeIndex= 28587 token= 67109117
+  field 59860 _clueRevealSystem typeIndex= 28175 token= 67109118
+  field 59861 _revealHighlightSystem typeIndex= 28188 token= 67109119
+  field 59862 _analyticsSystems typeIndex= 10081 token= 67109120
+  field 59863 _levelLoaderSystem typeIndex= 29609 token= 67109121
+  field 59864 _levelDecisionSystem typeIndex= 29600 token= 67109122
+  field 59865 _levelAttemptSystem typeIndex= 29590 token= 67109123
+  field 59866 _preferencesSystem typeIndex= 29904 token= 67109124
+  field 59867 _inventorySystem typeIndex= 29544 token= 67109125
+  field 59868 _heartSystem typeIndex= 28923 token= 67109126
+  field 59869 _timeManager typeIndex= 30234 token= 67109127
+  field 59870 _hapticSystem typeIndex= 29435 token= 67109128
+  field 59871 _hapticConfig typeIndex= 27782 token= 67109129
+  field 59872 _audioSystem typeIndex= 28914 token= 67109130
+  field 59873 _audioConfig typeIndex= 27764 token= 67109131
+  field 59874 _activeFlightCount typeIndex= 30861 token= 67109132
+  field 59875 _gridSpawnerOriginalSiblingIndex typeIndex= 30861 token= 67109133
+  method 100303 get_IsOnboardingLevel ret= 23057 flags= 2177 params=  token= 100663514
+  method 100304 BeginFlight ret= 40808 flags= 129 params=  token= 100663515
+  method 100305 EndFlight ret= 40808 flags= 129 params=  token= 100663516
+  method 100306 RevealAllClonesOf ret= 30860 flags= 134 params= item token= 100663517
+  method 100307 OnItemSelected ret= 23057 flags= 134 params= cellView,selected,itemView token= 100663518
+  method 100308 OnClueCompletedByEraser ret= 40808 flags= 134 params= clueId token= 100663519
+  method 100309 FlyEraserItem ret= 40808 flags= 129 params= item,cellView,slotIndex,onComplete token= 100663520
+  method 100310 OnHintUsed ret= 40808 flags= 134 params= bestItem token= 100663521
+  method 100311 RevealClonesExcluding ret= 30860 flags= 129 params= item,excludeRow,excludeCol token= 100663522
+  method 100312 DecrementAllCurtains ret= 40808 flags= 129 params= amount token= 100663523
+  method 100313 ProcessPendingClonePlacements ret= 40808 flags= 129 params=  token= 100663524
+  method 100314 ExecuteDeferredPlacement ret= 40808 flags= 129 params= item,row,col,slotIndex token= 100663525
+  method 100315 OnCellItemRevealed ret= 40808 flags= 129 params= row,col token= 100663526
+  method 100316 TryUnlockNewLocksByKey ret= 40808 flags= 129 params= row,col token= 100663527
+  method 100317 PlayObstacleReveal ret= 40808 flags= 129 params= row,col,onComplete token= 100663528
+  method 100318 PlayCurtainRevealOn ret= 40808 flags= 129 params= row,col,onComplete token= 100663529
+  method 100319 PlayKeyLockReveal ret= 40808 flags= 129 params= lockRow,lockCol,onComplete token= 100663530
+  method 100320 FindKeyCell ret= 14400 flags= 129 params= color token= 100663531
+  method 100321 TryTriggerLevelCompleted ret= 40808 flags= 129 params=  token= 100663532
+  method 100322 DebugFillGridWithoutCompleting ret= 40808 flags= 134 params=  token= 100663533
+  method 100323 BuildLevelAnalyticsModel ret= 31654 flags= 129 params=  token= 100663534
+  method 100324 .ctor ret= 40808 flags= 6278 params=  token= 100663535
+  prop 19005 IsOnboardingLevel get= 0 set= -1 token= 385876004
+
+== CheerGames.Game.GriddleRevealHighlightSystem == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 10 methods: 3 props: 0
+  field 59960 WaveDelayPerCell typeIndex= 37180 token= 67109218
+  field 59961 WaveScalePunch typeIndex= 37180 token= 67109219
+  field 59962 WaveYPunch typeIndex= 37180 token= 67109220
+  field 59963 WaveDuration typeIndex= 37180 token= 67109221
+  field 59964 _gridSpawner typeIndex= 28170 token= 67109222
+  field 59965 _session typeIndex= 28182 token= 67109223
+  field 59966 _hapticSystem typeIndex= 29435 token= 67109224
+  field 59967 _hapticConfig typeIndex= 27782 token= 67109225
+  field 59968 _audioSystem typeIndex= 28914 token= 67109226
+  field 59969 _audioConfig typeIndex= 27764 token= 67109227
+  method 100381 HighlightRevealedCells ret= 40808 flags= 134 params= animate token= 100663592
+  method 100382 PlayWaveOnImage ret= 40808 flags= 129 params= img,delay,color token= 100663593
+  method 100383 .ctor ret= 40808 flags= 6278 params=  token= 100663594
+
+== CheerGames.Game.IdleHintSystem == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 28 methods: 25 props: 0
+  field 59975 _pointerPrefab typeIndex= 27787 token= 67109233
+  field 59976 _idleThreshold typeIndex= 37161 token= 67109234
+  field 59977 _guidedIdleThreshold typeIndex= 37161 token= 67109235
+  field 59978 _pointerLoopScaleMin typeIndex= 37161 token= 67109236
+  field 59979 _pointerLoopScaleMax typeIndex= 37161 token= 67109237
+  field 59980 _pointerLoopDuration typeIndex= 37161 token= 67109238
+  field 59981 _sortingOrder typeIndex= 30861 token= 67109239
+  field 59982 _inputCoordinator typeIndex= 29505 token= 67109240
+  field 59983 _gridSpawner typeIndex= 28170 token= 67109241
+  field 59984 _session typeIndex= 28182 token= 67109242
+  field 59985 _tutorialController typeIndex= 39433 token= 67109243
+  field 59986 _selectionPanel typeIndex= 36736 token= 67109244
+  field 59987 _eraserBoosterManager typeIndex= 26547 token= 67109245
+  field 59988 _gameViews typeIndex= 27816 token= 67109246
+  field 59989 _cellSelectionSystem typeIndex= 28173 token= 67109247
+  field 59990 _hapticSystem typeIndex= 29435 token= 67109248
+  field 59991 _hapticConfig typeIndex= 27782 token= 67109249
+  field 59992 _audioSystem typeIndex= 28914 token= 67109250
+  field 59993 _audioConfig typeIndex= 27764 token= 67109251
+  field 59994 _lastInputTime typeIndex= 37161 token= 67109252
+  field 59995 _currentTarget typeIndex= 23683 token= 67109253
+  field 59996 _isShown typeIndex= 23058 token= 67109254
+  field 59997 _addedCanvas typeIndex= 23596 token= 67109255
+  field 59998 _addedRaycaster typeIndex= 28104 token= 67109256
+  field 59999 _pointerImage typeIndex= 35290 token= 67109257
+  field 60000 _cornerBuffer typeIndex= 20640 token= 67109258
+  field 60001 _guidedTarget typeIndex= 23683 token= 67109259
+  field 60002 _clueBuffer typeIndex= 12894 token= 67109260
+  method 100388 Awake ret= 40808 flags= 129 params=  token= 100663599
+  method 100389 Start ret= 40808 flags= 129 params=  token= 100663600
+  method 100390 OnDestroy ret= 40808 flags= 129 params=  token= 100663601
+  method 100391 HandleTap ret= 40808 flags= 129 params= _ token= 100663602
+  method 100392 HandleCellTap ret= 40808 flags= 129 params= _,__ token= 100663603
+  method 100393 HandleItemTap ret= 40808 flags= 129 params= _ token= 100663604
+  method 100394 HandleZoom ret= 40808 flags= 129 params= _ token= 100663605
+  method 100395 MarkActivity ret= 40808 flags= 129 params=  token= 100663606
+  method 100396 LateUpdate ret= 40808 flags= 129 params=  token= 100663607
+  method 100397 IsGuidedMode ret= 23057 flags= 129 params=  token= 100663608
+  method 100398 UpdateGuided ret= 40808 flags= 129 params=  token= 100663609
+  method 100399 HideGuided ret= 40808 flags= 129 params=  token= 100663610
+  method 100400 FindNextRowMajorCell ret= 23682 flags= 129 params=  token= 100663611
+  method 100401 GetConnectedRevealedClues ret= 12893 flags= 129 params= cellView token= 100663612
+  method 100402 ShouldSuppress ret= 23057 flags= 129 params=  token= 100663613
+  method 100403 HasAnyUsableClue ret= 23057 flags= 129 params=  token= 100663614
+  method 100404 FindBestHintCell ret= 23682 flags= 129 params=  token= 100663615
+  method 100405 FindSingleDistinctUnrevealedCell ret= 23678 flags= 145 params= grid,row token= 100663616
+  method 100406 CountNewClueReveals ret= 30860 flags= 129 params= item token= 100663617
+  method 100407 Show ret= 40808 flags= 129 params= target token= 100663618
+  method 100408 Hide ret= 40808 flags= 129 params=  token= 100663619
+  method 100409 EnsureSorting ret= 40808 flags= 129 params=  token= 100663620
+  method 100410 RemoveSorting ret= 40808 flags= 129 params=  token= 100663621
+  method 100411 UpdatePointer ret= 40808 flags= 129 params=  token= 100663622
+  method 100412 .ctor ret= 40808 flags= 6278 params=  token= 100663623
+
+== CheerGames.Game.TutorialController == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 35 methods: 32 props: 4
+  field 60006 _overlay typeIndex= 30407 token= 67109264
+  field 60007 _pointerPrefab typeIndex= 27787 token= 67109265
+  field 60008 _pointerImage typeIndex= 35290 token= 67109266
+  field 60009 _overlayColor typeIndex= 24110 token= 67109267
+  field 60010 _disabledButtonColor typeIndex= 24110 token= 67109268
+  field 60011 _pointerOffset typeIndex= 40516 token= 67109269
+  field 60012 _pointerLoopScaleMin typeIndex= 37161 token= 67109270
+  field 60013 _pointerLoopScaleMax typeIndex= 37161 token= 67109271
+  field 60014 _pointerLoopDuration typeIndex= 37161 token= 67109272
+  field 60015 _overlayFadeDuration typeIndex= 37161 token= 67109273
+  field 60016 _pointerPopDuration typeIndex= 37161 token= 67109274
+  field 60017 _overlaySortingOrder typeIndex= 30861 token= 67109275
+  field 60018 _highlightSortingOrder typeIndex= 30861 token= 67109276
+  field 60019 _hapticSystem typeIndex= 29435 token= 67109277
+  field 60020 _hapticConfig typeIndex= 27782 token= 67109278
+  field 60021 _audioSystem typeIndex= 28914 token= 67109279
+  field 60022 _audioConfig typeIndex= 27764 token= 67109280
+  field 60023 _inputCoordinator typeIndex= 29505 token= 67109281
+  field 60024 _isActive typeIndex= 23058 token= 67109282
+  field 60025 _guidedHintActive typeIndex= 23058 token= 67109283
+  field 60026 _correctItem typeIndex= 46410 token= 67109284
+  field 60027 _onCellClicked typeIndex= 21263 token= 67109285
+  field 60028 _clickZone typeIndex= 27787 token= 67109286
+  field 60029 _selectionPanel typeIndex= 36734 token= 67109287
+  field 60030 _tutorialCell typeIndex= 23683 token= 67109288
+  field 60031 _pointerTarget typeIndex= 35290 token= 67109289
+  field 60032 _pointerAtCenter typeIndex= 23058 token= 67109290
+  field 60033 _pointerLoopActive typeIndex= 23058 token= 67109291
+  field 60034 _pointerLoopStartTime typeIndex= 37161 token= 67109292
+  field 60035 _pointerAppearScale typeIndex= 37161 token= 67109293
+  field 60036 _overlayFadeTween typeIndex= 39478 token= 67109294
+  field 60037 _pointerAppearTween typeIndex= 39478 token= 67109295
+  field 60038 _cornerBuffer typeIndex= 20640 token= 67109296
+  field 60039 _highlights typeIndex= 13810 token= 67109297
+  field 60040 <HasCompletedOnboarding>k__BackingField typeIndex= 23058 token= 67109298
+  method 100415 get_IsActive ret= 23057 flags= 2182 params=  token= 100663626
+  method 100416 get_IsGuidedHintActive ret= 23057 flags= 2182 params=  token= 100663627
+  method 100417 get_HasCompletedOnboarding ret= 23057 flags= 2182 params=  token= 100663628
+  method 100418 set_HasCompletedOnboarding ret= 40808 flags= 2177 params= value token= 100663629
+  method 100419 get_PointerImage ret= 35289 flags= 2182 params=  token= 100663630
+  method 100420 Awake ret= 40808 flags= 129 params=  token= 100663631
+  method 100421 StartTutorial ret= 40808 flags= 134 params= cell,correctItem,clue,selectionPanel,onCellClicked token= 100663632
+  method 100422 SetOverlayAlpha ret= 40808 flags= 129 params= alpha token= 100663633
+  method 100423 PlayIntroSequence ret= 40808 flags= 129 params=  token= 100663634
+  method 100424 PopPointerIn ret= 40808 flags= 129 params= sortingOrder,playFeedback,onComplete token= 100663635
+  method 100425 EnableTutorialClickZone ret= 40808 flags= 129 params=  token= 100663636
+  method 100426 KillIntroTweens ret= 40808 flags= 129 params=  token= 100663637
+  method 100427 OnSelectionPanelShown ret= 40808 flags= 134 params=  token= 100663638
+  method 100428 StartPointerLoop ret= 40808 flags= 129 params=  token= 100663639
+  method 100429 SetPointerSortingOrder ret= 40808 flags= 129 params= sortingOrder token= 100663640
+  method 100430 OnDestroy ret= 40808 flags= 129 params=  token= 100663641
+  method 100431 StopPointerLoop ret= 40808 flags= 129 params=  token= 100663642
+  method 100432 LateUpdate ret= 40808 flags= 129 params=  token= 100663643
+  method 100433 ShowGuidedHint ret= 40808 flags= 134 params= cell,clues,onCellClicked token= 100663644
+  method 100434 EndGuidedHint ret= 40808 flags= 134 params=  token= 100663645
+  method 100435 EndTutorial ret= 40808 flags= 134 params=  token= 100663646
+  method 100436 TeardownOverlayAndHighlights ret= 40808 flags= 129 params=  token= 100663647
+  method 100437 AddHighlight ret= 40808 flags= 129 params= target,sortingOrder token= 100663648
+  method 100438 SetupSorting ret= 40808 flags= 129 params= target,sortingOrder token= 100663649
+  method 100439 RemoveSorting ret= 40808 flags= 129 params= target token= 100663650
+  method 100440 PositionPointer ret= 40808 flags= 129 params= targetRect token= 100663651
+  method 100441 GetLoopFactor ret= 37160 flags= 129 params=  token= 100663652
+  method 100442 CreateClickZone ret= 40808 flags= 129 params= cellRect token= 100663653
+  method 100443 OnClickZoneClicked ret= 40808 flags= 129 params=  token= 100663654
+  method 100444 .ctor ret= 40808 flags= 6278 params=  token= 100663655
+  method 100445 <PlayIntroSequence>b__48_0 ret= 40808 flags= 129 params=  token= 100663656
+  method 100446 <OnClickZoneClicked>b__68_0 ret= 40808 flags= 129 params=  token= 100663657
+  prop 19016 IsActive get= 0 set= -1 token= 385876015
+  prop 19017 IsGuidedHintActive get= 1 set= -1 token= 385876016
+  prop 19018 HasCompletedOnboarding get= 2 set= 3 token= 385876017
+  prop 19019 PointerImage get= 4 set= -1 token= 385876018
+
+== CheerGames.Game.CellView == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 90 methods: 60 props: 9
+  field 60064 _background typeIndex= 30407 token= 67109322
+  field 60065 _lockedBackground typeIndex= 27787 token= 67109323
+  field 60066 _curtainOverlay typeIndex= 27787 token= 67109324
+  field 60067 _curtainIcon typeIndex= 39297 token= 67109325
+  field 60068 _curtainCountText typeIndex= 38287 token= 67109326
+  field 60069 _clonedCellImage typeIndex= 30407 token= 67109327
+  field 60070 _clonedCellImageSlot1 typeIndex= 30407 token= 67109328
+  field 60071 _outline typeIndex= 27787 token= 67109329
+  field 60072 _tutorialHighlight typeIndex= 27787 token= 67109330
+  field 60073 _outlineTopRight typeIndex= 37503 token= 67109331
+  field 60074 _outlineBottomRight typeIndex= 37503 token= 67109332
+  field 60075 _outlineOther typeIndex= 37503 token= 67109333
+  field 60076 _outlineSelectedColor typeIndex= 24110 token= 67109334
+  field 60077 _multiCellTopRight typeIndex= 37503 token= 67109335
+  field 60078 _multiCellBottomRight typeIndex= 37503 token= 67109336
+  field 60079 _multiCellOther typeIndex= 37503 token= 67109337
+  field 60080 _clonedItemTopRightSlot0 typeIndex= 37503 token= 67109338
+  field 60081 _clonedItemTopRightSlot1 typeIndex= 37503 token= 67109339
+  field 60082 _clonedItemBottomRightSlot1 typeIndex= 37503 token= 67109340
+  field 60083 _clonedItemOtherSlot0 typeIndex= 37503 token= 67109341
+  field 60084 _clonedItemOtherSlot1 typeIndex= 37503 token= 67109342
+  field 60085 _multiCellObject typeIndex= 27787 token= 67109343
+  field 60086 _plusPrefab typeIndex= 27787 token= 67109344
+  field 60087 _multiCellPlusScale typeIndex= 37161 token= 67109345
+  field 60088 _plusHideDuration typeIndex= 37161 token= 67109346
+  field 60089 _colorFadeDuration typeIndex= 37161 token= 67109347
+  field 60090 _defaultColor typeIndex= 24110 token= 67109348
+  field 60091 _waveScalePunch typeIndex= 37161 token= 67109349
+  field 60092 _waveYPunch typeIndex= 37161 token= 67109350
+  field 60093 _waveDuration typeIndex= 37161 token= 67109351
+  field 60094 _waveScaleCurve typeIndex= 21634 token= 67109352
+  field 60095 _waveYCurve typeIndex= 21634 token= 67109353
+  field 60096 _wrongOutlineColor typeIndex= 24110 token= 67109354
+  field 60097 _wrongShakeStrength typeIndex= 37161 token= 67109355
+  field 60098 _wrongShakeDuration typeIndex= 37161 token= 67109356
+  field 60099 _wrongShakeVibrato typeIndex= 30861 token= 67109357
+  field 60100 _wrongOutlineDuration typeIndex= 37161 token= 67109358
+  field 60101 _tapScalePunch typeIndex= 37161 token= 67109359
+  field 60102 _tapDuration typeIndex= 37161 token= 67109360
+  field 60103 _tapVibrato typeIndex= 30861 token= 67109361
+  field 60104 _tapElasticity typeIndex= 37161 token= 67109362
+  field 60105 _lockContainer typeIndex= 27787 token= 67109363
+  field 60106 _newLockTopObject typeIndex= 27787 token= 67109364
+  field 60107 _newLockBottomObject typeIndex= 27787 token= 67109365
+  field 60108 _colorConfigs typeIndex= 13136 token= 67109366
+  field 60109 _keyJumpYOffset typeIndex= 37161 token= 67109367
+  field 60110 _keyJumpDuration typeIndex= 37161 token= 67109368
+  field 60111 _keyJumpCurve typeIndex= 21634 token= 67109369
+  field 60112 _keyFlyDuration typeIndex= 37161 token= 67109370
+  field 60113 _keyFlyForwardCurve typeIndex= 21634 token= 67109371
+  field 60114 _keyFlyLateralCurve typeIndex= 21634 token= 67109372
+  field 60115 _keyFlyLateralAmplitude typeIndex= 37161 token= 67109373
+  field 60116 _keyFlyScaleTarget typeIndex= 37161 token= 67109374
+  field 60117 _keyFlyScaleCurve typeIndex= 21634 token= 67109375
+  field 60118 _keyFlyStaggerDelay typeIndex= 37161 token= 67109376
+  field 60119 _keyArriveScaleDownDuration typeIndex= 37161 token= 67109377
+  field 60120 _lockBgFadeDuration typeIndex= 37161 token= 67109378
+  field 60121 _lockBgFadeEase typeIndex= 26256 token= 67109379
+  field 60122 _curtainShakeStrength typeIndex= 37161 token= 67109380
+  field 60123 _curtainShakeDuration typeIndex= 37161 token= 67109381
+  field 60124 _curtainShakeVibrato typeIndex= 30861 token= 67109382
+  field 60125 _curtainCountPunchScale typeIndex= 37161 token= 67109383
+  field 60126 _curtainCountPunchDuration typeIndex= 37161 token= 67109384
+  field 60127 _curtainCountPunchVibrato typeIndex= 30861 token= 67109385
+  field 60128 _curtainCountPunchElasticity typeIndex= 37161 token= 67109386
+  field 60129 _curtainAnimator typeIndex= 21696 token= 67109387
+  field 60130 _curtainParticleDelay typeIndex= 37161 token= 67109388
+  field 60131 _curtainParticle typeIndex= 39714 token= 67109389
+  field 60132 _lockKeyAnimator typeIndex= 21696 token= 67109390
+  field 60133 _lockKeyRevealState typeIndex= 37842 token= 67109391
+  field 60134 _keyKnownParticleDelay typeIndex= 37161 token= 67109392
+  field 60135 _keyKnownParticle typeIndex= 39714 token= 67109393
+  field 60136 CurtainRevealStateHash typeIndex= 30875 token= 67109394
+  field 60137 _itemViews typeIndex= 13108 token= 67109395
+  field 60138 _plusInstances typeIndex= 12998 token= 67109396
+  field 60139 _placedSlots typeIndex= 9123 token= 67109397
+  field 60140 _keyInstances typeIndex= 13284 token= 67109398
+  field 60141 <Row>k__BackingField typeIndex= 30861 token= 67109399
+  field 60142 <Column>k__BackingField typeIndex= 30861 token= 67109400
+  field 60143 <IsCurtained>k__BackingField typeIndex= 23058 token= 67109401
+  field 60144 _curtainCount typeIndex= 30861 token= 67109402
+  field 60145 _isCurtainShaking typeIndex= 23058 token= 67109403
+  field 60146 _totalSlots typeIndex= 30861 token= 67109404
+  field 60147 _isMarkedRevealed typeIndex= 23058 token= 67109405
+  field 60148 _hasNewLock typeIndex= 23058 token= 67109406
+  field 60149 _outlineImage typeIndex= 30407 token= 67109407
+  field 60150 _outlineSprite typeIndex= 37503 token= 67109408
+  field 60151 _itemsLayer typeIndex= 35290 token= 67109409
+  field 60152 _hasItemsBehindObstacle typeIndex= 23058 token= 67109410
+  field 60153 DoubleCellCornerPadding typeIndex= 37180 token= 67109411
+  method 100460 get_Row ret= 30860 flags= 2182 params=  token= 100663671
+  method 100461 set_Row ret= 40808 flags= 2177 params= value token= 100663672
+  method 100462 get_Column ret= 30860 flags= 2182 params=  token= 100663673
+  method 100463 set_Column ret= 40808 flags= 2177 params= value token= 100663674
+  method 100464 get_IsCurtained ret= 23057 flags= 2182 params=  token= 100663675
+  method 100465 set_IsCurtained ret= 40808 flags= 2177 params= value token= 100663676
+  method 100466 get_RectTransform ret= 35289 flags= 2182 params=  token= 100663677
+  method 100467 get_ItemViews ret= 11665 flags= 2182 params=  token= 100663678
+  method 100468 get_IsMarkedRevealed ret= 23057 flags= 2182 params=  token= 100663679
+  method 100469 get_IsDoubleCell ret= 23057 flags= 2182 params=  token= 100663680
+  method 100470 get_DefaultColor ret= 24109 flags= 2182 params=  token= 100663681
+  method 100471 Init ret= 40808 flags= 134 params= row,col token= 100663682
+  method 100472 ConfigureOutline ret= 40808 flags= 134 params= topRight,bottomRight token= 100663683
+  method 100473 SetOutline ret= 40808 flags= 134 params= active token= 100663684
+  method 100474 PlayWrongAnswer ret= 40808 flags= 134 params=  token= 100663685
+  method 100475 SetTutorialHighlight ret= 40808 flags= 134 params= active token= 100663686
+  method 100476 SetSprite ret= 40808 flags= 134 params= sprite token= 100663687
+  method 100477 SetBackgroundColor ret= 40808 flags= 134 params= color token= 100663688
+  method 100478 FadeBackgroundColor ret= 40808 flags= 134 params= color,onComplete token= 100663689
+  method 100479 MarkRevealed ret= 40808 flags= 134 params= color,animate token= 100663690
+  method 100480 HidePlusAnimated ret= 40808 flags= 134 params= slotIndex,onComplete token= 100663691
+  method 100481 SetCurtain ret= 40808 flags= 134 params= curtainCount token= 100663692
+  method 100482 DecrementCurtain ret= 40808 flags= 134 params=  token= 100663693
+  method 100483 PlayCurtainReveal ret= 40808 flags= 134 params= onComplete token= 100663694
+  method 100484 PlayCurtainOpenAnimation ret= 40808 flags= 129 params= onComplete token= 100663695
+  method 100485 PlayCurtainShake ret= 40808 flags= 134 params=  token= 100663696
+  method 100486 PlayCurtainCountPunch ret= 40808 flags= 134 params=  token= 100663697
+  method 100487 PlayTapAnimation ret= 40808 flags= 134 params= onComplete token= 100663698
+  method 100488 get_KeyFlyStaggerDelay ret= 37160 flags= 2182 params=  token= 100663699
+  method 100489 CreateKeyFlySequence ret= 36769 flags= 134 params= keyRt,targetWorldPos token= 100663700
+  method 100490 PlayKeyKnownParticle ret= 40808 flags= 134 params=  token= 100663701
+  method 100491 PlayCurtainParticle ret= 40808 flags= 134 params=  token= 100663702
+  method 100492 PrepareCellParticle ret= 40808 flags= 129 params= particle token= 100663703
+  method 100493 PlayCellParticle ret= 40808 flags= 129 params= particle,delay token= 100663704
+  method 100494 ClearLockAndKeyAnimated ret= 40808 flags= 134 params= onComplete token= 100663705
+  method 100495 PlayLockKeyUnlockAnimation ret= 40808 flags= 129 params= onComplete token= 100663706
+  method 100496 FadeLockBackground ret= 40808 flags= 134 params= onComplete token= 100663707
+  method 100497 UpdateCurtainVisual ret= 40808 flags= 129 params=  token= 100663708
+  method 100498 ShowClonedCell ret= 40808 flags= 134 params= uiType,color,slotIndex token= 100663709
+  method 100499 SetSlotCount ret= 40808 flags= 134 params= count token= 100663710
+  method 100500 SpawnPlusIcons ret= 40808 flags= 129 params=  token= 100663711
+  method 100501 GetSlotWorldPosition ret= 40550 flags= 134 params= slotIndex,contentAspect token= 100663712
+  method 100502 GetDoubleCellItemSize ret= 40515 flags= 150 params= cellSize,contentAspect token= 100663713
+  method 100503 PlaceItem ret= 40808 flags= 134 params= itemView,item,slotIndex token= 100663714
+  method 100504 MoveItemsBehindObstacles ret= 40808 flags= 134 params= itemsLayer token= 100663715
+  method 100505 RestoreItemsIfUnblocked ret= 40808 flags= 129 params=  token= 100663716
+  method 100506 PlayWaveAnimation ret= 40808 flags= 134 params= delay,revealColor token= 100663717
+  method 100507 SetLockAndKey ret= 40808 flags= 134 params= data token= 100663718
+  method 100508 GetKeySprite ret= 37502 flags= 134 params= color token= 100663719
+  method 100509 AddKeyInstance ret= 40808 flags= 134 params= rt token= 100663720
+  method 100510 ShakeKeyInstances ret= 40808 flags= 134 params= strength,duration,vibrato token= 100663721
+  method 100511 ShakeLock ret= 40808 flags= 134 params= strength,duration,vibrato token= 100663722
+  method 100512 ClearKeyData ret= 40808 flags= 134 params=  token= 100663723
+  method 100513 TakeKeyInstance ret= 35289 flags= 134 params=  token= 100663724
+  method 100514 GetColorConfig ret= 32024 flags= 129 params= color token= 100663725
+  method 100515 HideAllLockAndKeyObjects ret= 40808 flags= 129 params=  token= 100663726
+  method 100516 UpdatePlusVisibility ret= 40808 flags= 129 params=  token= 100663727
+  method 100517 .ctor ret= 40808 flags= 6278 params=  token= 100663728
+  method 100518 .cctor ret= 40808 flags= 6289 params=  token= 100663729
+  method 100519 <PlayWrongAnswer>b__112_0 ret= 40808 flags= 129 params=  token= 100663730
+  prop 19020 Row get= 0 set= 1 token= 385876019
+  prop 19021 Column get= 2 set= 3 token= 385876020
+  prop 19022 IsCurtained get= 4 set= 5 token= 385876021
+  prop 19023 RectTransform get= 6 set= -1 token= 385876022
+  prop 19024 ItemViews get= 7 set= -1 token= 385876023
+  prop 19025 IsMarkedRevealed get= 8 set= -1 token= 385876024
+  prop 19026 IsDoubleCell get= 9 set= -1 token= 385876025
+  prop 19027 DefaultColor get= 10 set= -1 token= 385876026
+  prop 19028 KeyFlyStaggerDelay get= 28 set= -1 token= 385876027
+
+== CheerGames.Game.ItemView == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 24 methods: 26 props: 3
+  field 60236 _background typeIndex= 30407 token= 67109494
+  field 60237 _label typeIndex= 38287 token= 67109495
+  field 60238 _textBackground typeIndex= 27787 token= 67109496
+  field 60239 _imageContainer typeIndex= 27787 token= 67109497
+  field 60240 _itemImage typeIndex= 30407 token= 67109498
+  field 60241 _imageLabel typeIndex= 38287 token= 67109499
+  field 60242 _aspectRatioFitter typeIndex= 22017 token= 67109500
+  field 60243 _imageOnlyContainer typeIndex= 27787 token= 67109501
+  field 60244 _imageOnlyImage typeIndex= 30407 token= 67109502
+  field 60245 _imageOnlyAspectRatioFitter typeIndex= 22017 token= 67109503
+  field 60246 _registry typeIndex= 7063 token= 67109504
+  field 60247 _animator typeIndex= 31147 token= 67109505
+  field 60248 _textBgLayoutGroup typeIndex= 40666 token= 67109506
+  field 60249 _textBgImage typeIndex= 29576 token= 67109507
+  field 60250 _doubleCellFit typeIndex= 23058 token= 67109508
+  field 60251 _doubleCellBox typeIndex= 40516 token= 67109509
+  field 60252 DoubleCellContentPadding typeIndex= 37180 token= 67109510
+  field 60253 _imageOnlyLayoutCached typeIndex= 23058 token= 67109511
+  field 60254 _imageOnlyAnchorMin typeIndex= 40516 token= 67109512
+  field 60255 _imageOnlyAnchorMax typeIndex= 40516 token= 67109513
+  field 60256 _imageOnlyPivot typeIndex= 40516 token= 67109514
+  field 60257 _imageOnlyAnchoredPos typeIndex= 40516 token= 67109515
+  field 60258 _imageOnlySizeDelta typeIndex= 40516 token= 67109516
+  field 60259 <ItemData>k__BackingField typeIndex= 46410 token= 67109517
+  method 100587 get_RectTransform ret= 35289 flags= 2182 params=  token= 100663798
+  method 100588 get_Animator ret= 31146 flags= 2182 params=  token= 100663799
+  method 100589 get_ItemData ret= 46409 flags= 2182 params=  token= 100663800
+  method 100590 set_ItemData ret= 40808 flags= 2177 params= value token= 100663801
+  method 100591 Awake ret= 40808 flags= 129 params=  token= 100663802
+  method 100592 CacheImageOnlyLayout ret= 40808 flags= 129 params=  token= 100663803
+  method 100593 OnEnable ret= 40808 flags= 129 params=  token= 100663804
+  method 100594 OnDisable ret= 40808 flags= 129 params=  token= 100663805
+  method 100595 TryGet ret= 23057 flags= 150 params= go,view token= 100663806
+  method 100596 Setup ret= 40808 flags= 134 params= item token= 100663807
+  method 100597 SetupTextOnly ret= 40808 flags= 129 params= item token= 100663808
+  method 100598 HideText ret= 40808 flags= 134 params=  token= 100663809
+  method 100599 GetVisualCenter ret= 40550 flags= 134 params=  token= 100663810
+  method 100600 SetDoubleCellFit ret= 40808 flags= 134 params= enabled,boxSize token= 100663811
+  method 100601 ApplyDoubleCellImage ret= 23057 flags= 129 params=  token= 100663812
+  method 100602 RestoreImageOnlyLayout ret= 40808 flags= 129 params=  token= 100663813
+  method 100603 ApplyCellLayout ret= 40808 flags= 134 params=  token= 100663814
+  method 100604 SnapToCellLayout ret= 40808 flags= 134 params= worldPos,size token= 100663815
+  method 100605 FitTextOnlyToCell ret= 40808 flags= 134 params= cellSize token= 100663816
+  method 100606 Show ret= 40808 flags= 134 params=  token= 100663817
+  method 100607 GetTextBackgroundWidth ret= 37160 flags= 134 params=  token= 100663818
+  method 100608 GetTextBackgroundSize ret= 40515 flags= 134 params=  token= 100663819
+  method 100609 ComputeTextBgSize ret= 40515 flags= 129 params=  token= 100663820
+  method 100610 Hide ret= 40808 flags= 134 params=  token= 100663821
+  method 100611 .ctor ret= 40808 flags= 6278 params=  token= 100663822
+  method 100612 .cctor ret= 40808 flags= 6289 params=  token= 100663823
+  prop 19037 RectTransform get= 0 set= -1 token= 385876036
+  prop 19038 Animator get= 1 set= -1 token= 385876037
+  prop 19039 ItemData get= 2 set= 3 token= 385876038
+
+== CheerGames.Game.SelectionPanel == image= Assembly-CSharp.dll
+parent:  declaring:  fields: 50 methods: 24 props: 2
+  field 60275 _panel typeIndex= 27787 token= 67109533
+  field 60276 _buttonContainer typeIndex= 39297 token= 67109534
+  field 60277 _optionMask typeIndex= 39297 token= 67109535
+  field 60278 _optionButtonPrefab typeIndex= 27787 token= 67109536
+  field 60279 _separatorPrefab typeIndex= 27787 token= 67109537
+  field 60280 _rowPrefab typeIndex= 27787 token= 67109538
+  field 60281 _rowSeparatorPrefab typeIndex= 27787 token= 67109539
+  field 60282 _maxItemsPerRow typeIndex= 30861 token= 67109540
+  field 60283 _arrow typeIndex= 35290 token= 67109541
+  field 60284 _arrowUpSprite typeIndex= 37503 token= 67109542
+  field 60285 _arrowDownSprite typeIndex= 37503 token= 67109543
+  field 60286 _arrowOverlapAbove typeIndex= 37161 token= 67109544
+  field 60287 _arrowOverlapBelow typeIndex= 37161 token= 67109545
+  field 60288 _screenMargin typeIndex= 37161 token= 67109546
+  field 60289 _sortingOrder typeIndex= 30861 token= 67109547
+  field 60290 _tutorialDisabledAlpha typeIndex= 37161 token= 67109548
+  field 60291 OnlyTextHeight typeIndex= 37180 token= 67109549
+  field 60292 ImageOnlyHeight typeIndex= 37180 token= 67109550
+  field 60293 ImageTextHeight typeIndex= 37180 token= 67109551
+  field 60294 RowSeparatorHeight typeIndex= 37180 token= 67109552
+  field 60295 TextOnlyHorizontalPadding typeIndex= 37180 token= 67109553
+  field 60296 _getItemView typeIndex= 8353 token= 67109554
+  field 60297 _returnItemView typeIndex= 5329 token= 67109555
+  field 60298 _panelRect typeIndex= 35290 token= 67109556
+  field 60299 _buttonContainerRect typeIndex= 35290 token= 67109557
+  field 60300 _animator typeIndex= 36738 token= 67109558
+  field 60301 _arrowImage typeIndex= 30407 token= 67109559
+  field 60302 _panelCanvas typeIndex= 23596 token= 67109560
+  field 60303 _panelRaycaster typeIndex= 28104 token= 67109561
+  field 60304 _onItemSelected typeIndex= 9016 token= 67109562
+  field 60305 _activeCell typeIndex= 23683 token= 67109563
+  field 60306 _isHiding typeIndex= 23058 token= 67109564
+  field 60307 _isTutorialMode typeIndex= 23058 token= 67109565
+  field 60308 _onHideComplete typeIndex= 21263 token= 67109566
+  field 60309 _buttons typeIndex= 12848 token= 67109567
+  field 60310 _buttonRects typeIndex= 13282 token= 67109568
+  field 60311 _optionButtonViews typeIndex= 13202 token= 67109569
+  field 60312 _separators typeIndex= 12995 token= 67109570
+  field 60313 _separatorRects typeIndex= 13282 token= 67109571
+  field 60314 _optionItemViews typeIndex= 13107 token= 67109572
+  field 60315 _rows typeIndex= 13503 token= 67109573
+  field 60316 _rowLayoutElements typeIndex= 13119 token= 67109574
+  field 60317 _rowSeparators typeIndex= 12995 token= 67109575
+  field 60318 _rowSeparatorRects typeIndex= 13282 token= 67109576
+  field 60319 _currentOptionCount typeIndex= 30861 token= 67109577
+  field 60320 _defaultOptionWidth typeIndex= 37161 token= 67109578
+  field 60321 _headerRightEdge typeIndex= 37161 token= 67109579
+  field 60322 _cellAreaTop typeIndex= 37161 token= 67109580
+  field 60323 _hasBounds typeIndex= 23058 token= 67109581
+  field 60324 _corners typeIndex= 20640 token= 67109582
+  method 100627 get_IsVisible ret= 23057 flags= 2182 params=  token= 100663838
+  method 100628 IsShowingFor ret= 23057 flags= 134 params= cell token= 100663839
+  method 100629 get_OptionsParent ret= 39296 flags= 2177 params=  token= 100663840
+  method 100630 Awake ret= 40808 flags= 129 params=  token= 100663841
+  method 100631 GetContainerOffsetY ret= 37160 flags= 129 params= above token= 100663842
+  method 100632 GetContainerHeight ret= 37160 flags= 129 params=  token= 100663843
+  method 100633 GetContainerWidth ret= 37160 flags= 129 params=  token= 100663844
+  method 100634 GetButtonContainerPadding ret= 35279 flags= 129 params=  token= 100663845
+  method 100635 SetItemViewPool ret= 40808 flags= 134 params= getItemView,returnItemView token= 100663846
+  method 100636 SetGridBounds ret= 40808 flags= 134 params= headerRightEdge,cellAreaTop token= 100663847
+  method 100637 InitButtons ret= 40808 flags= 134 params= count token= 100663848
+  method 100638 Show ret= 40808 flags= 134 params= cell,options,cellsInRow,onSelected token= 100663849
+  method 100639 DecideDirection ret= 23057 flags= 129 params= cellWorldPos,cellHalfH token= 100663850
+  method 100640 ApplyTestPosition ret= 40808 flags= 129 params= cellWorldPos,cellHalfH,above token= 100663851
+  method 100641 Hide ret= 40808 flags= 134 params= onComplete token= 100663852
+  method 100642 FinishHide ret= 40808 flags= 129 params=  token= 100663853
+  method 100643 EnsureRowPool ret= 40808 flags= 129 params= rowCount token= 100663854
+  method 100644 ClearOptionItemViews ret= 40808 flags= 129 params=  token= 100663855
+  method 100645 SetTutorialMode ret= 40808 flags= 134 params= correctItemId,disabledColor token= 100663856
+  method 100646 GetOptionButtonRect ret= 35289 flags= 134 params= itemId token= 100663857
+  method 100647 ClearTutorialMode ret= 40808 flags= 134 params=  token= 100663858
+  method 100648 OnOptionClicked ret= 40808 flags= 129 params= selected,itemView token= 100663859
+  method 100649 ProcessOptionSelection ret= 40808 flags= 129 params= selected,itemView token= 100663860
+  method 100650 .ctor ret= 40808 flags= 6278 params=  token= 100663861
+  prop 19041 IsVisible get= 0 set= -1 token= 385876040
+  prop 19042 OptionsParent get= 2 set= -1 token= 385876041
+
+== CheerGames.Shared.InGameBoosterType == image= CheerGames.Shared.dll
+parent:  declaring:  fields: 3 methods: 0 props: 0
+  field 73668 value__ typeIndex= 30883 token= 67108897
+  field 73669 HINT typeIndex= 30464 token= 67108898
+  field 73670 ERASER typeIndex= 30464 token= 67108899
+
+== CheerGames.Shared.LevelDifficulty == image= CheerGames.Shared.dll
+parent:  declaring:  fields: 4 methods: 0 props: 0
+  field 73682 value__ typeIndex= 30883 token= 67108911
+  field 73683 NORMAL typeIndex= 31690 token= 67108912
+  field 73684 HARD typeIndex= 31690 token= 67108913
+  field 73685 SUPER_HARD typeIndex= 31690 token= 67108914
+
+== CheerGames.Shared.PreLevelBoosterType == image= CheerGames.Shared.dll
+parent:  declaring:  fields: 1 methods: 0 props: 0
+  field 73713 value__ typeIndex= 30883 token= 67108942
+
+== CheerGames.Shared.TutorialType == image= CheerGames.Shared.dll
+parent:  declaring:  fields: 4 methods: 0 props: 0
+  field 73737 value__ typeIndex= 30883 token= 67108966
+  field 73738 UNKNOWN typeIndex= 39437 token= 67108967
+  field 73739 NONE typeIndex= 39437 token= 67108968
+  field 73740 ONBOARDING typeIndex= 39437 token= 67108969

@@ -1,0 +1,96 @@
+== Assembly-CSharp.dll :: CheerGames.Game.GameConfig ==
+fields: spacing, columnHeaderSpacing, isEraserOpened, isHintOpened
+methods: .ctor()
+props: 
+== Assembly-CSharp.dll :: CheerGames.Game.ColumnHeader ==
+fields: _image, _text
+methods: get_Image(), get_Text(), .ctor()
+props: Image, Text
+== Assembly-CSharp.dll :: CheerGames.Game.GriddleLegacyLevelBuilder ==
+fields: TrimBuildsPerFrame, _levelSetupSystem, _clueRevealSystem, _gameController, _inputCoordinator, _zoomContainer, _cgAssetProvider
+methods: BuildAsync(levelJsonModel,cancellationToken), LoadCgAssetSpritesAsync(level,cancellationToken), LoadSpriteAsync(cgAssetId,catalog,cancellationToken), FadeInGrid(duration), PlayLevelCompleteAsync(startDelay,duration,positionXCurve,cancellationToken), get_IsTutorialPending(), StartTutorialIfNeeded(), FireInitialClueStartedEvents(), .ctor()
+props: IsTutorialPending
+== Assembly-CSharp.dll :: CheerGames.Game.CellView ==
+fields: _background, _lockedBackground, _curtainOverlay, _curtainIcon, _curtainCountText, _clonedCellImage, _clonedCellImageSlot1, _outline, _tutorialHighlight, _outlineTopRight, _outlineBottomRight, _outlineOther, _outlineSelectedColor, _multiCellTopRight, _multiCellBottomRight, _multiCellOther, _clonedItemTopRightSlot0, _clonedItemTopRightSlot1, _clonedItemBottomRightSlot1, _clonedItemOtherSlot0, _clonedItemOtherSlot1, _multiCellObject, _plusPrefab, _multiCellPlusScale, _plusHideDuration, _colorFadeDuration, _defaultColor, _waveScalePunch, _waveYPunch, _waveDuration, _waveScaleCurve, _waveYCurve, _wrongOutlineColor, _wrongShakeStrength, _wrongShakeDuration, _wrongShakeVibrato, _wrongOutlineDuration, _tapScalePunch, _tapDuration, _tapVibrato, _tapElasticity, _lockContainer, _newLockTopObject, _newLockBottomObject, _colorConfigs, _keyJumpYOffset, _keyJumpDuration, _keyJumpCurve, _keyFlyDuration, _keyFlyForwardCurve, _keyFlyLateralCurve, _keyFlyLateralAmplitude, _keyFlyScaleTarget, _keyFlyScaleCurve, _keyFlyStaggerDelay, _keyArriveScaleDownDuration, _lockBgFadeDuration, _lockBgFadeEase, _curtainShakeStrength, _curtainShakeDuration, _curtainShakeVibrato, _curtainCountPunchScale, _curtainCountPunchDuration, _curtainCountPunchVibrato, _curtainCountPunchElasticity, _curtainAnimator, _curtainParticleDelay, _curtainParticle, _lockKeyAnimator, _lockKeyRevealState, _keyKnownParticleDelay, _keyKnownParticle, CurtainRevealStateHash, _itemViews, _plusInstances, _placedSlots, _keyInstances, <Row>k__BackingField, <Column>k__BackingField, <IsCurtained>k__BackingField, _curtainCount, _isCurtainShaking, _totalSlots, _isMarkedRevealed, _hasNewLock, _outlineImage, _outlineSprite, _itemsLayer, _hasItemsBehindObstacle, DoubleCellCornerPadding
+methods: get_Row(), set_Row(value), get_Column(), set_Column(value), get_IsCurtained(), set_IsCurtained(value), get_RectTransform(), get_ItemViews(), get_IsMarkedRevealed(), get_IsDoubleCell(), get_DefaultColor(), Init(row,col), ConfigureOutline(topRight,bottomRight), SetOutline(active), PlayWrongAnswer(), SetTutorialHighlight(active), SetSprite(sprite), SetBackgroundColor(color), FadeBackgroundColor(color,onComplete), MarkRevealed(color,animate), HidePlusAnimated(slotIndex,onComplete), SetCurtain(curtainCount), DecrementCurtain(), PlayCurtainReveal(onComplete), PlayCurtainOpenAnimation(onComplete), PlayCurtainShake(), PlayCurtainCountPunch(), PlayTapAnimation(onComplete), get_KeyFlyStaggerDelay(), CreateKeyFlySequence(keyRt,targetWorldPos), PlayKeyKnownParticle(), PlayCurtainParticle(), PrepareCellParticle(particle), PlayCellParticle(particle,delay), ClearLockAndKeyAnimated(onComplete), PlayLockKeyUnlockAnimation(onComplete), FadeLockBackground(onComplete), UpdateCurtainVisual(), ShowClonedCell(uiType,color,slotIndex), SetSlotCount(count), SpawnPlusIcons(), GetSlotWorldPosition(slotIndex,contentAspect), GetDoubleCellItemSize(cellSize,contentAspect), PlaceItem(itemView,item,slotIndex), MoveItemsBehindObstacles(itemsLayer), RestoreItemsIfUnblocked(), PlayWaveAnimation(delay,revealColor), SetLockAndKey(data), GetKeySprite(color), AddKeyInstance(rt), ShakeKeyInstances(strength,duration,vibrato), ShakeLock(strength,duration,vibrato), ClearKeyData(), TakeKeyInstance(), GetColorConfig(color), HideAllLockAndKeyObjects(), UpdatePlusVisibility(), .ctor(), .cctor(), <PlayWrongAnswer>b__112_0()
+props: Row, Column, IsCurtained, RectTransform, ItemViews, IsMarkedRevealed, IsDoubleCell, DefaultColor, KeyFlyStaggerDelay
+== Assembly-CSharp.dll :: CheerGames.Game.ItemAnimator ==
+fields: _moveSpeed, _moveXCurve, _moveYCurve, _moveScaleCurve, _bounceSquishScale, _bounceSquishDuration, _bounceSquishCurve, _bounceUpScale, _bounceUpDuration, _bounceUpCurve, _bounceDownDuration, _bounceDownCurve, _hintStartDelay, _eraserStartDelay, _hintMoveSpeed, _hintMoveXCurve, _hintMoveYCurve, _hintMoveScaleCurve, _hintBounceSquishScale, _hintBounceSquishDuration, _hintBounceSquishCurve, _hintBounceUpScale, _hintBounceUpDuration, _hintBounceUpCurve, _hintBounceDownDuration, _hintBounceDownCurve, _revealStartScale, _revealDuration, _revealCurve, _impactFX, _selectFX, _boosterTrail, _rectTransform
+methods: Awake(), PlayPlaceAnimation(targetWorldPos,onComplete), PlayHintPlaceAnimation(targetWorldPos,useEraserDelay,onComplete), PlaySelectFX(), PlayRevealAnimation(delay,onComplete), .ctor()
+props: 
+== Assembly-CSharp.dll :: CheerGames.Game.ItemView ==
+fields: _background, _label, _textBackground, _imageContainer, _itemImage, _imageLabel, _aspectRatioFitter, _imageOnlyContainer, _imageOnlyImage, _imageOnlyAspectRatioFitter, _registry, _animator, _textBgLayoutGroup, _textBgImage, _doubleCellFit, _doubleCellBox, DoubleCellContentPadding, _imageOnlyLayoutCached, _imageOnlyAnchorMin, _imageOnlyAnchorMax, _imageOnlyPivot, _imageOnlyAnchoredPos, _imageOnlySizeDelta, <ItemData>k__BackingField
+methods: get_RectTransform(), get_Animator(), get_ItemData(), set_ItemData(value), Awake(), CacheImageOnlyLayout(), OnEnable(), OnDisable(), TryGet(go,view), Setup(item), SetupTextOnly(item), HideText(), GetVisualCenter(), SetDoubleCellFit(enabled,boxSize), ApplyDoubleCellImage(), RestoreImageOnlyLayout(), ApplyCellLayout(), SnapToCellLayout(worldPos,size), FitTextOnlyToCell(cellSize), Show(), GetTextBackgroundWidth(), GetTextBackgroundSize(), ComputeTextBgSize(), Hide(), .ctor(), .cctor()
+props: RectTransform, Animator, ItemData
+== Assembly-CSharp.dll :: CheerGames.Game.OptionButtonView ==
+fields: _padding, _tapScalePunch, _tapDuration, _tapVibrato, _tapElasticity
+methods: SetPadding(active), PlayTapAnimation(onComplete), .ctor()
+props: 
+== CheerGames.Game.dll :: CheerGames.Game.LevelAttemptAnalyticsModel ==
+fields: Empty
+methods: .ctor(), .cctor()
+props: 
+== CheerGames.Game.dll :: CheerGames.Game.InGameBoosterSystem ==
+fields: DEFAULT_INITIAL_AMOUNT, DEFAULT_PURCHASE_AMOUNT, DEFAULT_RV_AMOUNT, DEFAULT_PURCHASE_PRICE, _economyModel
+methods: InitWithData(economyModel), GetBoosterInventoryItemType(boosterType), GetBoosterPurchaseAmount(boosterType), GetBoosterPurchasePrice(boosterType), GetBoosterRVAmount(boosterType), GetInitialBoosterAmount(boosterType), .ctor(), CheerGames.Game.IInGameBoosterSystem.InitWithData(economyModel)
+props: 
+== CheerGames.Game.dll :: CheerGames.Game.LevelAttemptRecord ==
+fields: Level, AttemptNumber, IsCompleted, MinutesInApp
+methods: .ctor(level,attemptNumber,isCompleted,minutesInApp)
+props: 
+== CheerGames.Game.dll :: CheerGames.Game.LevelCompletionPoint ==
+fields: Level, RelativeMinutes
+methods: .ctor(level,relativeMinutes)
+props: 
+== CheerGames.Game.dll :: CheerGames.Game.LevelBuilderCoordinator ==
+fields: _legacyLevelBuilder
+methods: BuildLevelAsync(levelJsonModel,cancellationToken), FadeInGrid(duration), PlayLevelCompleteAsync(startDelay,duration,positionXCurve,cancellationToken), get_IsTutorialPending(), StartTutorialIfNeeded(), FireInitialClueStartedEvents(), .ctor()
+props: IsTutorialPending
+== CheerGames.Game.dll :: CheerGames.Game.LevelBuilderCoordinatorSettings ==
+fields: 
+methods: .ctor()
+props: 
+== CheerGames.Game.dll :: CheerGames.Game.PreLevelBoosterInitData ==
+fields: <FrameworkPreferencesSystem>k__BackingField, <PreLevelBoosterSystem>k__BackingField, <InventorySystem>k__BackingField, <PopupSystem>k__BackingField, <HapticSystem>k__BackingField, <LevelDifficulty>k__BackingField
+methods: get_FrameworkPreferencesSystem(), get_PreLevelBoosterSystem(), get_InventorySystem(), get_PopupSystem(), get_HapticSystem(), get_LevelDifficulty(), .ctor(frameworkPreferencesSystem,preLevelBoosterSystem,inventorySystem,popupSystem,hapticSystem,levelDifficulty)
+props: FrameworkPreferencesSystem, PreLevelBoosterSystem, InventorySystem, PopupSystem, HapticSystem, LevelDifficulty
+== CheerGames.Game.dll :: CheerGames.Game.BoosterIntroductionSystem ==
+fields: _boosterTutorials
+methods: InitWithData(boosterTutorials), IsBoosterTutorialLevel(levelIndex,tutorialType), .ctor()
+props: 
+== CheerGames.Game.dll :: CheerGames.Game.LevelLoaderSystem ==
+fields: _scopedEventBus, _frameworkPreferencesSystem, _objectResolver, <IsCustomLevel>k__BackingField, <LoadedLevelIndex>k__BackingField, <LoadedLevelJsonModel>k__BackingField
+methods: get_IsCustomLevel(), set_IsCustomLevel(value), get_LoadedLevelIndex(), set_LoadedLevelIndex(value), get_LoadedLevelJsonModel(), set_LoadedLevelJsonModel(value), InitWithData(levelJsonModel), InitializeAsync(levelJsonModel), .ctor()
+props: IsCustomLevel, LoadedLevelIndex, LoadedLevelJsonModel
+== CheerGames.Game.dll :: CheerGames.Game.MechanicIntroductionSystem ==
+fields: _config, _mechanicTutorials
+methods: InitWithData(mechanicTutorials), IsMechanicTutorialLevel(levelIndex,tutorialType), HasNewMechanicToShow(levelIndex), GetLevelsOfPreviousAndCurrentMechanic(currentLevelIndex), GetNextMechanicTutorialType(currentLevelIndex), GetHeaderText(tutorialType), GetDescriptionText(tutorialType), GetSprite(tutorialType), .ctor()
+props: 
+== CheerGames.Game.dll :: MechanicIntroductionDescriptorData ==
+fields: sprite, header, body
+methods: get_Sprite(), get_Header(), get_Body()
+props: Sprite, Header, Body
+== CheerGames.Game.dll :: CheerGames.Game.MechanicIntroductionSystemConfig ==
+fields: mechanicTextDataByType
+methods: get_MechanicTextDataByType(), TryGetDescriptor(type,descriptor), .ctor()
+props: MechanicTextDataByType
+== CheerGames.Game.dll :: CheerGames.Game.Clue ==
+fields: _text, _button, _strikethroughParent, _strikethroughLinePrefab, _eraserModeSprite, MinHeight, Padding, _image, _defaultSprite, _onClick, _clueId, _animator, _layoutElement
+methods: get_Text(), Init(clueId), SetText(value), SetSpriteAsset(spriteAsset), FitHeight(), SetSelectable(selectable), SetLoadingState(loading), SetOnClick(onClick), SetAsRevealButton(), PlaySlideOutOnly(onFinished), PlayStrikethrough(onFinished), PlayCompleteAnimation(onFinished), PlayEraserCompleteAnimation(onFinished), SetEraserMode(active), PlayBounce(delay), ResetAnimationState(), PlayRevealAnimation(sourceWorldPos,animationParent,siblingIndex,delay,onFinished), PlayExtraClueRevealAnimation(delay,onFinished), .ctor(), <Init>b__15_0()
+props: Text
+== CheerGames.Game.dll :: CheerGames.Game.ClueAnimator ==
+fields: _checkboxEmpty, _checkboxFilled, _completedColor, _fadeStartTime, _fadeDuration, _fadeCurve, _fillStartTime, _fillFadeDuration, _fillFadeCurve, _checkIcon, _checkStartTime, _checkAppearStartScale, _checkAppearDuration, _checkAppearCurve, _impactSquishScale, _impactSquishDuration, _impactSquishCurve, _impactBounceDuration, _impactBounceCurve, _slideOutStartTime, _slideOutDistance, _slideOutDuration, _slideOutCurve, _slideOutFadeCurve, _eraserFadeStartTime, _eraserFillStartTime, _eraserCheckStartTime, _eraserSlideOutStartTime, _revealLabel, _revealStartWidth, _revealStartHeight, _outline, _spawnStartTime, _spawnScaleDuration, _spawnScaleCurve, _jumpStartTime, _jumpYOffset, _jumpDuration, _jumpCurve, _moveStartTime, _moveDuration, _pathForwardCurve, _pathLateralCurve, _pathLateralAmplitude, _moveScaleTarget, _moveScaleDuration, _moveScaleCurve, _labelOutStartTime, _labelFadeOutDuration, _labelFadeOutCurve, _labelScaleOutDuration, _labelScaleOutCurve, _checkboxAppearStartTime, _checkboxAppearDuration, _checkboxAppearCurve, _textAppearStartTime, _textAppearDuration, _textAppearCurve, _expandStartTime, _expandDuration, _expandCurve, _extraClueRevealFx, _extraCluePeakScale, _extraClueScaleUpDuration, _extraClueScaleUpCurve, _extraClueScaleDownDuration, _extraClueScaleDownCurve, _bounceScale, _bounceDuration, _bounceCurve, _bounceReturnDuration, _bounceReturnCurve, _eraserLoopScale, _eraserLoopDuration, _eraserLoopCurve, _strikethroughDuration, _strikethroughLineDelay, _strikethroughThickness, _strikethroughEase, _rectTransform, _canvasGroup, _emptyCanvasGroup, _filledCanvasGroup, _revealLabelCanvasGroup, _backgroundImage, _originalColor, _originalAnchoredPos, _strikethroughLines, _strikethroughParent, _strikethroughSequence, _eraserLoopSequence, _eraserLoopRestScale, _eraserLoopRestAnchoredPos, _eraserLoopRestRotation, _eraserLoopActive
+methods: OnDestroy(), Awake(), PlayCompleteAnimation(onSlideOutFinished), PlayEraserCompleteAnimation(onSlideOutFinished), PlayCompleteAnimation(fadeStartTime,fillStartTime,checkStartTime,slideOutStartTime,onSlideOutFinished), PlayRevealAnimation(sourceWorldPos,animationParent,textComponent,siblingIndex,delay,onFinished), PlayExtraClueRevealAnimation(delay,onFinished), PlayStrikethrough(text,parent,linePrefab,onFinished), ClearStrikethrough(), HideCheckboxes(), PlaySlideOutOnly(onFinished), PlayBounce(delay), PlayEraserLoop(), StopEraserLoop(), ResetState(), .ctor()
+props: 
+== CheerGames.Game.dll :: CheerGames.Game.ClueListView ==
+fields: _clueContainer, _bottomSafeAreaRect, _cluePrefab, _clueCountText, _rearrangeDuration, _rearrangeStaggerDelay, _rearrangeCurve, _revealStaggerDelay, _extraCluePrefab, _eraserOverlay, _levelOpenSlideOffset, _levelOpenDuration, _levelOpenDelay, _levelOpenEase, _clueViews, _pendingReveals, _revealBatch, _extraClueReveals, _siblingBuffer, _tweenBuffer, _layoutGroup, _rectTransform, _clueContainerRect, _canvasGroup, _clueContainerCanvas, _clueContainerRaycaster, _scrollRect, _revealClue, _spriteAsset, _isAnimating, _repositionActive, _deferredHides, _deferredHideBuffer, _activeHideCount, _totalClues, _knownClues, _revealedCount, _revealingClues, _queuedHidesByClue, _levelOpenSequence, _levelOpenRestPos, _levelOpenRestCaptured, OnRevealClicked, _savedAnchoredPosition
+methods: add_OnRevealClicked(value), remove_OnRevealClicked(value), get_BottomSafeAreaRect(), Awake(), OnDestroy(), SaveScrollPosition(), RestoreScrollPosition(), Init(clues,spriteAsset,revealedClueIds), get_LevelOpenAnimationDuration(), PlayLevelOpenAnimation(), PlayLevelCompleteAnimationAsync(startDelay,duration,positionYCurve,cancellationToken), GetOffscreenUpDistance(), RevealClue(data,sourceWorldPos,completeAfterReveal), RevealClueFromExtraButton(data,completeAfterReveal), HideClue(clueId,useEraserAnimation,onSlideOutFinished), FlushPendingReveals(), GetClueView(clueId), EnableClueSelection(onClueSelected), DisableClueSelection(), ShowEraserOverlay(), HideEraserOverlay(), EnsureClueContainerCanvasExists(), SetRevealButtonVisible(visible), SetRevealButtonInteractable(interactable), SetCluesEraserMode(active), AnimateRearrange(), OnRearrangeComplete(), OnPassFinished(), PlayPendingReveals(), PlayRevealAnimations(), TryHideRevealButtonWhenAllOnScreen(), OnSingleRevealComplete(clue), StartHideAnimation(clueView,useEraserAnimation,onSlideOutFinished), UpdateClueCountText(), Clear(), .ctor(), <Init>b__52_0(_), <OnRearrangeComplete>b__72_0(), <TryHideRevealButtonWhenAllOnScreen>b__76_0()
+props: BottomSafeAreaRect, LevelOpenAnimationDuration
+== CheerGames.Game.dll :: CheerGames.Game.CluePanelView ==
+fields: clueListView, stretchTargets, _canvasGroup, _panelRect, _baseAnchoredY
+methods: get_BottomSafeAreaRect(), get_PanelTransform(), add_OnRevealClicked(value), remove_OnRevealClicked(value), OnInit(), ApplyBottomLayout(), GetBottomSafeAreaInset(), Init(clues,spriteAsset,revealedClueIds), get_LevelOpenAnimationDuration(), PlayLevelOpenAnimation(), PlayLevelCompleteAnimationAsync(startDelay,duration,positionYCurve,cancellationToken), PlayLevelCompleteElementsStretchAsync(startDelay,duration,scaleXCurve,scaleYCurve,cancellationToken), GetClueView(clueId), RevealClue(data,sourceWorldPos,completeAfterReveal), RevealClueFromExtraButton(data,completeAfterReveal), FlushPendingReveals(), HideClue(clueId,useEraserAnimation,onSlideOutFinished), SetRevealButtonVisible(visible), SetRevealButtonInteractable(interactable), ShowEraserOverlay(), HideEraserOverlay(), SetCluesEraserMode(active), EnableClueSelection(onClueSelected), DisableClueSelection(), Show(), Hide(), .ctor()
+props: BottomSafeAreaRect, PanelTransform, LevelOpenAnimationDuration
+== CheerGames.Game.dll :: CheerGames.Game.MechanicIntroductionPopupView ==
+fields: ShowHash, closeButton, mechanicImage, mechanicIntroductionText, headerText, tapToContinueTransform, animator, _mechanicIntroductionSystem, _showAnimationCompletionSource, _cancellationTokenSource, _closeCompletionSource
+methods: OnInit(), OnDispose(), InitWithData(tutorialType), OnShowAnimationFinished(), OnShowPopupAnimation(onFinish), WaitUntilClosedAsync(), OnCloseButtonClicked(), .ctor(), .cctor()
+props: 
