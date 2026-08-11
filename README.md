@@ -31,13 +31,9 @@ Use `$wallfacer-reverse` or 面壁者-逆向 when continuing a cross-device proj
 - `references/state-schema.md`: portable state package fields.
 - `references/breakthrough-protocol.md`: failure recovery and route-matrix discipline.
 - `references/reverse-capabilities.md`: technical capability catalog.
-- `references/reference-case/`: Griddle demo v1.0.0 method corpus (sanitized traces, execution graph, key workspace).
+- `references/reference-case/`: Griddle demo v1.0.0 method corpus (unpacked il2cpp metadata, level/asset JSON, web demo source, sanitized traces, execution graph, key workspace).
 - `assets/project-template/`: portable `.mianbizhe` state package template.
 - `scripts/`: `init_project.py`, `validate_state.py`, `audit_reference.py`, `build_handoff.py`, `self_test.py`, `sanitize_trace.py`.
-
-## Griddle Demo Artifacts
-
-The reference corpus uses cold artifacts hosted in the [griddle-demo-v1.0.0 release](https://github.com/NeilXiao233/wallfacer-reverse/releases/tag/griddle-demo-v1.0.0): `Griddle-256.ipa`, `unity-extract.tar.zst`, and `ipa-extracted.tar.zst`. The skill keeps only URIs, SHA-256 hashes, sizes, and restore commands in `references/reference-case/artifact-manifest.json`.
 
 ## License
 
@@ -78,13 +74,9 @@ git clone https://github.com/NeilXiao233/wallfacer-reverse.git "$CODEX_HOME/skil
 - `references/state-schema.md`：可移植状态包字段。
 - `references/breakthrough-protocol.md`：失败恢复与路线矩阵纪律。
 - `references/reverse-capabilities.md`：技术能力目录。
-- `references/reference-case/`：Griddle demo v1.0.0 方法语料（脱敏轨迹、执行图、关键工作区）。
+- `references/reference-case/`：Griddle demo v1.0.0 方法语料（解包 il2cpp 元数据、关卡/资产 JSON、web demo 源码、脱敏轨迹、执行图、关键工作区）。
 - `assets/project-template/`：可移植 `.mianbizhe` 状态包模板。
 - `scripts/`：`init_project.py`、`validate_state.py`、`audit_reference.py`、`build_handoff.py`、`self_test.py`、`sanitize_trace.py`。
-
-## Griddle Demo 冷制品
-
-参考语料使用 [griddle-demo-v1.0.0 release](https://github.com/NeilXiao233/wallfacer-reverse/releases/tag/griddle-demo-v1.0.0) 托管的冷制品：`Griddle-256.ipa`、`unity-extract.tar.zst`、`ipa-extracted.tar.zst`。skill 内只保存 `references/reference-case/artifact-manifest.json` 中的 URI、SHA-256、大小与恢复命令。
 
 ## 许可证
 
