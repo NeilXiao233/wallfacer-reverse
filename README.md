@@ -1,39 +1,77 @@
-# Wallfacer Reverse (面壁者-逆向)
+# Wallfacer Reverse (面壁者-逆向) v2.0.0
 
-An evidence-led Codex skill for cross-device task recovery and execution. Wallfacer Reverse treats an authoritative reference session as a searchable evidence corpus instead of a free-form summary: it transfers execution methods, decision conditions, and verification patterns, while every target fact must be re-observed on the current project.
+An evidence-led Codex skill for personal project data analysis and source-lost code recovery. Version 2 makes Wallfacer an opt-in recovery assistant: project-local documentation and evidence remain authoritative, while the optional state index supports only a verified handoff.
 
 ## Install
-
-Clone this repository into your Codex skills directory:
 
 ```sh
 git clone https://github.com/NeilXiao233/wallfacer-reverse.git "$CODEX_HOME/skills/wallfacer-reverse"
 ```
 
-Restart Codex after installation so it can discover the skill.
+Restart Codex after installation.
 
-## When It Activates
+## When To Use It
 
-Use `$wallfacer-reverse` or 面壁者-逆向 when continuing a cross-device project, recovering resources from a source-lost package or build, analyzing mobile/Unity/native packages, reconstructing protocols or decode chains, or decomposing complex tasks that require exhausting viable paths.
+Use `$wallfacer-reverse` or 面壁者-逆向 for confirmed, complex recovery work that benefits from a prior method or needs cross-session continuity. Do not create state for a short analysis, a one-off change, or a project that already has an adequate README and handoff.
+
+## v2.0.0 Changes
+
+- State is opt-in and is created only after objective, scope, owner, and project authority are known.
+- `.wallfacer/state.json` is a minimal index, not a parallel evidence ledger.
+- One owner and an optimistic revision guard prevent parallel sessions from silently overwriting state.
+- Reference selection is bounded and optional; no target starts with a fixed Griddle binding.
+- No fixed proclamation and no automatic `challenge` escalation.
+- v1 state packages are left untouched by default; transfer their useful facts into project materials, then explicitly archive the v1 directory before creating a v2 index.
 
 ## How It Works
 
-- Reference corpus: the skill reads the original session traces and workspace index; summaries are navigation only.
-- Execution graph: `bind -> audit -> map -> route -> discriminate -> execute -> verify -> checkpoint`.
-- Evidence tiers: `A-runtime`, `B-static`, `C-inference`, `D-reference-method`. Reference facts cannot prove target facts.
-- Breakthrough protocol: failed routes become evidence, every retry requires a materially different cross-layer route, and progress stops only at verified delivery or a named, evidenced boundary.
-- Intensity modes: `difficult` is the default (original workflow); `challenge` discloses all absorbed capabilities and is the automatic escalation target after repeated failure; `hell` delegates to reverse-skill-router only when the user explicitly requests it.
-- Portable paths: no machine absolute paths; reference locators resolve relative to the skill root (`locator_base: skill_root`).
+1. Read-only discovery identifies the task, project root, existing authority, and user constraints.
+2. Confirm whether a historical method or cross-session state is actually needed.
+3. Select only relevant reference evidence, keeping it separate from target facts.
+4. Execute target-specific, minimal discriminating tests and record evidence in the project.
+5. When needed, use the state index for one checkpoint and a portable handoff.
+
+Evidence tiers remain `A-runtime`, `B-static`, `C-inference`, and `D-reference-method`. A reference method never proves a target fact.
+
+## State Index
+
+Create a v2 index only after confirmation:
+
+```sh
+python3 scripts/init_project.py <project-root> \
+  --objective '<confirmed objective>' \
+  --owner '<single writer id>' \
+  --authority README.md
+```
+
+The `--authority` values are existing project-relative paths. They are the handoff's facts and validation entry points. Update the state only through `update_checkpoint.py`; pass the current revision so stale or non-owner writers fail instead of overwriting newer work.
+
+For a v1 state package, first move useful facts into project authority, then explicitly preserve it during v2 initialization with `--archive-v1-to .wallfacer-v1-legacy`. The script only renames the directory when that exact flag is supplied.
+
+Transfer ownership rather than sharing writes:
+
+```sh
+python3 scripts/transfer_owner.py <project-root> \
+  --owner '<current writer id>' --revision <current revision> \
+  --new-owner '<next writer id>'
+```
 
 ## Included Resources
 
-- `SKILL.md`: activation rules and the core workflow.
-- `references/state-schema.md`: portable state package fields.
-- `references/breakthrough-protocol.md`: failure recovery and route-matrix discipline.
+- `SKILL.md`: activation and execution rules.
+- `references/state-schema.md`: v2 state-index schema.
+- `references/breakthrough-protocol.md`: minimal-test and failure discipline.
 - `references/reverse-capabilities.md`: technical capability catalog.
-- `references/reference-case/`: Griddle demo v1.0.0 method corpus (unpacked il2cpp metadata, level/asset JSON, web demo source, sanitized traces, execution graph, key workspace).
-- `assets/project-template/`: portable `.mianbizhe` state package template.
-- `scripts/`: `init_project.py`, `validate_state.py`, `audit_reference.py`, `build_handoff.py`, `self_test.py`, `sanitize_trace.py`.
+- `references/reference-case/`: Griddle demo v1.0.0 method corpus.
+- `assets/project-template/`: `.wallfacer/state.json` template.
+- `scripts/`: initialization, ownership-safe checkpoint update and transfer, validation, handoff, reference audit, and self-test tools.
+
+## Verify The Skill
+
+```sh
+python3 scripts/self_test.py
+python3 scripts/audit_reference.py .
+```
 
 ## License
 
@@ -41,42 +79,72 @@ Use `$wallfacer-reverse` or 面壁者-逆向 when continuing a cross-device proj
 
 ---
 
-# 面壁者-逆向（Wallfacer Reverse）
+# 面壁者-逆向（Wallfacer Reverse）v2.0.0
 
-面向跨设备任务恢复与执行的 Codex skill。面壁者把权威参考会话当作可检索的证据语料，而不是可自由改写的总结：它只迁移执行方法、决策条件和验证方式，当前项目的每一个事实都必须重新观察。
+这是一个用于个人项目数据解析与代码丢失支援找回的 Codex Skill。v2 将面壁者收敛为按需介入的恢复助手：项目内 README、证据和验证脚本始终是事实来源；可选状态索引只承担跨会话交接。
 
-## 安装
+## 何时使用
 
-将本仓库克隆到 Codex 的 skills 目录：
+通过 `$wallfacer-reverse` 或 `面壁者-逆向` 启用。适用于已确认、需要参考既有方法或需要跨会话续作的复杂恢复任务。短期分析、一次性修改，或已有充分交接材料的项目不创建状态。
+
+## v2.0.0 变更
+
+- 确认目标、范围、写者和项目权威材料后，才可创建状态。
+- `.wallfacer/state.json` 只是最小索引，不再平行维护证据台账。
+- 单写者与乐观修订号阻止并行会话静默覆写状态。
+- 参考会话按需、有限检索，不再默认绑定 Griddle。
+- 移除固定宣言和自动 `challenge` 升档。
+- v1 状态包默认不会被改写；先把有效事实归入项目材料，再明确归档旧目录并创建 v2 索引。
+
+## 工作方式
+
+1. 只读识别任务、项目根、既有材料和用户限制。
+2. 确认是否真的需要历史方法或跨会话状态。
+3. 仅选择相关参考证据，并与目标事实隔离。
+4. 在项目内执行目标专属的最小区分测试并记录证据。
+5. 需要续作时，使用状态索引记录一个 checkpoint 并生成可移植交接。
+
+证据分层仍为 `A-runtime`、`B-static`、`C-inference`、`D-reference-method`；参考方法不证明当前目标事实。
+
+## 状态索引
+
+确认后才创建：
 
 ```sh
-git clone https://github.com/NeilXiao233/wallfacer-reverse.git "$CODEX_HOME/skills/wallfacer-reverse"
+python3 scripts/init_project.py <project-root> \
+  --objective '<已确认目标>' \
+  --owner '<唯一写者标识>' \
+  --authority README.md
 ```
 
-安装后重启 Codex，使其发现该 skill。
+`--authority` 是既有项目内相对路径，承载事实与验证入口。只能通过 `update_checkpoint.py` 更新状态，并携带当前 revision；过期写者或非 owner 会失败，不能覆盖新状态。
 
-## 适用场景
+项目已有 v1 状态时，先把有效事实归入项目材料，再在初始化时明确传入 `--archive-v1-to .wallfacer-v1-legacy`。只有该参数存在，脚本才会重命名旧目录。
 
-通过 `$wallfacer-reverse` 或 `面壁者-逆向` 启用。适用于跨设备继续项目、从源丢失的包或构建中恢复资源、分析移动端/Unity/原生包、还原协议或解码链，以及需要穷尽可行路径的复杂任务。
+交接时转移写者，不共享写入权限：
 
-## 工作机制
-
-- 参考语料：读取原始会话轨迹和工作区索引，总结只作导航入口。
-- 执行图：`bind -> audit -> map -> route -> discriminate -> execute -> verify -> checkpoint`。
-- 证据分层：`A-runtime`、`B-static`、`C-inference`、`D-reference-method`；参考事实不能证明目标事实。
-- 破局协议：失败路径转为证据，每次重试必须换一条实质不同的跨层路线，只在验证交付或命名并证明的客观边界处停止。
-- 运行强度：默认 `difficult`（原流程）；反复失败自动升级到 `challenge`（披露全部新增能力）；`hell`（委派 reverse-skill-router 做技术路由）只在用户明确请求时启用。
-- 可移植路径：状态包不写机器绝对路径，reference locator 相对 skill 根目录解析（`locator_base: skill_root`）。
+```sh
+python3 scripts/transfer_owner.py <project-root> \
+  --owner '<当前写者标识>' --revision <当前 revision> \
+  --new-owner '<下一写者标识>'
+```
 
 ## 包含内容
 
-- `SKILL.md`：启用规则与核心流程。
-- `references/state-schema.md`：可移植状态包字段。
-- `references/breakthrough-protocol.md`：失败恢复与路线矩阵纪律。
+- `SKILL.md`：启用与执行规则。
+- `references/state-schema.md`：v2 状态索引格式。
+- `references/breakthrough-protocol.md`：最小测试与失败纪律。
 - `references/reverse-capabilities.md`：技术能力目录。
-- `references/reference-case/`：Griddle demo v1.0.0 方法语料（解包 il2cpp 元数据、关卡/资产 JSON、web demo 源码、脱敏轨迹、执行图、关键工作区）。
-- `assets/project-template/`：可移植 `.mianbizhe` 状态包模板。
-- `scripts/`：`init_project.py`、`validate_state.py`、`audit_reference.py`、`build_handoff.py`、`self_test.py`、`sanitize_trace.py`。
+- `references/reference-case/`：Griddle demo v1.0.0 方法语料。
+- `assets/project-template/`：`.wallfacer/state.json` 模板。
+- `scripts/`：初始化、安全 checkpoint 更新和所有权转移、校验、交接、参考审计和自检工具。
+
+## 验证 Skill
+
+```sh
+python3 scripts/self_test.py
+python3 scripts/audit_reference.py .
+```
 
 ## 许可证
 

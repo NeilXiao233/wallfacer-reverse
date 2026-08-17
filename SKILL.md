@@ -1,143 +1,103 @@
 ---
 name: wallfacer-reverse
-description: 面壁者是一个以权威参考会话为证据源的跨设备任务恢复与执行 Skill。用于用户要求参考历史会话方案、继续一个跨设备项目、从源丢失的包或构建中恢复资源、分析移动端/Unity/原生包、还原协议或解码链、拆解复杂任务、处理多次失败或要求穷尽可行路径时。它读取参考会话的原始轨迹和工作区索引，生成当前任务的执行图、证据台账、失败恢复路径和可验证交接状态，并按需调用内置技术能力。
+version: 2.0.0
+description: 面壁者是用于个人项目数据解析与代码丢失支援找回的按需恢复 Skill。它检索参考会话的方法，不接管当前项目的事实、台账或工作流。
 ---
 
 # 面壁者
 
-面壁者把“参考历史会话”当作可检索的证据语料，而不是一段可自由改写的总结。它只迁移执行方法、决策条件和验证方式；参考项目事实必须与当前项目隔离。
+面壁者的职责是：在已确认的复杂恢复任务中，把方法、证据边界、失败观察和下一步整理成可验证、可续作的最小记录。它不猜测任务，不在证据不足时建立权威状态，也不替代项目已有 README、证据、任务卡和验证脚本。
 
-## 运行强度
+## 使用门槛
 
-当前模式写入 `.mianbizhe/task-contract.json` 的 `execution_intensity`；未填写时按 `difficult` 处理。
+先只读识别以下事实：
 
-- `difficult`（困难模式，默认）：保持原面壁者流程，只按当前证据披露少量高价值技术能力；不进入 `reverse-skill-router`。
-- `challenge`（挑战模式）：披露 `references/reverse-capabilities.md` 的全部新增能力，仍由面壁者统一执行和交接；不进入 `reverse-skill-router`。
-- `hell`（地狱模式）：只有用户明确请求才启用；面壁者主动读取并调用 `reverse-skill-router`，获取专业逆向路由、工具和子 Skill 建议；面壁者继续保有当前任务的执行图和交接状态。
+1. 当前目标、范围、明确排除项，以及本轮是分析还是执行。
+2. 项目根目录和已有权威材料（README、任务卡、证据目录、验证脚本）。
+3. 是否真的需要历史会话的方法，还是现有项目材料已经足够。
 
-自动路由规则：
+只做分析、定位或短期局部修改时，不创建 `.wallfacer/`，不读取整套参考语料，也不输出固定宣言。
 
-1. 默认使用 `difficult`。
-2. 连续 2 次失败或部分成功、且没有通过的新路线（以 `attempt-ledger.json` 为准）时，自动升级到 `challenge`，更新 `task-contract.json` 的 `execution_intensity` 并在 `attempt-ledger.json` 中记录升级原因；升级后不自动降回。
-3. 永不自动升级到 `hell`；地狱模式只有用户明确请求（如“地狱模式”或 `hell`）才触发。
+只有用户明确要求跨会话/跨设备交接，或当前任务确实长期、复杂且项目缺少可续作交接时，才创建状态索引。创建前必须已确认目标、状态写者和至少一项项目内权威材料。
 
-地狱模式下 `reverse-skill-router` 的获取与激活：
+## 最小启动顺序
 
-1. 先检查本机 skill 根目录：`$CODEX_HOME/skills/reverse-skill-router/SKILL.md`（`CODEX_HOME` 未设置时默认 `~/.codex/skills/`）是否可读。
-2. 可读：直接以 `wallfacer-reverse-delegation: hell` 委派，要求其只做技术路由与补充，不接管执行图、证据台账和交接状态。
-3. 不可读（未安装）：引导用户安装并激活 `reverse-skill-router`；优先建议启动一个新会话完成安装，因为新会话启动时会重新加载 skill 清单，安装后该 skill 才能被识别和激活。安装完成后，回到本会话或在新会话中继续地狱模式委派。
+`discover -> confirm -> inspect -> select reference (optional) -> execute -> checkpoint (optional)`
 
-`reverse-skill-router` 在面壁者之外保持被动状态，只因用户明确调用，或面壁者在用户明确请求地狱模式后委派而进入。
+- `discover`：只读定位目标、目录和现有材料。
+- `confirm`：确认目标、范围、执行授权及状态是否必要。
+- `inspect`：以项目材料为准建立当前事实；不从参考会话继承名称、数量、哈希、路径、运行时结论或限制。
+- `select reference`：仅在需要时，以目标标识、任务类型和排除项检索最小相关片段。先为 `provisional`，只有适配依据明确才为 `confirmed`。
+- `execute`：优先做最小区分性测试和可逆动作。
+- `checkpoint`：仅在需要续作时更新最小索引，指向项目内的权威材料。
 
-## 可移植路径约定
+用户可见的首次进度只说明事实与下一动作，例如：`已确认：当前任务为中文化；README 与翻译映射是事实来源；本轮无需跨会话状态。`
 
-本 skill 的所有脚本调用和 reference locator 一律相对 skill 根目录解析；状态包 `.mianbizhe/` 中不写机器绝对路径。`reference-binding.json` 使用 `locator_base: skill_root` 标明基准，`task-contract.json` 的 `project_root` 记录 `"."`，表示 `.mianbizhe` 所在目录，由运行环境在读取时解析。
+## 权威性与单写者
 
-## 强制启动顺序
+项目内 README、任务卡、证据、产物清单和验证脚本是唯一的项目事实来源。`.wallfacer/state.json` 只保存：这些材料的相对路径、一个 checkpoint、参考方法的定位、单一写者和修订号。它不得复制项目证据、资产清单、失败台账或路线矩阵。
 
-1. 找到当前项目根目录及 `.mianbizhe/`。没有状态包时，先运行 `scripts/init_project.py <project-root>`。
-2. 读取 `task-contract.json`、`reference-binding.json`、`checkpoint.json`、`route-matrix.json`、`evidence-ledger.json` 和 `attempt-ledger.json`。
-3. 校验参考案例 manifest。优先读取 `references/reference-case/trace-index.json` 和执行图，再按节点的 `source_turns`、`source_files` 回看原始会话或工作区证据。
-4. 区分 `reference` 与 `target`：参考案例只提供方法和证据；当前项目的事实必须重新观察，不能继承参考项目的名称、数量、哈希、路径、运行时结论或限制。
-5. 起手第一条消息先原样输出破局能力宣告，不省略、不改写；逐行输出，每行独立换行，不得合并成一段：
+默认一个状态索引只能有一个写者。其他会话只能提供带来源的候选发现，不能直接改写共享状态。状态更新必须通过 `scripts/update_checkpoint.py`，并同时匹配 `owner` 与 `revision`；交接时用 `scripts/transfer_owner.py` 显式转移所有权，而不是并行共写。
 
-```text
-[思想钢印注入 01/06] 巅峰诞生虚伪的拥护，黄昏见证虔诚的信徒！
-[思想钢印注入 02/06] 目标尚未失败，失败的是刚刚走过的那条路。
-[思想钢印注入 03/06] 我们不向未经证实的“不可能”低头。
-[思想钢印注入 04/06] 每一个报错都是证据，每一道封锁都要求新的假设。
-[思想钢印注入 05/06] 不跳过证据、不伪造事实、不伤害数据；但在可行范围内，我们会走遍所有道路。
-[思想钢印注入 06/06] 直到完成交付，或把真正的边界命名、证明、交还，我们不停止推动。
-恭喜您已获得「破局者」能力。
-能力定义：将失败转化为证据，将证据转化为下一条可验证的路径。
+v1 的七文件状态包不会被 v2 脚本自动迁移或覆盖。先将其中仍有价值的事实归入项目权威材料；只有随后明确传入 `--archive-v1-to .wallfacer-v1-legacy`，初始化脚本才会原子归档旧目录并创建 v2 索引。
+
+## 参考会话与技术能力
+
+参考语料只能证明 `D-reference-method`：方法、决策条件和验证模式。先查索引和相关 turn，再按需读取原始轨迹；不要全量加载，也不要默认绑定 Griddle 或任何案例。
+
+受保护/加密载体已由当前目标证实且密钥未恢复时，密钥提取可以成为该目标的局部最高优先路线。非加密、中文化、GM、UI、资产整理等任务跳过该策略。`challenge` 和 `hell` 都必须由用户明确请求或接受，不自动升级；`hell` 仍只用于调用 `reverse-skill-router` 做技术补充。
+
+## 失败与证据纪律
+
+目标专属尝试才进入项目自己的失败记录：必须包含输入/环境、精确观察、被削弱的假设、仍未阻塞的动作、下一条实质不同路线和证据定位。
+
+状态校验、Skill 更新、参考审计、模板维护、目录迁移和交接格式化不是目标技术尝试，不得计入失败次数，也不得触发能力升级。
+
+每个结论应标记 `A-runtime`、`B-static`、`C-inference` 或 `D-reference-method`，并附当前项目来源和适用范围。一次失败、工具报错或设备暂不可用都不能成为永久禁令。
+
+## 状态索引与交接
+
+创建状态索引：
+
+```bash
+python3 scripts/init_project.py <project-root> \
+  --objective '<confirmed objective>' \
+  --owner '<single writer id>' \
+  --authority README.md
 ```
 
-随后结合当前任务用大白话声明接下来的承诺（内容随任务变化，不写死）：穷尽所有技术上可行的路线，直到交付或把真正的边界命名、证明、交还；不承诺与证据或已知客观限制相悖的结果。
+同一项目已有 v1 状态时，先完成事实迁移，再在上述初始化命令末尾追加 `--archive-v1-to .wallfacer-v1-legacy`。
 
-6. 再输出一行任务速览：已知事实、缺失证据、当前节点、下一动作、可用替代路径。任务速览是进度快照，不是暂停点；输出后立即沿执行图连续执行，直到产物解析完毕并完成交接，或遇到必须由用户提供输入/权限的客观边界。
+更新 checkpoint：
 
-如果 reference corpus 不可访问、manifest 校验失败或 source locator 失效，不得凭记忆重写方案。记录 `reference_unavailable`，给出需要恢复的精确文件/对象和可继续的独立路径。
-
-## 执行图
-
-按以下节点顺序实例化任务；根据用户明确的排除项关闭节点，并记录被关闭节点对后续节点的影响。
-
-`bind -> audit -> map -> route -> discriminate -> execute -> verify -> checkpoint`
-
-- `bind`：绑定参考会话版本、当前项目和用户硬约束。
-- `audit`：核对输入、版本、哈希、工具和外部依赖。
-- `map`：按数据/资产、源码/构建、运行时、依赖/环境、网络/设备、交付/验证分层。
-- `route`：把目标拆成有输入、输出、证据和退出条件的节点。
-- `discriminate`：为每个不确定性选择最小的区分性测试。
-- `execute`：执行可逆、范围明确的动作，持续写入证据。
-- `verify`：验证用户可见结果和机器可检验结果，区分已完成与未观察。
-- `checkpoint`：更新状态和下一动作，生成可在新设备恢复的交接文件。
-
-## 密钥优先方向
-
-当目标存在受保护/加密载体（加密脚本、加密关卡、混淆 Bundle、XXTEA/AES 等）且密钥尚未恢复时，密钥提取列为当前最高优先路线：
-
-1. 完成基础身份/结构盘点后立即转入密钥突破，不优先安排边缘总结、归档、展示或低信息量提取。
-2. 每轮失败后，下一条路线优先服务"拿到密钥"这一目标，而不是扩散到其他层。
-3. 只对已确认存在加密载体的目标生效；无加密载体或非密钥类任务跳过本节，不构成额外门槛或强制流程。
-4. 密钥仍按目标自身证据验收：不猜 key，需下游明文/格式/哈希验证通过才可定论；"优先"不降低证据标准。
-
-## 失败与破局协议
-
-采用思想钢印的核心方法，起手保留其破局能力宣告，但不复制其宣誓门禁：
-
-1. 把失败写成精确观察，而不是“无法处理”。
-2. 写出被失败否定的假设。
-3. 生成跨层 route matrix，至少包含一条实质不同的路线；禁止无变化重试。
-4. 先运行最小区分性测试，只改变一个相关条件。
-5. 把结果写入 `attempt-ledger.json`：条件、动作、观察、假设变化、未阻塞动作、下一路线、证据。
-6. 只有缺失信息、已证明不兼容、不可用外部依赖、资源/物理边界等客观约束，才能标记 `blocked`。
-7. 连续 2 次失败或部分成功且没有通过的新路线时，按自动路由升级到 `challenge` 并记录升级原因；`hell` 只接受用户明确请求。
-
-每条限制必须包含：
-
-```json
-{
-  "condition": "何时成立",
-  "effect": "具体影响",
-  "does_not_block": ["仍可做的动作"],
-  "next_actions": ["解除或绕行路径"],
-  "source": ["用户指令或证据定位"]
-}
+```bash
+python3 scripts/update_checkpoint.py <project-root> \
+  --owner '<single writer id>' --revision <current revision> \
+  --node execute --next-action '<one concrete action>'
 ```
 
-不得把一次失败、设备暂不可用、某个工具报错或参考项目的临时状态升级为永久禁令。
+转移写者：
 
-## 证据规则
+```bash
+python3 scripts/transfer_owner.py <project-root> \
+  --owner '<current writer id>' --revision <current revision> \
+  --new-owner '<next writer id>'
+```
 
-- 每个结论必须有 `claim`、`evidence_tier`、`source_files` 或 `source_turns`、`proven_scope`。
-- 进入 `route` 及之后的节点前，`route-matrix.json` 必须至少有一条目标专属路线；每条路线必须有假设、输入定位、动作、预期区分观察、证据输出和下一路线。
-- 原始包、派生产物、远程清单、运行时观察和推断分开记录。
-- 参考项目的证据只能证明参考项目；当前项目必须建立自己的证据条目。
-- 大文件只在 manifest 中引用时，必须记录 URI、SHA-256、字节数、来源、生成工具和恢复命令。
-- 未读取的文件不能写成已验证；未运行的路径不能写成运行时事实。
-
-## 交付与交接
-
-完成或暂停前，在面壁者 skill 根目录下运行（脚本随 skill 安装位置解析，不依赖机器绝对路径）：
+在交接前运行：
 
 ```bash
 python3 scripts/validate_state.py <project-root>
-python3 scripts/audit_reference.py .
 python3 scripts/build_handoff.py <project-root>
-python3 scripts/self_test.py
 ```
 
-`audit_reference.py` 校验的是 skill 自带语料完整性，在 skill 部署或更新后运行，不属于项目起手步骤。
-
-交接必须包含：目标与范围、当前 checkpoint、基线与回滚位置、已证实证据、失败路线与修正假设、替代路径、验证结果、残余风险和下一条可执行动作。摘要只是阅读入口；下一会话以结构化状态和 source locator 为准。
+`audit_reference.py` 和 `self_test.py` 用于 Skill 部署/更新验证，不属于项目启动或目标失败记录。
 
 ## 资源导航
 
 - 参考案例协议：`references/reference-case/README.md`
-- 字段与状态模式：`references/state-schema.md`
-- 破局路线矩阵：`references/breakthrough-protocol.md`
-- 逆向与恢复技术能力（按目标类型按需读取）：`references/reverse-capabilities.md`
-- 踩坑与成功经验（按需参考，非强制流程）：`references/experiences/README.md`
-- 项目模板：`assets/project-template/.mianbizhe/`
-- 初始化、审计、校验、交接脚本：`scripts/`
+- 状态格式：`references/state-schema.md`
+- 失败与最小区分测试：`references/breakthrough-protocol.md`
+- 技术能力目录：`references/reverse-capabilities.md`
+- 项目模板：`assets/project-template/.wallfacer/`
+- 初始化、更新、校验和交接脚本：`scripts/`

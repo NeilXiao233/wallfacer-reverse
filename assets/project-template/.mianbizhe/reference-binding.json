@@ -1,8 +1,0 @@
-{
-  "schema_version": 1,
-  "reference_case": {"id": "griddle-demo-v1.0.0", "locator_base": "skill_root", "bundle_root": "UNSET", "trace_index": "UNSET", "execution_graph": "UNSET"},
-  "target_project_id": "UNSET",
-  "binding_reason": "UNSET",
-  "separation": {"reference_proves": ["method", "decision conditions", "verification patterns"], "target_must_reprove": ["identity", "counts", "hashes", "paths", "runtime behavior", "constraints"]},
-  "source_policy": "No reference fact may be copied into target evidence without a current target locator."
-}

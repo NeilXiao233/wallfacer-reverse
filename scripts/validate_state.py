@@ -1,73 +1,117 @@
 #!/usr/bin/env python3
-"""Validate portable state and reject unverifiable handoffs."""
+"""Validate a v2 minimal Wallfacer state index without treating it as evidence."""
 from __future__ import annotations
-import argparse, json, re
+
+import argparse
+import json
 from pathlib import Path
 
-REQUIRED = ("task-contract.json", "reference-binding.json", "checkpoint.json", "route-matrix.json", "evidence-ledger.json", "attempt-ledger.json", "artifact-manifest.json")
-ROUTE_NODES = ("route","discriminate","execute","verify","checkpoint")
-SELECTED_ROUTE_NODES = ("discriminate","execute","verify","checkpoint")
-ROUTE_STATUSES = {"planned","selected","running","passed","failed","blocked","pending-input"}
-EXECUTION_INTENSITIES = {"difficult", "challenge", "hell"}
-def load(p: Path):
-    try: return json.loads(p.read_text())
-    except Exception as e: raise ValueError(f"{p.name}: invalid JSON: {e}")
-def is_absolute_path(value: str) -> bool:
-    return value.startswith("/") or bool(re.match(r"^[A-Za-z]:[/\\]", value))
+STATE_VERSION = 2
+SKILL_VERSION = "2.0.0"
+CHECKPOINT_STATUSES = {"active", "blocked", "complete"}
+REFERENCE_STATUSES = {"unbound", "provisional", "confirmed"}
+V1_FILES = {
+    "task-contract.json", "reference-binding.json", "checkpoint.json", "route-matrix.json",
+    "evidence-ledger.json", "attempt-ledger.json", "artifact-manifest.json",
+}
+
+
+def is_relative_path(value: object) -> bool:
+    if not isinstance(value, str) or not value:
+        return False
+    path = Path(value)
+    return not path.is_absolute() and ".." not in path.parts
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser(); ap.add_argument("project_root"); ns = ap.parse_args()
-    state = Path(ns.project_root).expanduser().resolve() / ".mianbizhe"; errors=[]
-    docs={}
-    for name in REQUIRED:
-        p=state/name
-        if not p.exists(): errors.append(f"missing {name}"); continue
-        try: docs[name]=load(p)
-        except ValueError as e: errors.append(str(e))
-    contract=docs.get("task-contract.json",{})
-    if contract.get("execution_intensity", "difficult") not in EXECUTION_INTENSITIES:
-        errors.append("task-contract.execution_intensity must be difficult, challenge, or hell")
-    if contract.get("project_id") in (None,"","UNSET"): errors.append("task-contract.project_id is unresolved")
-    if contract.get("project_root") and is_absolute_path(str(contract["project_root"])):
-        errors.append("task-contract.project_root must be a portable path such as '.'")
-    if docs.get("reference-binding.json",{}).get("target_project_id") in (None,"","UNSET"): errors.append("reference-binding.target_project_id is unresolved")
-    reference_case=docs.get("reference-binding.json",{}).get("reference_case",{})
-    for key in ("bundle_root","trace_index","execution_graph"):
-        if reference_case.get(key) and is_absolute_path(str(reference_case[key])):
-            errors.append(f"reference-binding.reference_case.{key} must be a portable path relative to skill root")
-    if docs.get("checkpoint.json",{}).get("next_action") in (None,"",[]): errors.append("checkpoint.next_action is empty")
-    checkpoint=docs.get("checkpoint.json",{})
-    routes=docs.get("route-matrix.json",{}).get("routes",[])
-    if checkpoint.get("current_node") in ROUTE_NODES and contract.get("objective") in (None,"","UNSET"):
-        errors.append("task-contract.objective is unresolved from route node onward")
-    if docs.get("route-matrix.json",{}).get("project_id") != contract.get("project_id"):
-        errors.append("route-matrix.project_id must match task-contract.project_id")
-    if checkpoint.get("current_node") in ROUTE_NODES and not routes:
-        errors.append("route-matrix.routes must contain a target-specific route from route node onward")
-    route_ids=set()
-    for i,r in enumerate(routes):
-        if r.get("id"): route_ids.add(r["id"])
-        for key in ("id","layer","hypothesis","action","expected_observation","status"):
-            if not r.get(key): errors.append(f"route[{i}] missing {key}")
-        if not (r.get("input_locator") or r.get("source_files")): errors.append(f"route[{i}] needs input_locator or source_files")
-        if not r.get("discriminates"): errors.append(f"route[{i}] needs discriminates")
-        if r.get("status") and r["status"] not in ROUTE_STATUSES: errors.append(f"route[{i}] has invalid status {r['status']}")
-    selected_route=docs.get("route-matrix.json",{}).get("selected_route")
-    if selected_route is not None and selected_route not in route_ids: errors.append("route-matrix.selected_route must identify an existing route")
-    if checkpoint.get("current_node") in SELECTED_ROUTE_NODES and not selected_route:
-        errors.append("route-matrix.selected_route is required from discriminate node onward")
-    evidence=docs.get("evidence-ledger.json",{}).get("entries",[])
-    for i,e in enumerate(evidence):
-        for key in ("id","claim","evidence_tier","proven_scope"): 
-            if not e.get(key): errors.append(f"evidence[{i}] missing {key}")
-        if not (e.get("source_files") or e.get("source_turns")): errors.append(f"evidence[{i}] needs source_files or source_turns")
-    attempts=docs.get("attempt-ledger.json",{}).get("entries",[])
-    for i,a in enumerate(attempts):
-        for key in ("id","observation","weakened_hypothesis","next_route"): 
-            if not a.get(key): errors.append(f"attempt[{i}] missing {key}")
-        if a.get("result") in ("failed","blocked","partial") and not a.get("does_not_block"): errors.append(f"attempt[{i}] must list does_not_block")
-    cp=docs.get("checkpoint.json",{})
-    if cp.get("status")=="blocked" and not cp.get("next_action"): errors.append("blocked checkpoint needs reopening action")
-    if errors:
-        print(json.dumps({"valid":False,"errors":errors}, indent=2, ensure_ascii=True)); return 1
-    print(json.dumps({"valid":True,"state":str(state),"evidence_count":len(evidence),"attempt_count":len(attempts)}, indent=2, ensure_ascii=True)); return 0
-if __name__ == "__main__": raise SystemExit(main())
+    parser = argparse.ArgumentParser()
+    parser.add_argument("project_root")
+    args = parser.parse_args()
+    root = Path(args.project_root).expanduser().resolve()
+    state_dir = root / ".wallfacer"
+    state_file = state_dir / "state.json"
+    errors: list[str] = []
+    if not state_file.exists():
+        legacy = sorted(path.name for path in state_dir.glob("*.json") if path.name in V1_FILES) if state_dir.exists() else []
+        if legacy:
+            errors.append("v1 state detected; preserve it and create a v2 index only after moving useful facts into project authority")
+        else:
+            errors.append("missing .wallfacer/state.json")
+        print(json.dumps({"valid": False, "errors": errors}, indent=2, ensure_ascii=True))
+        return 1
+    try:
+        state = json.loads(state_file.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print(json.dumps({"valid": False, "errors": [f"invalid state.json: {exc}"]}, indent=2, ensure_ascii=True))
+        return 1
+
+    if state.get("schema_version") != STATE_VERSION:
+        errors.append(f"schema_version must be {STATE_VERSION}")
+    if state.get("skill_version") != SKILL_VERSION:
+        errors.append(f"skill_version must be {SKILL_VERSION}")
+    project = state.get("project", {})
+    if project.get("root") != ".":
+        errors.append("project.root must be '.'")
+    if not isinstance(project.get("objective"), str) or not project["objective"].strip():
+        errors.append("project.objective is unresolved")
+    authority = project.get("authority")
+    if not isinstance(authority, list) or not authority:
+        errors.append("project.authority must contain at least one project-relative path")
+    else:
+        for item in authority:
+            if not is_relative_path(item):
+                errors.append(f"invalid authority path: {item}")
+                continue
+            resolved = (root / item).resolve()
+            try:
+                resolved.relative_to(root)
+            except ValueError:
+                errors.append(f"authority escapes project root: {item}")
+                continue
+            if not resolved.exists():
+                errors.append(f"authority does not exist: {item}")
+
+    ownership = state.get("ownership", {})
+    if not isinstance(ownership.get("writer"), str) or not ownership["writer"].strip():
+        errors.append("ownership.writer is unresolved")
+    if not isinstance(ownership.get("revision"), int) or ownership["revision"] < 1:
+        errors.append("ownership.revision must be a positive integer")
+
+    reference = state.get("reference", {})
+    status = reference.get("status")
+    if status not in REFERENCE_STATUSES:
+        errors.append("reference.status must be unbound, provisional, or confirmed")
+    locator = reference.get("locator")
+    basis = reference.get("selection_basis")
+    if status == "unbound":
+        if locator is not None or basis not in ([], None):
+            errors.append("unbound reference must not carry a locator or selection basis")
+    else:
+        if not isinstance(locator, dict) or not locator.get("id") or not is_relative_path(locator.get("path")):
+            errors.append("bound reference needs an id and a skill-root-relative path")
+        if not isinstance(basis, list) or not basis or not all(isinstance(item, str) and item.strip() for item in basis):
+            errors.append("bound reference needs a nonempty selection_basis")
+
+    checkpoint = state.get("checkpoint", {})
+    if checkpoint.get("status") not in CHECKPOINT_STATUSES:
+        errors.append("checkpoint.status must be active, blocked, or complete")
+    if not isinstance(checkpoint.get("node"), str) or not checkpoint["node"].strip():
+        errors.append("checkpoint.node is required")
+    if not isinstance(checkpoint.get("next_action"), str) or not checkpoint["next_action"].strip():
+        errors.append("checkpoint.next_action is required")
+    if not isinstance(checkpoint.get("updated_at"), str) or not checkpoint["updated_at"].strip():
+        errors.append("checkpoint.updated_at is required")
+
+    output = {
+        "valid": not errors,
+        "state": str(state_file),
+        "revision": ownership.get("revision"),
+        "authority_count": len(authority) if isinstance(authority, list) else 0,
+        "errors": errors,
+    }
+    print(json.dumps(output, indent=2, ensure_ascii=True))
+    return 0 if not errors else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
